@@ -7,11 +7,13 @@ import Footer from "./components/Footer";
 import Courses from "./routes/Courses";
 import Question from "./routes/Question";
 import Answer from "./routes/Answer";
+import "./App.css"
 
 function App() {
 
     return (
-        <div className="App">
+        <>
+
             <div>
                 <Routes>
                     <Route path="/vite-dev" element={<Top/>}/>
@@ -22,7 +24,7 @@ function App() {
                     <Route path="/answer" element={<Answer/>}/>
                 </Routes>
             </div>
-        </div>
+        </>
     )
 }
 
