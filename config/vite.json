@@ -1,6 +1,7 @@
 {
   "all": {
     "sourceCodeDir": "frontend",
+    "entrypointsDir": "src",
     "watchAdditionalPaths": []
   },
   "development": {
