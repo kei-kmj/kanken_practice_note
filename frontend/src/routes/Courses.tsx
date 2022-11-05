@@ -13,11 +13,11 @@ const Courses = (): JSX.Element => {
             navigate("/question")
         }
     ;
-    const choiceClass = () => {
-
+    const choiceClass = (e) => {
+        console.log(e.target.value)
     }
-    const choiceCategory = () => {
-
+    const choiceCategory = (e) => {
+        console.log(e.target.value)
     }
     return (<>
         <div className="flex flex-col min-h-screen">
@@ -26,34 +26,68 @@ const Courses = (): JSX.Element => {
 
                 <p className="text-xl flex justify-center m-1">級を選んでください</p>
                 <div className="flex justify-center">
-                    <button className="btn btn-wide m-2 btn-primary" onClick={choiceClass}>準1級</button>
-                    <button className="btn btn-wide m-2 btn-primary" onClick={choiceClass}>1級</button>
+                    <button
+                        className="btn btn-wide m-2 btn-primary"
+                        value="11"
+                        onClick={choiceClass}>準1級
+                    </button>
+                    <button
+                        className="btn btn-wide m-2 btn-primary"
+                        value="1"
+                        onClick={choiceClass}>1級
+                    </button>
                 </div>
 
                 <div>
                     <div>
                         <p className="text-xl flex justify-center m-2">分野を選んでください</p>
                         <div className="flex justify-center">
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>全分野</button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value=""
+                                onClick={choiceCategory}>全分野
+                            </button>
 
                         </div>
                         <div className="flex justify-center">
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>読み</button>
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>書き</button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="1"
+                                onClick={choiceCategory}>読み
+                            </button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="3"
+                                onClick={choiceCategory}>書き
+                            </button>
                         </div>
                         <div className="flex justify-center">
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>四字熟語（書き）</button>
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>四字熟語（読み）</button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="4"
+                                onClick={choiceCategory}>四字熟語（書き）
+                            </button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="5"
+                                onClick={choiceCategory}>四字熟語（読み）
+                            </button>
                         </div>
                         <div className="flex justify-center">
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>故事成語・諺</button>
-                            <button className="btn btn-wide m-2 btn-primary" onClick={choiceCategory}>対義語・類義語</button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="6"
+                                onClick={choiceCategory}>対義語・類義語
+                            </button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="7"
+                                onClick={choiceCategory}>故事成語・諺
+                            </button>
                         </div>
 
                         <p className="text-xl flex justify-center m-2 ">新規又は復習を選んでください</p>
                         <div className="flex justify-center">
-
-
                             <button className="btn btn-wide m-2 btn-primary" onClick={allQuizStart}>新規</button>
                             <button className="btn btn-wide m-2 btn-primary" onClick={repeatQuizStart}>復習</button>
                         </div>
