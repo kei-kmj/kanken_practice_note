@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from "../components/Footer";
 import {useNavigate} from "react-router-dom";
+import logo from '../../public/logo.png'
 
 const Top = (): JSX.Element => {
     const navigate = useNavigate()
@@ -14,8 +15,9 @@ const Top = (): JSX.Element => {
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
-                <h1 className="text-3xl ">( ..)φ 漢検練習帳</h1>
-
+                <div className="flex justify-center">
+                    <p　className="text-5xl m-5">漢検練習帳</p>
+                </div>
                 <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
                 <p className="flex justify-center">（1級は準備中です）</p>
                 <div className="flex justify-center m-8">

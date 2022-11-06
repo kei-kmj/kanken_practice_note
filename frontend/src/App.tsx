@@ -2,14 +2,16 @@ import {Routes, Route, Link} from 'react-router-dom'
 import Qualification from './routes/Qualification'
 import Top from "./routes/Top";
 import Support from './routes/Support'
-import Nomatch from './routes/Nomatch'
-import Footer from "./components/Footer";
 import Courses from "./routes/Courses";
 import Question from "./routes/Question";
 import Answer from "./routes/Answer";
+
 import "./App.css"
 
+
+
 function App() {
+
 
     return (
         <>

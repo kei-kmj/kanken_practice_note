@@ -1,8 +1,20 @@
 import React from 'react'
 import {useNavigate, Link} from "react-router-dom";
 import Footer from "../components/Footer";
+import {fetchQuestions} from "../API";
+
+const CATEGORY = ""
+const LEVEL = 11
 
 const Courses = (): JSX.Element => {
+
+    const startQuiz = async () => {
+
+        const setQuestions = await fetchQuestions(
+            LEVEL,
+            CATEGORY,
+        )
+    }
     const navigate = useNavigate()
     const allQuizStart = () => {
             navigate("/question")
@@ -98,7 +110,6 @@ const Courses = (): JSX.Element => {
                         </div>
                     </div>
                 </div>
-
             </main>
 
             <Footer/>
