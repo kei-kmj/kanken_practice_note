@@ -25,9 +25,28 @@ const Top = (): JSX.Element => {
                             onClick={start}>始める
                     </button>
                 </div>
-                <div className="flex justify-end m-3">
-                    <button className="btn btn-active btn-link" onClick={deleteAll}>復習データを消す</button>
+
+                <div className="flex justify-end">
+                    <label htmlFor="my-modal" className="btn btn-link">復習データを消す</label>
+
+                    <input type="checkbox" id="my-modal" className="modal-toggle"/>
+                    <div className="modal">
+                        <div className="modal-box">
+                            <h3 className="font-bold text-lg">本当に復習データを消していいですか？</h3>
+                            <div className="modal-action">
+
+                                <label htmlFor="my-modal" className="btn btn-primary" onClick={deleteAll}>はい</label>
+                                <label htmlFor="my-modal" className="btn btn-primary">いいえ</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
+
+
                 <p className="flex justify-center">~~~~</p>
                 <p className="flex justify-center">説明画像📸</p>
                 <p className="flex justify-center">~~~~</p>
