@@ -8,7 +8,7 @@ const Answer = (): JSX.Element => {
     const navigate = useNavigate()
 
     const nextQuestion = () => {
-        navigate("/question")
+        navigate("/questions")
     }
 
     const quiteQuestion = () => {
@@ -18,12 +18,9 @@ const Answer = (): JSX.Element => {
         <>
             <div>
                 <div className="flex justify-center">
-                    <img className="object-scale-down h-32 w-48 ... " src={correct} alt="correct"/>
                     <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p>
-
                 </div>
                 <div className="flex justify-center">
-                    <img className="object-scale-down h-32 w-48 ... " src={incorrect} alt="incorrect"/>
                     <p className="text-3xl text-red-600 flex justify-center m-5 ">残念！</p>
                 </div>
                 <p className="text-3xl flex justify-center m-5 "> きゅうしゃ</p>

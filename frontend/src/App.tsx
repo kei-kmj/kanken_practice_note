@@ -1,4 +1,4 @@
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route, Link, useLocation} from 'react-router-dom'
 import Qualification from './routes/Qualification'
 import Top from "./routes/Top";
 import Support from './routes/Support'
@@ -9,7 +9,6 @@ import Answer from "./routes/Answer";
 import "./App.css"
 
 
-
 function App() {
 
 
@@ -17,13 +16,14 @@ function App() {
         <>
 
             <div>
-                <Routes>
+                <Routes >
                     <Route path="/vite-dev" element={<Top/>}/>
                     <Route path="/courses" element={<Courses/>}/>
                     <Route path="/qualification" element={<Qualification/>}/>
                     <Route path="/support" element={<Support/>}/>
                     <Route path="/question" element={<Question/>}/>
                     <Route path="/answer" element={<Answer/>}/>
+
                 </Routes>
             </div>
         </>

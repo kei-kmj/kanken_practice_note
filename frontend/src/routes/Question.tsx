@@ -1,27 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
-import {useNavigate} from "react-router-dom";
-
 
 
 const Question = (): JSX.Element => {
-
-
-
-    const navigate = useNavigate()
-    const answer1 = () => {
-        navigate("/answer")
-    }
-    const answer2 = () => {
-        navigate("/answer")
-    }
-    const answer3 = () => {
-        navigate("/answer")
-    }
-    const answer4 = () => {
-        navigate("/answer")
-    }
 
     return (<>
         <div className="flex flex-col min-h-screen">
@@ -31,12 +13,16 @@ const Question = (): JSX.Element => {
                 <p className="text-3xl m-10 flex justify-center">【厩舎】を掃除する</p>
                 <div className="flex justify-center">
                     <div>
-                        <button className="btn btn-wide m-10 btn-primary text-3xl" onClick={answer1}>がいしゃ</button>
-                        <button className="btn btn-wide m-10 btn-primary text-3xl" onClick={answer2}>きゅうしゃ</button>
+                        < button className="btn btn-wide m-10 btn-primary text-3xl">
+                            <Link to="/answer">がいしゃ</Link></button>
+                        < button className="btn btn-wide m-10 btn-primary text-3xl">
+                            <Link to="/answer">きゅうしゃ</Link></button>
                     </div>
                     <div>
-                        <button className="btn btn-wide m-10 btn-primary text-3xl" onClick={answer3}>げいしゃ</button>
-                        <button className="btn btn-wide m-10 btn-primary text-3xl" onClick={answer4}>がいや</button>
+                        < button className="btn btn-wide m-10 btn-primary text-3xl">
+                            <Link to="/answer">げいしゃ</Link></button>
+                        < button className="btn btn-wide m-10 btn-primary text-3xl">
+                            <Link to="/answer">がいや</Link></button>
                     </div>
                 </div>
             </main>

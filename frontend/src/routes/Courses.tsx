@@ -17,12 +17,13 @@ const Courses = (): JSX.Element => {
     }
     const navigate = useNavigate()
     const allQuizStart = () => {
-            navigate("/question")
+            navigate("/questions")
+        //history.replaceState('','','kanken')
         }
 
     ;
     const repeatQuizStart = () => {
-            navigate("/question")
+            navigate("/questions")
         }
     ;
     const choiceClass = (e) => {
@@ -59,6 +60,11 @@ const Courses = (): JSX.Element => {
                                 value=""
                                 onClick={choiceCategory}>全分野
                             </button>
+                            <button
+                                className="btn btn-wide m-2 btn-primary"
+                                value="3"
+                                onClick={choiceCategory}>書き
+                            </button>
 
                         </div>
                         <div className="flex justify-center">
@@ -70,7 +76,7 @@ const Courses = (): JSX.Element => {
                             <button
                                 className="btn btn-wide m-2 btn-primary"
                                 value="3"
-                                onClick={choiceCategory}>書き
+                                onClick={choiceCategory}>表外の読み
                             </button>
                         </div>
                         <div className="flex justify-center">

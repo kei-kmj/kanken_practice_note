@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KankenPracticeNote</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>KankenPracticeNote</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= vite_client_tag %>
-    <%= vite_react_refresh_tag %>
-    <%= vite_javascript_tag 'main.tsx' %>
+  <%= vite_client_tag %>
+  <%= vite_react_refresh_tag %>
+  <%= vite_javascript_tag 'main.tsx' %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+</head>
 
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<%= yield %>
+</body>
 </html>
