@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Question < ApplicationRecord
-  has_one :category
-  has_many :answer
+  belongs_to :category
+  has_many :answers
 end

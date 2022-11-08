@@ -6,11 +6,14 @@ module.exports = {
   },
   daisyui: {
     themes: [
+        "cupcake",
+        "lemonade",
+        "autumn",
       {
         mytheme: {
           "primary": "#c8c2be",
           "secondary": "#ee827c",
-          "accent": "#6e7955",
+          "accent": "#d59b6c",
           "neutral": "#1c305c",
           "base-100": "#fff9fc",
           "info": "#ab6953",

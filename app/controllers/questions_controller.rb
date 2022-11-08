@@ -2,8 +2,9 @@
 
 class QuestionsController < ApplicationController
   def index
-    render json: {
-      current: Time.now
-    }
+    @questions = Question.where(level: 11, category_id: [3]).order("RANDOM()").limit(10).to_json(include: [:category, :answers])
+
+    render json: @questions
+
   end
 end
