@@ -1,34 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useNavigate, Link} from "react-router-dom";
 import Footer from "../components/Footer";
-import {fetchQuestions} from "../API";
-
-const CATEGORY = ""
-const LEVEL = 11
+import {useFetchApi} from "../API";
 
 const Courses = (): JSX.Element => {
 
-    const startQuiz = async () => {
+    const {data} = useFetchApi()
 
-        const setQuestions = await fetchQuestions(
-            LEVEL,
-            CATEGORY,
-        )
-    }
     const navigate = useNavigate()
-    const allQuizStart = () => {
-            navigate("/questions")
-        //history.replaceState('','','kanken')
-        }
 
-    ;
+    const allQuizStart = () => {
+        console.log(data)
+        navigate("/questions", {state:{data}})
+        //history.replaceState('','','kanken')
+    }
+
     const repeatQuizStart = () => {
-            navigate("/questions")
-        }
-    ;
+        navigate("/questions")
+    }
+
     const choiceClass = (e) => {
         console.log(e.target.value)
     }
+
     const choiceCategory = (e) => {
         console.log(e.target.value)
     }

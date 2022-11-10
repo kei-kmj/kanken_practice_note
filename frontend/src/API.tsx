@@ -1,26 +1,47 @@
+import axios, {AxiosError} from 'axios'
+import {useEffect, useState} from "react";
 
-export type Question = {
-    category: string;
-    description: string
-    revel: number;
-    questionsId: number;
-    question: string;
-    note: string;
+type ResponseData = {
+    current: string
 }
 
-export type Answer = {
-    questionsId: number;
-    answer:string;
-    correctness: boolean
+export interface Response {
+    data: ResponseData
+    error: AxiosError | null,
+    loading: boolean
 }
 
-export type QuestionsState = Question & {answers: string[]}
 
-export const fetchQuestions = async (revel: number, category: string): Promise<QuestionsState[]> => {
-    const endpoint = `https://opentdb.com/api.php?amount=${revel}&difficulty=${category}&type=multiple`
-    const data = await (await fetch(endpoint)).json();
-    return data.results.map((question: Question) => (
-        {
-            ...question
-        }
-    ))}
+const SEMIFIRST = "&level=11"
+const FIRST = "&level=1"
+
+const ALL = ""
+const READING = "&category=1"
+const RARE_READING = "&category=2"
+const WRITING = "&category=3"
+const WRITING_IDIOM = "&category=4"
+const MEANING_IDIOM = "&category=5"
+const HISTORICAL_IDIOM = "&category=6"
+const SYNONYMS_OR_ANTONYMS = "&category=7"
+
+
+
+export const useFetchApi = () => {
+    const [response, setResponse] = useState<Response>({data: {current: ''}, error: null, loading: false})
+
+
+    useEffect(() => {
+        fetchRequest()
+    }, [])
+
+    const fetchRequest = () => {
+        setResponse(prevState => ({...prevState, loading: true}))
+        axios.get<ResponseData>(`http://localhost:3000/?${ALL}${SEMIFIRST}&limit=10`).then((response) => {
+            setResponse({data: response.data, error: null, loading: false})
+        }).catch(error => {
+            setResponse({data: {current: ''}, error: error, loading: false})
+        })
+    }
+
+    return response
+}

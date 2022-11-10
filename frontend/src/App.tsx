@@ -21,10 +21,8 @@ function App() {
                     <Route path="/courses" element={<Courses/>}/>
                     <Route path="/qualification" element={<Qualification/>}/>
                     <Route path="/support" element={<Support/>}/>
-                    <Route path="/questions" element={<Question/>}/>
-                    <Route path="/answer" element={<Answer/>}/>
-
-                </Routes>
+                    <Route path="/questions" element={<Question />}/>
+                   </Routes>
             </div>
         </>
     )

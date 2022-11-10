@@ -1,8 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import {useNavigate} from "react-router-dom";
-import correct from '../../public/correct.png'
-import incorrect from '../../public/incorrect.png'
 
 const Answer = (): JSX.Element => {
     const navigate = useNavigate()
@@ -21,7 +19,7 @@ const Answer = (): JSX.Element => {
                     <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p>
                 </div>
                 <div className="flex justify-center">
-                    <p className="text-3xl text-red-600 flex justify-center m-5 ">残念！</p>
+                    <p className="text-3xl text-red-600 flex justify-center m-5 "> </p>
                 </div>
                 <p className="text-3xl flex justify-center m-5 "> きゅうしゃ</p>
 
@@ -36,7 +34,7 @@ const Answer = (): JSX.Element => {
                     </button>
                 </div>
                 <div className="flex justify-end">
-                    <label htmlFor="my-modal" className="btn btn-link">問題選択画面に戻る</label>
+                    <label htmlFor="my-modal" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
                     <input type="checkbox" id="my-modal" className="modal-toggle"/>
                     <div className="modal">

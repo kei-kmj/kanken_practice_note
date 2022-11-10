@@ -35,5 +35,17 @@ module KankenPracticeNote
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "http://localhost:3036"
+        resource "*",
+                 headers: :any,
+                 methods: [:get, :post, :options, :head]
+      end
+    end
   end
+
+
 end
+
