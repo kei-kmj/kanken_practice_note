@@ -1,17 +1,64 @@
-import React, {useEffect, useState} from 'react'
-import {useNavigate, Link} from "react-router-dom";
+import React from 'react'
+import {Link, useNavigate} from "react-router-dom";
 import Footer from "../components/Footer";
-import {useFetchApi} from "../API";
+import {Category, Level, Limit, useFetchApi} from "../API";
 
 const Courses = (): JSX.Element => {
 
-    const {data} = useFetchApi()
+    const level = (choiceLevel = 11) => {
+        if (choiceLevel === 1) {
+            return Level.FIRST
+        } else
+            return Level.SEMI_FIRST
+    }
+
+
+    const choiceCategory = (e:any) => {
+        return e.target.value
+    }
+
+    const category = () => {
+        const num ="5"
+        switch (num) {
+            case "1" :
+                return Category.READING
+            case "2" :
+                return Category.RARE_READING
+            case "3" :
+                return Category.WRITING
+            case "4" :
+                return Category.WRITING_IDIOM
+            case "5" :
+                return Category.MEANING_IDIOM
+            case "6" :
+                return Category.SYNONYMS_OR_ANTONYMS
+            case "7" :
+                return Category.HISTORICAL_IDIOM
+            default :
+                return Category.ALL
+        }
+    }
+
+    const limit = (choiceLimit = 10) => {
+        if (choiceLimit === 10) {
+            return Limit.TEN
+        } else {
+            return null
+        }
+    }
+
+
+    const {data} = useFetchApi(
+        level(),
+        category(),
+        limit()
+    )
 
     const navigate = useNavigate()
 
     const allQuizStart = () => {
         console.log(data)
-        navigate("/questions", {state:{data}})
+        navigate("/questions", {state: {data}})
         //history.replaceState('','','kanken')
     }
 
@@ -23,9 +70,7 @@ const Courses = (): JSX.Element => {
         console.log(e.target.value)
     }
 
-    const choiceCategory = (e) => {
-        console.log(e.target.value)
-    }
+
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
@@ -69,7 +114,7 @@ const Courses = (): JSX.Element => {
                             </button>
                             <button
                                 className="btn btn-wide m-2 btn-primary"
-                                value="3"
+                                value="2"
                                 onClick={choiceCategory}>表外の読み
                             </button>
                         </div>
@@ -82,7 +127,7 @@ const Courses = (): JSX.Element => {
                             <button
                                 className="btn btn-wide m-2 btn-primary"
                                 value="5"
-                                onClick={choiceCategory}>四字熟語（読み）
+                                onClick={choiceCategory}>四字熟語（意味）
                             </button>
                         </div>
                         <div className="flex justify-center">
