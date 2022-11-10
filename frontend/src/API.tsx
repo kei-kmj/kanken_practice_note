@@ -12,8 +12,8 @@ export interface Response {
 }
 
 
-const SEMIFIRST = "&level=11"
-const FIRST = "&level=1"
+const SEMI_FIRST = "level=11"
+const FIRST = "level=1"
 
 const ALL = ""
 const READING = "&category=1"
@@ -23,6 +23,8 @@ const WRITING_IDIOM = "&category=4"
 const MEANING_IDIOM = "&category=5"
 const HISTORICAL_IDIOM = "&category=6"
 const SYNONYMS_OR_ANTONYMS = "&category=7"
+
+const LIMIT = "limit=10"
 
 
 
@@ -36,7 +38,7 @@ export const useFetchApi = () => {
 
     const fetchRequest = () => {
         setResponse(prevState => ({...prevState, loading: true}))
-        axios.get<ResponseData>(`http://localhost:3000/?${ALL}${SEMIFIRST}&limit=10`).then((response) => {
+        axios.get<ResponseData>(`http://localhost:3000/?${ALL}&${SEMI_FIRST}&${LIMIT}`).then((response) => {
             setResponse({data: response.data, error: null, loading: false})
         }).catch(error => {
             setResponse({data: {current: ''}, error: error, loading: false})
