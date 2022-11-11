@@ -8,63 +8,63 @@ const Question = (): JSX.Element => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const [data, setData] = useState<{ quiz }>(location.state as { quiz })
+    const data = location.state as { quiz }
     const [loading, setLoading] = useState<boolean>(false)
+    const [currentQuiz, setCurrentQuiz] = useState<number>(0)
+    const [score, setScore] = useState<number>(0)
 
-    const correctAnswer = data.quiz[0].answers.filter(answer => {
+    const correctAnswer = data.quiz[currentQuiz].answers.filter(answer => {
         if (answer.correctness) {
             return answer
         }
     })
 
-    const startQuiz = async () => {
-        setLoading(true)
-        setData(data)
-    }
-
-    const nextQuestion = () => {
-        navigate("/questions")
-    }
-
     const quiteQuestion = () => {
+        currentQuiz === 0
         navigate("/courses")
     }
 
-
-
-
-
-
+    const addScore = (num) => {
+        if (data.quiz[currentQuiz].answers[num].correctness === true) {
+            setScore(score + 1)
+        }
+    }
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
-                <p className="flex justify-end m-3">{data.quiz[0].level === 11 ? "準1級" : "1級"}</p>
-                <p className="text-xl m-10 flex justify-center">{data.quiz[0].category.description}</p>
-                <p className="text-3xl m-10 flex justify-center">{data.quiz[0].question}</p>
+                <p className="flex justify-end m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
+
+                <p className="flex justify-center">得点：{score}</p>
+                <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
+                <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
                 <div className="flex justify-center">
                     <label htmlFor="answer1"
-                           className="btn btn-wide m-10 btn-primary text-3xl">{data.quiz[0].answers[0].answer}</label>
+                           className="btn btn-wide m-10 btn-primary text-3xl"
+                           onClick={() => addScore(0)}>{data.quiz[currentQuiz].answers[0].answer}</label>
 
                     <input type="checkbox" id="answer1" className="modal-toggle"/>
                     <div className="modal">
                         <div className="modal-box">
                             <div>
                                 <div className="flex justify-center">
-                                    {data.quiz[0].answers[0].correctness ?
+                                    {data.quiz[currentQuiz].answers[0].correctness ?
                                         <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p> :
                                         <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解！</p>}
                                 </div>
 
                                 <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
-                                <p className="text-xl flex justify-center m-5">{data.quiz[0].note}</p>
+                                <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
                                 <label className="flex m-3 justify-end">
                                     <input type="checkbox" name="radio-5"/>
                                     <span className="button ">復習する</span>
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
-                                    <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
-                                           onClick={nextQuestion}>次の問題</label>
+                                    {currentQuiz < data.quiz.length - 1 ?
+                                        <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
+                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
+                                        <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
+                                        >採点</label>}
                                 </div>
 
                                 <div className="flex justify-end">
@@ -88,15 +88,18 @@ const Question = (): JSX.Element => {
 
                         </div>
                     </div>
-                    <label htmlFor="answer2"
-                           className="btn btn-wide m-10 btn-primary text-3xl">{data.quiz[0].answers[1].answer}</label>
+                    <label
+                        htmlFor="answer2"
+                        className="btn btn-wide m-10 btn-primary text-3xl"
+                        onClick={() => addScore(1)}>
+                        {data.quiz[currentQuiz].answers[1].answer}</label>
 
                     <input type="checkbox" id="answer2" className="modal-toggle"/>
                     <div className="modal">
                         <div className="modal-box">
                             <div>
                                 <div className="flex justify-center">
-                                    {data.quiz[0].answers[1].correctness ?
+                                    {data.quiz[currentQuiz].answers[1].correctness ?
                                         <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p> :
                                         <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解！</p>}
                                 </div>
@@ -104,14 +107,17 @@ const Question = (): JSX.Element => {
 
                                 <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
-                                <p className="text-xl flex justify-center m-5">{data.quiz[0].note}</p>
+                                <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
                                 <label className="flex m-3 justify-end">
                                     <input type="checkbox" name="radio-5"/>
                                     <span className="button ">復習する</span>
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
-                                    <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
-                                           onClick={nextQuestion}>次の問題</label>
+                                    {currentQuiz < data.quiz.length - 1 ?
+                                        <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
+                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
+                                        <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
+                                        >採点</label>}
                                 </div>
 
                                 <div className="flex justify-end">
@@ -135,29 +141,35 @@ const Question = (): JSX.Element => {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <label htmlFor="answer3"
-                           className="btn btn-wide m-10 btn-primary text-3xl">{data.quiz[0].answers[2].answer}</label>
+                    <label
+                        htmlFor="answer3"
+                        className="btn btn-wide m-10 btn-primary text-3xl"
+                        onClick={() => addScore(2)}>
+                        {data.quiz[currentQuiz].answers[2].answer}</label>
 
                     <input type="checkbox" id="answer3" className="modal-toggle"/>
                     <div className="modal">
                         <div className="modal-box">
                             <div>
                                 <div className="flex justify-center">
-                                    {data.quiz[0].answers[2].correctness === true ?
+                                    {data.quiz[currentQuiz].answers[2].correctness === true ?
                                         <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p> :
                                         <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解！</p>}
                                 </div>
 
                                 <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
-                                <p className="text-xl flex justify-center m-5">{data.quiz[0].note}</p>
+                                <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
                                 <label className="flex m-3 justify-end">
                                     <input type="checkbox" name="radio-5"/>
                                     <span className="button ">復習する</span>
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
-                                    <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
-                                           onClick={nextQuestion}>次の問題</label>
+                                    {currentQuiz < data.quiz.length - 1 ?
+                                        <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
+                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
+                                        <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
+                                        >採点</label>}
                                 </div>
 
                                 <div className="flex justify-end">
@@ -177,12 +189,13 @@ const Question = (): JSX.Element => {
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-                    <label htmlFor="answer4"
-                           className="btn btn-wide m-10 btn-primary text-3xl">{data.quiz[0].answers[3].answer}</label>
+                    <label
+                        htmlFor="answer4"
+                        className="btn btn-wide m-10 btn-primary text-3xl"
+                        onClick={() => addScore(3)}>
+                        {data.quiz[currentQuiz].answers[3].answer}</label>
 
                     <input type="checkbox" id="answer4" className="modal-toggle"/>
                     <div className="modal">
@@ -190,7 +203,7 @@ const Question = (): JSX.Element => {
                             <div>
                                 <div className="flex justify-center">
                                     <div className="flex justify-center">
-                                        {data.quiz[0].answers[3].correctness === true ?
+                                        {data.quiz[currentQuiz].answers[3].correctness === true ?
                                             <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p> :
                                             <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解！</p>}
                                     </div>
@@ -198,14 +211,17 @@ const Question = (): JSX.Element => {
 
                                 <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
-                                <p className="text-xl flex justify-center m-5">{data.quiz[0].note}</p>
+                                <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
                                 <label className="flex m-3 justify-end">
                                     <input type="checkbox" name="radio-5"/>
                                     <span className="button ">復習する</span>
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
-                                    <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
-                                           onClick={nextQuestion}>次の問題</label>
+                                    {currentQuiz < data.quiz.length - 1 ?
+                                        <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
+                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
+                                        <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
+                                        >採点</label>}
                                 </div>
 
                                 <div className="flex justify-end">
@@ -225,8 +241,6 @@ const Question = (): JSX.Element => {
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
