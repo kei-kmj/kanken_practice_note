@@ -61,7 +61,7 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <div><p></p>
+                                        <div><p> </p>
                                             <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
                                                    onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
                                         <div><p
@@ -73,7 +73,7 @@ const Question = (): JSX.Element => {
                                             >問題選択画面に戻る</label></div>
                                     }
                                 </div>
-
+                                {currentQuiz < data.quiz.length - 1 ?
                                 <div className="flex justify-end">
                                     <label htmlFor="modal" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
@@ -89,7 +89,7 @@ const Question = (): JSX.Element => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> : null}
                             </div>
 
 
@@ -133,7 +133,7 @@ const Question = (): JSX.Element => {
                                             >問題選択画面に戻る</label></div>
                                     }
                                 </div>
-
+                                {currentQuiz < data.quiz.length - 1 ?
                                 <div className="flex justify-end">
                                     <label htmlFor="modal2" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
@@ -149,7 +149,7 @@ const Question = (): JSX.Element => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>:null}
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ const Question = (): JSX.Element => {
                                                 onClick={finishQuiz}
                                             >問題選択画面に戻る</label></div>
                                     }</div>
-
+                                {currentQuiz < data.quiz.length - 1 ?
                                 <div className="flex justify-end">
                                     <label htmlFor="modal3" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
@@ -207,7 +207,7 @@ const Question = (): JSX.Element => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>:null}
                             </div>
                         </div>
                     </div>
@@ -249,7 +249,7 @@ const Question = (): JSX.Element => {
                                             >問題選択画面に戻る</label></div>
                                     }
                                 </div>
-
+                                {currentQuiz < data.quiz.length - 1 ?
                                 <div className="flex justify-end">
                                     <label htmlFor="modal4" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
@@ -265,7 +265,7 @@ const Question = (): JSX.Element => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>:null}
                             </div>
                         </div>
                     </div>
