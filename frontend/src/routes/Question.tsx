@@ -19,7 +19,7 @@ const Question = (): JSX.Element => {
         }
     })
 
-    const quiteQuestion = () => {
+    const finishQuiz = () => {
         currentQuiz === 0
         navigate("/courses")
     }
@@ -34,7 +34,7 @@ const Question = (): JSX.Element => {
             <main className="flex-grow">
                 <p className="flex justify-end m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
 
-                <p className="flex justify-center">得点：{score}</p>
+                <p className="flex justify-end m-3">{score}問目 / {data.quiz.length} 問中</p>
                 <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
                 <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
                 <div className="flex justify-center">
@@ -61,10 +61,16 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
-                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
-                                        <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
-                                        >採点</label>}
+                                        <div><p> </p>
+                                            <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
+                                                   onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
+                                        <div><p　className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
+                                        <label
+                                            htmlFor="answer1"
+                                            className="btn btn-wide btn-primary  text-2xl"
+                                            onClick={finishQuiz}
+                                        >問題選択画面に戻る</label></div>
+                                    }
                                 </div>
 
                                 <div className="flex justify-end">
@@ -77,7 +83,7 @@ const Question = (): JSX.Element => {
                                             <div className="modal-action">
 
                                                 <label htmlFor="modal" className="btn btn-primary"
-                                                       onClick={quiteQuestion}>はい</label>
+                                                       onClick={finishQuiz}>はい</label>
                                                 <label htmlFor="modal" className="btn btn-primary">いいえ</label>
                                             </div>
                                         </div>
@@ -130,7 +136,7 @@ const Question = (): JSX.Element => {
                                             <div className="modal-action">
 
                                                 <label htmlFor="modal2" className="btn btn-primary"
-                                                       onClick={quiteQuestion}>はい</label>
+                                                       onClick={finishQuiz}>はい</label>
                                                 <label htmlFor="modal2" className="btn btn-primary">いいえ</label>
                                             </div>
                                         </div>
@@ -182,7 +188,7 @@ const Question = (): JSX.Element => {
                                             <div className="modal-action">
 
                                                 <label htmlFor="modal3" className="btn btn-primary"
-                                                       onClick={quiteQuestion}>はい</label>
+                                                       onClick={finishQuiz}>はい</label>
                                                 <label htmlFor="modal3" className="btn btn-primary">いいえ</label>
                                             </div>
                                         </div>
@@ -234,7 +240,7 @@ const Question = (): JSX.Element => {
                                             <div className="modal-action">
 
                                                 <label htmlFor="modal4" className="btn btn-primary"
-                                                       onClick={quiteQuestion}>はい</label>
+                                                       onClick={finishQuiz}>はい</label>
                                                 <label htmlFor="modal4" className="btn btn-primary">いいえ</label>
                                             </div>
                                         </div>
