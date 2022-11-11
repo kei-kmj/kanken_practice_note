@@ -5,21 +5,28 @@ import {Category, Level, Limit, useFetchApi} from "../API";
 
 const Courses = (): JSX.Element => {
 
-    const level = (choiceLevel = 11) => {
-        if (choiceLevel === 1) {
+    const level = (type = "11") => {
+        //console.log(choiceLevel)
+        if (choiceLevel === "1") {
             return Level.FIRST
         } else
             return Level.SEMI_FIRST
     }
 
+    const choiceLevel = (level) => {
+        console.log(level)
+        return level
+    }
 
-    const choiceCategory = (e:any) => {
-        return e.target.value
+
+    const choiceCategory = (num) => {
+        //console.log(num)
+        return num
     }
 
     const category = () => {
-        const num ="5"
-        switch (num) {
+        const choiceCategory = ""
+        switch (choiceCategory) {
             case "1" :
                 return Category.READING
             case "2" :
@@ -66,10 +73,6 @@ const Courses = (): JSX.Element => {
         navigate("/questions")
     }
 
-    const choiceClass = (e) => {
-        console.log(e.target.value)
-    }
-
 
     return (<>
         <div className="flex flex-col min-h-screen">
@@ -81,12 +84,12 @@ const Courses = (): JSX.Element => {
                     <button
                         className="btn btn-wide m-2 btn-primary"
                         value="11"
-                        onClick={choiceClass}>準1級
+                        onClick={() => choiceLevel("11")}>準1級
                     </button>
                     <button
                         className="btn btn-wide m-2 btn-primary"
                         value="1"
-                        onClick={choiceClass}>1級
+                        onClick={() => choiceLevel("1")}>1級
                     </button>
                 </div>
 
@@ -96,13 +99,12 @@ const Courses = (): JSX.Element => {
                         <div className="flex justify-center">
                             <button
                                 className="btn btn-wide m-2 btn-primary"
-                                value=""
-                                onClick={choiceCategory}>全分野
+                                onClick={() => choiceCategory("")}>全分野
                             </button>
                             <button
                                 className="btn btn-wide m-2 btn-primary"
                                 value="3"
-                                onClick={choiceCategory}>書き
+                                onClick={() => choiceCategory("3")}>書き
                             </button>
 
                         </div>
