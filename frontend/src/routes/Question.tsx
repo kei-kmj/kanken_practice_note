@@ -34,7 +34,7 @@ const Question = (): JSX.Element => {
             <main className="flex-grow">
                 <p className="flex justify-end m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
 
-                <p className="flex justify-end m-3">{score}問目 / {data.quiz.length} 問中</p>
+                <p className="flex justify-end m-3">{currentQuiz + 1}問目 / {data.quiz.length} 問中</p>
                 <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
                 <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
                 <div className="flex justify-center">
@@ -61,15 +61,16 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <div><p> </p>
+                                        <div><p></p>
                                             <label htmlFor="answer1" className="btn btn-wide btn-primary  text-2xl"
                                                    onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
-                                        <div><p　className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
-                                        <label
-                                            htmlFor="answer1"
-                                            className="btn btn-wide btn-primary  text-2xl"
-                                            onClick={finishQuiz}
-                                        >問題選択画面に戻る</label></div>
+                                        <div><p
+                                            className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
+                                            <label
+                                                htmlFor="answer1"
+                                                className="btn btn-wide btn-primary  text-2xl"
+                                                onClick={finishQuiz}
+                                            >問題選択画面に戻る</label></div>
                                     }
                                 </div>
 
@@ -120,10 +121,17 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
-                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
-                                        <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
-                                        >採点</label>}
+                                        <div><p></p>
+                                            <label htmlFor="answer2" className="btn btn-wide btn-primary  text-2xl"
+                                                   onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
+                                        <div><p
+                                            className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
+                                            <label
+                                                htmlFor="answer2"
+                                                className="btn btn-wide btn-primary  text-2xl"
+                                                onClick={finishQuiz}
+                                            >問題選択画面に戻る</label></div>
+                                    }
                                 </div>
 
                                 <div className="flex justify-end">
@@ -172,11 +180,17 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
-                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
-                                        <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
-                                        >採点</label>}
-                                </div>
+                                        <div><p></p>
+                                            <label htmlFor="answer3" className="btn btn-wide btn-primary  text-2xl"
+                                                   onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
+                                        <div><p
+                                            className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
+                                            <label
+                                                htmlFor="answer3"
+                                                className="btn btn-wide btn-primary  text-2xl"
+                                                onClick={finishQuiz}
+                                            >問題選択画面に戻る</label></div>
+                                    }</div>
 
                                 <div className="flex justify-end">
                                     <label htmlFor="modal3" className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
@@ -224,10 +238,16 @@ const Question = (): JSX.Element => {
                                 </label>
                                 <div className="modal-action flex justify-center m-8">
                                     {currentQuiz < data.quiz.length - 1 ?
-                                        <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
-                                               onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label> :
-                                        <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
-                                        >採点</label>}
+                                        <div><p> </p>
+                                            <label htmlFor="answer4" className="btn btn-wide btn-primary  text-2xl"
+                                                   onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div> :
+                                        <div><p　className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
+                                            <label
+                                                htmlFor="answer4"
+                                                className="btn btn-wide btn-primary  text-2xl"
+                                                onClick={finishQuiz}
+                                            >問題選択画面に戻る</label></div>
+                                    }
                                 </div>
 
                                 <div className="flex justify-end">
