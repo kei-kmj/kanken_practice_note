@@ -55,7 +55,7 @@ const Courses = (): JSX.Element => {
     }
 
 
-    const {data} = useFetchApi(
+    const {quiz} = useFetchApi(
         level(),
         category(),
         limit()
@@ -64,8 +64,8 @@ const Courses = (): JSX.Element => {
     const navigate = useNavigate()
 
     const allQuizStart = () => {
-        console.log(data)
-        navigate("/questions", {state: {data}})
+        console.log(quiz)
+        navigate("/questions", {state: {quiz: quiz}})
         //history.replaceState('','','kanken')
     }
 

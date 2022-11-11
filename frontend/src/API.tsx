@@ -6,7 +6,7 @@ type ResponseData = {
 }
 
 export interface Response {
-    data: ResponseData
+    quiz: ResponseData
     error: AxiosError | null,
     loading: boolean
 }
@@ -32,7 +32,7 @@ export enum Limit {
 }
 
 export const useFetchApi = (level: Level, category: Category, limit: Limit) => {
-    const [response, setResponse] = useState<Response>({data: {current: ''}, error: null, loading: false})
+    const [response, setResponse] = useState<Response>({quiz: {current: ''}, error: null, loading: false})
 
 
     useEffect(() => {
@@ -42,9 +42,9 @@ export const useFetchApi = (level: Level, category: Category, limit: Limit) => {
     const fetchRequest = (level: Level, category: Category,limit:Limit) => {
         setResponse(prevState => ({...prevState, loading: true}))
         axios.get<ResponseData>(`http://localhost:3000/?&category=${category}&level=${level}&limit=${limit}`).then((response) => {
-            setResponse({data: response.data, error: null, loading: false})
+            setResponse({quiz: response.data, error: null, loading: false})
         }).catch(error => {
-            setResponse({data: {current: ''}, error: error, loading: false})
+            setResponse({quiz: {current: ''}, error: error, loading: false})
         })
     }
 
