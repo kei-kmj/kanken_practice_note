@@ -4,6 +4,11 @@ import {useNavigate} from "react-router-dom";
 import logo from '../../public/img.png'
 import chara from '../../public/img_1.png'
 
+
+export const LOCAL_STORAGE = {
+    KEY: "repeatItemID"
+}
+
 const Top = (): JSX.Element => {
 
     const navigate = useNavigate()
@@ -11,7 +16,7 @@ const Top = (): JSX.Element => {
         navigate("/courses")
     }
     const deleteAll = () => {
-        localStorage.removeItem("repeatItemID")
+        localStorage.removeItem(LOCAL_STORAGE.KEY)
     }
 
     return (<>

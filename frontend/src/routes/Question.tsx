@@ -2,6 +2,18 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
 import {useNavigate, useLocation} from "react-router-dom";
+import {LOCAL_STORAGE} from "./Top";
+
+const saveJSON = (key, data) => {
+    localStorage.setItem(key, JSON.stringify([data]))
+}
+
+const removeJSON = (key) => {
+    localStorage.removeItem(key)
+}
+const loadJSON = (key) => {
+    key && JSON.parse(localStorage.getItem(key))
+}
 
 
 const Question = (): JSX.Element => {
@@ -9,7 +21,7 @@ const Question = (): JSX.Element => {
     const location = useLocation()
 
     const data = location.state as { quiz }
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
     const [currentQuiz, setCurrentQuiz] = useState<number>(0)
     const [score, setScore] = useState<number>(0)
 
@@ -29,6 +41,21 @@ const Question = (): JSX.Element => {
             setScore(score + 1)
         }
     }
+
+    const [checkedValue, setCheckedValue] = useState(false)
+
+    const handleChange = (e) => {
+        if (checkedValue) {
+            setCheckedValue(checkedValue !== e.target.value)
+            removeJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`)
+
+        } else {
+            setCheckedValue(e.target.value)
+            saveJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`, data.quiz[currentQuiz])
+
+        }
+    }
+
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
@@ -57,8 +84,12 @@ const Question = (): JSX.Element => {
 
                                     <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
                                     <label className="flex m-3 justify-end">
-                                        <input type="checkbox" name="radio-5"/>
-                                        <span className="button ">復習する</span>
+                                        <input
+                                            type="checkbox"
+                                            name="radio-5"
+                                            onChange={handleChange}
+                                            checked={checkedValue}/>
+                                        <span className="button text-l">復習する</span>
                                     </label>
                                     {currentQuiz === data.quiz.length - 1 ?
                                         <p className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p> : null}
@@ -86,7 +117,8 @@ const Question = (): JSX.Element => {
 
                                                         <label htmlFor={`break${answer.id}`} className="btn btn-primary"
                                                                onClick={finishQuiz}>はい</label>
-                                                        <label htmlFor={`break${answer.id}`} className="btn btn-primary">いいえ</label>
+                                                        <label htmlFor={`break${answer.id}`}
+                                                               className="btn btn-primary">いいえ</label>
                                                     </div>
                                                 </div>
                                             </div>
