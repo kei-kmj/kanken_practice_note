@@ -38,7 +38,6 @@ const Question = (): JSX.Element => {
                 <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
                 <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
 
-                {/*{console.log(data.quiz[currentQuiz].answers.map((answer) => answer))}*/}
                 {data.quiz[currentQuiz].answers.map((answer) =>
                     <div className="flex justify-center" key={answer.id}>
                         <label htmlFor={answer.id}
@@ -50,11 +49,10 @@ const Question = (): JSX.Element => {
                             <div className="modal-box">
                                 <div>
                                     <div className="flex justify-center">
-                                        {answer.answer === correctAnswer[0].answer ?
+                                        {answer.correctness.toString() === "true" ?
                                             <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p> :
                                             <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解</p>}
                                     </div>
-
                                     <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
                                     <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
@@ -71,24 +69,24 @@ const Question = (): JSX.Element => {
                                             onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div>
                                         :
                                         <div className="flex justify-center"><label
-                                            htmlFor={answer.id}
+                                            htmlFor={`quit${answer.id}`}
                                             className="btn btn-wide btn-primary text-2xl"
                                             onClick={finishQuiz}
                                         >問題選択画面に戻る</label></div>}
                                     {currentQuiz < data.quiz.length - 1 ?
                                         <div className="flex justify-end">
-                                            <label htmlFor="modal"
+                                            <label htmlFor={`break${answer.id}`}
                                                    className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
 
-                                            <input type="checkbox" id="modal" className="modal-toggle"/>
+                                            <input type="checkbox" id={`break${answer.id}`} className="modal-toggle"/>
                                             <div className="modal">
                                                 <div className="modal-box">
                                                     <h3 className="font-bold text-lg">本当に問題選択画面に戻りますか？</h3>
                                                     <div className="modal-action">
 
-                                                        <label htmlFor="modal" className="btn btn-primary"
+                                                        <label htmlFor={`break${answer.id}`} className="btn btn-primary"
                                                                onClick={finishQuiz}>はい</label>
-                                                        <label htmlFor="modal" className="btn btn-primary">いいえ</label>
+                                                        <label htmlFor={`break${answer.id}`} className="btn btn-primary">いいえ</label>
                                                     </div>
                                                 </div>
                                             </div>

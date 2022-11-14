@@ -4,9 +4,10 @@ import Top from "./routes/Top";
 import Support from './routes/Support'
 import Courses from "./routes/Courses";
 import Question from "./routes/Question";
-import Answer from "./routes/Answer";
+import Nomatch from "./routes/Nomatch";
 
 import "./App.css"
+
 
 
 function App() {
@@ -14,9 +15,9 @@ function App() {
 
     return (
         <>
-
             <div>
                 <Routes >
+                    <Route exact path="/" element={<Top/>}/>
                     <Route path="/vite-dev" element={<Top/>}/>
                     <Route path="/courses" element={<Courses/>}/>
                     <Route path="/qualification" element={<Qualification/>}/>

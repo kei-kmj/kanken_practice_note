@@ -2,6 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-primary.btn-wide {
+    background-color: #c8c2be;
+    width: 380px;
+    height: 70px;
+    font-size: 1em; /* フォントサイズ */
+    text-align: center;
+    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
+    padding: 0.8em 5em 0.8em 5em;
+}
+
+.btn-primary.btn-wide:hover {
+    background-color: #82ae46;
+    color: #FFF;
+    font-size: 1em; /* フォントサイズ */
+    text-align: center;
+    width: 380px;
+    height: 70px;
+    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
+    padding: 0.8em 5em 0.8em 5em;
+}
+
+.radiobutton + label {
+    background-color: #c8c2be;
+    display: inline-block; /* テキストに応じて幅を可変させるため */
+    width: 380px;
+    height: 70px;
+    margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
+    padding: 0.8em 5em 0.8em 5em; /* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    text-align: center;
+    color: #2E2F30; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
+}
+
+
+
 .radiobutton:checked + label {
-    background-color: #aacf53;
+    background-color: #82ae46;
+    display: inline-block; /* テキストに応じて幅を可変させるため */
+    width: 380px;
+    height: 70px;
+    margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
+    padding: 0.8em 5em 0.8em 5em;/* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
+}
+
+.radiobutton:active + label {
+    background-color: #82ae46;
+    display: inline-block; /* テキストに応じて幅を可変させるため */
+    width: 380px;
+    height: 70px;
+    margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
+    padding: 0.8em 5em 0.8em 5em;/* 塗りの余白 */
+    font-size: 1em; /* フォントサイズ */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
 }
