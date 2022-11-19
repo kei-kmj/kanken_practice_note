@@ -66,11 +66,11 @@ const Courses = (): JSX.Element => {
 
     const allQuizStart = () => {
         console.log(quiz)
-        navigate("/questions", {state: {quiz: quiz}})
+        navigate("/quiz", {state: {quiz: quiz}})
     }
 
     const repeatQuizStart = () => {
-        navigate("/questions")
+        navigate("/quiz")
     }
 
 

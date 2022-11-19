@@ -3,7 +3,7 @@ import Qualification from './routes/Qualification'
 import Top from "./routes/Top";
 import Support from './routes/Support'
 import Courses from "./routes/Courses";
-import Question from "./routes/Question";
+import Quiz from "./routes/Quiz";
 import Nomatch from "./routes/Nomatch";
 
 import "./App.css"
@@ -22,7 +22,7 @@ function App() {
                     <Route path="/courses" element={<Courses/>}/>
                     <Route path="/qualification" element={<Qualification/>}/>
                     <Route path="/support" element={<Support/>}/>
-                    <Route path="/questions" element={<Question />}/>
+                    <Route path="/quiz" element={<Quiz />}/>
                    </Routes>
             </div>
         </>

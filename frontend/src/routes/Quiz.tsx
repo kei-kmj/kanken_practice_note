@@ -16,7 +16,7 @@ const loadJSON = (key) => {
 }
 
 
-const Question = (): JSX.Element => {
+const Quiz = (): JSX.Element => {
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -136,6 +136,6 @@ const Question = (): JSX.Element => {
         </div>
     </>)
 }
-export default Question
+export default Quiz
 
 
