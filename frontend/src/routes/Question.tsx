@@ -42,17 +42,12 @@ const Question = (): JSX.Element => {
         }
     }
 
-    const [checkedValue, setCheckedValue] = useState(false)
-
-    const handleChange = (e) => {
-        if (checkedValue) {
-            setCheckedValue(checkedValue !== e.target.value)
-            removeJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`)
-
-        } else {
-            setCheckedValue(e.target.value)
+    const handleToggle = (e) => {
+        console.log(e.target.checked)
+        if (e.target.checked) {
             saveJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`, data.quiz[currentQuiz])
-
+        } else {
+            removeJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`)
         }
     }
 
@@ -62,13 +57,14 @@ const Question = (): JSX.Element => {
                 <p className="flex justify-end m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
 
                 <p className="flex justify-end m-3">{currentQuiz + 1}問目 / {data.quiz.length} 問中</p>
+
                 <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
                 <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
 
                 {data.quiz[currentQuiz].answers.map((answer) =>
                     <div className="flex justify-center" key={answer.id}>
                         <label htmlFor={answer.id}
-                               className="btn btn-wide m-3 btn-primary text-3xl"
+                               className="btn btn-wide btn-primary"
                                onClick={() => addScore(answer)}>{answer.answer}</label>
 
                         <input type="checkbox" id={answer.id} className="modal-toggle"/>
@@ -83,21 +79,29 @@ const Question = (): JSX.Element => {
                                     <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
                                     <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
-                                    <label className="flex m-3 justify-end">
-                                        <input
-                                            type="checkbox"
-                                            name="radio-5"
-                                            onChange={handleChange}
-                                            checked={checkedValue}/>
-                                        <span className="button text-l">復習する</span>
-                                    </label>
+                                    <div className="flex m-3 justify-end">
+                                        <div className="form-control">
+                                            <label className="label cursor-pointer">
+                                                <input
+                                                    type="checkbox"
+                                                    className="toggle"
+                                                    defaultChecked={localStorage.hasOwnProperty(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`)}
+                                                    onClick={(e) => handleToggle(e)}
+                                                />
+                                                <span className="label-text">復習する</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
                                     {currentQuiz === data.quiz.length - 1 ?
                                         <p className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p> : null}
                                     {currentQuiz < data.quiz.length - 1 ?
                                         <div className="flex justify-center"><label
                                             htmlFor={answer.id}
                                             className="btn btn-wide btn-primary text-2xl"
-                                            onClick={() => setCurrentQuiz(currentQuiz + 1)}>次の問題</label></div>
+                                            onClick={() => {
+                                                setCurrentQuiz(currentQuiz + 1)
+                                            }}>次の問題</label></div>
                                         :
                                         <div className="flex justify-center"><label
                                             htmlFor={`quit${answer.id}`}

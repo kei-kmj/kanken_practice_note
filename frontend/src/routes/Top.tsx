@@ -23,8 +23,9 @@ const Top = (): JSX.Element => {
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
                 <div className="flex justify-center items-center m-8">
-                    <img className="w-24" src={chara} alt={chara}/>
-                    <img className="w-96" src={logo} alt={logo}/>
+                    <h1　className="text-3xl">漢検練習帳</h1>
+                    {/*<img className="w-24" src={chara} alt={chara}/>*/}
+                    {/*<img className="w-96" src={logo} alt={logo}/>*/}
                 </div>
                 <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
                 <p className="flex justify-center">（1級は準備中です）</p>

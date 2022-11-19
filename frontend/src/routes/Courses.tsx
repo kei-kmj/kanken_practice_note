@@ -26,7 +26,7 @@ const Courses = (): JSX.Element => {
     }
 
     const category = () => {
-        const choiceCategory = ""
+        const choiceCategory = "3"
         switch (choiceCategory) {
             case "1" :
                 return Category.READING
@@ -67,7 +67,6 @@ const Courses = (): JSX.Element => {
     const allQuizStart = () => {
         console.log(quiz)
         navigate("/questions", {state: {quiz: quiz}})
-        //history.replaceState('','','kanken')
     }
 
     const repeatQuizStart = () => {

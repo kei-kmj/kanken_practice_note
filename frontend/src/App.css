@@ -13,7 +13,7 @@
 }
 
 .btn-primary.btn-wide:hover {
-    background-color: #82ae46;
+    background-color: #696969;
     color: #FFF;
     font-size: 1em; /* フォントサイズ */
     text-align: center;
@@ -43,7 +43,7 @@
 
 
 .radiobutton:checked + label {
-    background-color: #82ae46;
+    background-color: #696969;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;
@@ -59,7 +59,7 @@
 }
 
 .radiobutton:active + label {
-    background-color: #82ae46;
+    background-color: #696969;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;
