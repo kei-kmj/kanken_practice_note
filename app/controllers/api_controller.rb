@@ -3,7 +3,12 @@
 # comment
 class ApiController < ApplicationController
   def index
-    category = params[:category]
+    category =
+      if params[:category] === "0"
+        [1..7]
+      else
+        params[:category]
+      end
     level = params[:level]
 
     limit =

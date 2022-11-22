@@ -16,17 +16,32 @@ const Courses = () => {
 
     const navigate = useNavigate()
     const [level, setLevel] = useState("")
+    const [category, setCategory] = useState("")
 
     const selectLevel = (level: string) => {
         setLevel(level)
     }
 
+    const selectCategory = (category: string) => {
+        setCategory(category)
+        console.log(typeof category)
+    }
+
 
     const allQuizStart = async () => {
         console.log(level)
-        const {quiz} = await fetchRequest(level, "1", "10")
+        const {quiz} = await fetchRequest(level, category, "10")
+        console.log(category)
         console.log(quiz)
-        if (quiz.length === 0) {
+
+        if (level === "") {
+            alert("級を選んでください")
+            return
+        }else if (category === ""){
+            alert("分野を選んでください")
+            return
+        }
+        else if (quiz.length === 0) {
             alert("出題できる問題がありません")
             return
         }
@@ -60,41 +75,41 @@ const Courses = () => {
                         <p className="text-xl flex justify-center mt-2">分野を選んでください</p>
                         <div className="flex justify-center m-0">
                             <input id="category1" className="radiobutton" name="category" hidden type="radio" value="11"
-                                   onClick={() => choiceCategory("")}/>
+                                   onClick={() => selectCategory("0")}/>
                             <label htmlFor="category1">全分野</label>
 
                             <input id="category2" className="radiobutton" name="category" hidden type="radio" value="3"
-                                   onClick={() => choiceCategory("3")}/>
+                                   onClick={() => selectCategory("3")}/>
                             <label htmlFor="category2">書 き</label>
                         </div>
                         <div className="flex justify-center">
                             <input id="category3" className="radiobutton" name="category" hidden type="radio" value="1"
-                                   onClick={() => choiceCategory("1")}/>
+                                   onClick={() => selectCategory("1")}/>
                             <label htmlFor="category3">読 み</label>
 
                             <input id="category4" className="radiobutton" name="category" hidden type="radio" value="2"
-                                   onClick={() => choiceCategory("2")}/>
+                                   onClick={() => selectCategory("2")}/>
                             <label htmlFor="category4">表外の読み</label>
 
                         </div>
                         <div className="flex justify-center">
                             <input id="category5" className="radiobutton" name="category" hidden type="radio" value="4"
-                                   onClick={() => choiceCategory("4")}/>
+                                   onClick={() => selectCategory("4")}/>
                             <label htmlFor="category5">四字熟語（書き）</label>
 
                             <input id="category6" className="radiobutton" name="category" hidden type="radio" value="5"
-                                   onClick={() => choiceCategory("5")}/>
+                                   onClick={() => selectCategory("5")}/>
                             <label htmlFor="category6">四字熟語（意味）</label>
 
 
                         </div>
                         <div className="flex justify-center">
                             <input id="category7" className="radiobutton" name="category" hidden type="radio" value="4"
-                                   onClick={() => choiceCategory("6")}/>
+                                   onClick={() => selectCategory("6")}/>
                             <label htmlFor="category7">対義語・類義</label>
 
                             <input id="category8" className="radiobutton" name="category" hidden type="radio" value="5"
-                                   onClick={() => choiceCategory("7")}/>
+                                   onClick={() => selectCategory("7")}/>
                             <label htmlFor="category8">故事成語・諺</label>
 
                         </div>
