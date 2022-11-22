@@ -5,7 +5,7 @@ import {useNavigate, useLocation} from "react-router-dom";
 import {LOCAL_STORAGE} from "./Top";
 
 const saveJSON = (key, data) => {
-    localStorage.setItem(key, JSON.stringify([data]))
+    localStorage.setItem(key, JSON.stringify(data))
 }
 
 const removeJSON = (key) => {
