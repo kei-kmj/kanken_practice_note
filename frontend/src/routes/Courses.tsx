@@ -1,23 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useNavigate} from "react-router-dom";
 import Footer from "../components/Footer";
-import {Category, Level, Limit, useFetchApi} from "../API";
+import {useFetchApi} from "../API";
 import "../App.css"
 
-const Courses = (): JSX.Element => {
-
-    const level = (type = "11") => {
-        //console.log(choiceLevel)
-        if (choiceLevel === "1") {
-            return Level.FIRST
-        } else
-            return Level.SEMI_FIRST
-    }
-
-    const choiceLevel = (level) => {
-        console.log(level)
-        return level
-    }
+const Courses = () => {
 
 
     const choiceCategory = (num) => {
@@ -25,46 +12,12 @@ const Courses = (): JSX.Element => {
         return num
     }
 
-    const category = () => {
-        const choiceCategory = "3"
-        switch (choiceCategory) {
-            case "1" :
-                return Category.READING
-            case "2" :
-                return Category.RARE_READING
-            case "3" :
-                return Category.WRITING
-            case "4" :
-                return Category.WRITING_IDIOM
-            case "5" :
-                return Category.MEANING_IDIOM
-            case "6" :
-                return Category.SYNONYMS_OR_ANTONYMS
-            case "7" :
-                return Category.HISTORICAL_IDIOM
-            default :
-                return Category.ALL
-        }
-    }
-
-    const limit = (choiceLimit = 10) => {
-        if (choiceLimit === 10) {
-            return Limit.TEN
-        } else {
-            return null
-        }
-    }
-
-
-    const {quiz} = useFetchApi(
-        level(),
-        category(),
-        limit()
-    )
+    const {fetchRequest} = useFetchApi()
 
     const navigate = useNavigate()
 
-    const allQuizStart = () => {
+    const allQuizStart = async () => {
+        const {quiz} = await fetchRequest("11", "1", "10")
         console.log(quiz)
         navigate("/quiz", {state: {quiz: quiz}})
     }
@@ -74,6 +27,10 @@ const Courses = (): JSX.Element => {
     }
 
 
+    function selectedLevel(s: string) {
+
+    }
+
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
@@ -81,12 +38,13 @@ const Courses = (): JSX.Element => {
 
                 <p className="text-xl flex justify-center mt-10">級を選んでください</p>
                 <div className="flex justify-center m-0">
-                    <input id="radio1" className="radiobutton" name="level" hidden type="radio" value="11"
-                           onClick={() => choiceLevel("11")}/>
+                    <input id="radio1" className="radiobutton" name="level" hidden type="radio"
+                           onClick={() => selectedLevel("11")}
+                    />
                     <label htmlFor="radio1">準1級</label>
 
                     <input id="radio2" className="radiobutton" name="level" hidden type="radio" value="1"
-                           onClick={() => choiceLevel("1")}/>
+                           onClick={() => selectedLevel("1")}/>
                     <label htmlFor="radio2">1 級</label>
                 </div>
 
@@ -141,7 +99,8 @@ const Courses = (): JSX.Element => {
                                 <p className="flex justify-center">選んだ分野のすべての問題から出題されます</p>
                             </div>
                             <div>
-                                <button className="btn btn-wide m-2 btn-primary b" onClick={repeatQuizStart}>復 習</button>
+                                <button className="btn btn-wide m-2 btn-primary b" onClick={repeatQuizStart}>復 習
+                                </button>
                                 <p className="flex justify-center">「復習する」にチェックした問題から出題されます</p>
                             </div>
                         </div>
