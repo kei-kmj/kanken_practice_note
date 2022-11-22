@@ -15,10 +15,21 @@ const Courses = () => {
     const {fetchRequest} = useFetchApi()
 
     const navigate = useNavigate()
+    const [level, setLevel] = useState("")
+
+    const selectLevel = (level: string) => {
+        setLevel(level)
+    }
+
 
     const allQuizStart = async () => {
-        const {quiz} = await fetchRequest("11", "1", "10")
+        console.log(level)
+        const {quiz} = await fetchRequest(level, "1", "10")
         console.log(quiz)
+        if (quiz.length === 0) {
+            alert("出題できる問題がありません")
+            return
+        }
         navigate("/quiz", {state: {quiz: quiz}})
     }
 
@@ -26,10 +37,6 @@ const Courses = () => {
         navigate("/quiz")
     }
 
-
-    function selectedLevel(s: string) {
-
-    }
 
     return (<>
         <div className="flex flex-col min-h-screen">
@@ -39,12 +46,12 @@ const Courses = () => {
                 <p className="text-xl flex justify-center mt-10">級を選んでください</p>
                 <div className="flex justify-center m-0">
                     <input id="radio1" className="radiobutton" name="level" hidden type="radio"
-                           onClick={() => selectedLevel("11")}
+                           onClick={() => selectLevel("11")}
                     />
                     <label htmlFor="radio1">準1級</label>
 
                     <input id="radio2" className="radiobutton" name="level" hidden type="radio" value="1"
-                           onClick={() => selectedLevel("1")}/>
+                           onClick={() => selectLevel("1")}/>
                     <label htmlFor="radio2">1 級</label>
                 </div>
 
