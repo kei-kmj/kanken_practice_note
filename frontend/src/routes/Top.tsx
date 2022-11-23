@@ -1,8 +1,8 @@
 import React from 'react'
 import Footer from "../components/Footer";
 import {useNavigate} from "react-router-dom";
-import logo from '../../public/img.png'
-import chara from '../../public/img_1.png'
+import logo from '../../public/logo5.png'
+import chara from '../../public/img_2.png'
 
 
 export const LOCAL_STORAGE = {
@@ -23,9 +23,9 @@ const Top = (): JSX.Element => {
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
                 <div className="flex justify-center items-center m-8">
-                    <h1　className="text-3xl">漢検練習帳</h1>
-                    {/*<img className="w-24" src={chara} alt={chara}/>*/}
-                    {/*<img className="w-96" src={logo} alt={logo}/>*/}
+                    {/*<h1　className="text-3xl">漢検練習帳</h1>*/}
+                    {/*<img className="w-16" src={chara} alt={chara}/>*/}
+                    <img className="w-96" src={logo} alt={logo}/>
                 </div>
                 <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
                 <p className="flex justify-center">（1級は準備中です）</p>
@@ -41,11 +41,12 @@ const Top = (): JSX.Element => {
                     <input type="checkbox" id="my-modal" className="modal-toggle"/>
                     <div className="modal">
                         <div className="modal-box">
-                            <h3 className="font-bold text-lg">本当に復習データを消していいですか？</h3>
+                            <p className="font-bold text-lg">本当に復習データを消していいですか？</p>
+                            <p className="font-bold text-lg">一度消すと元には戻せません</p>
                             <div className="modal-action">
 
-                                <label htmlFor="my-modal" className="btn btn-primary" onClick={deleteAll}>はい</label>
-                                <label htmlFor="my-modal" className="btn btn-primary">いいえ</label>
+                                <label htmlFor="my-modal" className="btn btn-info" onClick={deleteAll}>はい</label>
+                                <label htmlFor="my-modal" className="btn btn-info">いいえ</label>
                             </div>
                         </div>
                     </div>

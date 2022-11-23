@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn-primary.btn-wide {
-    background-color: #c8c2be;
+    background-color: #dddcd6;
     width: 380px;
     height: 70px;
     font-size: 1em; /* フォントサイズ */
@@ -13,7 +13,7 @@
 }
 
 .btn-primary.btn-wide:hover {
-    background-color: #696969;
+    background-color: #9e9478;
     color: #FFF;
     font-size: 1em; /* フォントサイズ */
     text-align: center;
@@ -24,7 +24,7 @@
 }
 
 .radiobutton + label {
-    background-color: #c8c2be;
+    background-color: #dddcd6;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;
@@ -43,7 +43,7 @@
 
 
 .radiobutton:checked + label {
-    background-color: #696969;
+    background-color: #9e9478;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;
@@ -59,7 +59,7 @@
 }
 
 .radiobutton:active + label {
-    background-color: #696969;
+    background-color: #9e9478;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;

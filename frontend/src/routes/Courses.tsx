@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import {useFetchApi} from "../API";
 import {LOCAL_STORAGE} from "./Top";
 import "../App.css"
+import chara from "../../public/img_2.png";
+import logo from "../../public/logo5.png";
 
 const Courses = () => {
 
@@ -64,9 +66,14 @@ const Courses = () => {
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
-                <h3>( ..)φ 漢検練習帳</h3>
+                {/*<h3>( ..)φ 漢検練習帳</h3>*/}
+                <div className="flex justify-left items-center m-2">
+                    {/*<h1　className="text-3xl">漢検練習帳</h1>*/}
+                    {/*<img className="w-10" src={chara} alt={chara}/>*/}
+                    <img className="w-40" src={logo} alt={logo}/>
+                </div>
 
-                <p className="text-xl flex justify-center mt-10">級を選んでください</p>
+                <p className="text-xl flex justify-center mt-1">級を選んでください</p>
                 <div className="flex justify-center m-0">
                     <input id="radio1" className="radiobutton" name="level" hidden type="radio"
                            onClick={() => selectLevel("11")}
@@ -133,12 +140,12 @@ const Courses = () => {
                         <p className="text-xl flex justify-center mt-5">新規又は復習を選んでください</p>
                         <div className="flex justify-center">
                             <div>
-                                <button className="btn btn-wide m-2 btn-primary b" onClick={allQuizStart}>新 規
+                                <button className="btn btn-wide m-2 btn-primary b" onClick={allQuizStart}>新 規　>
                                 </button>
                                 <p className="flex justify-center">選んだ分野のすべての問題から出題されます</p>
                             </div>
                             <div>
-                                <button className="btn btn-wide m-2 btn-primary b" onClick={repeatQuizStart}>復 習
+                                <button className="btn btn-wide m-2 btn-primary b" onClick={repeatQuizStart}>復 習　>
                                 </button>
                                 <p className="flex justify-center">「復習する」にチェックした問題から出題されます</p>
                             </div>

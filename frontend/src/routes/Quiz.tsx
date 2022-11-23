@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
 import {useNavigate, useLocation} from "react-router-dom";
 import {LOCAL_STORAGE} from "./Top";
+import logo from "../../public/logo5.png";
 
 const saveJSON = (key, data) => {
     localStorage.setItem(key, JSON.stringify(data))
@@ -53,13 +54,18 @@ const Quiz = (): JSX.Element => {
 
     return (<>
         <div className="flex flex-col min-h-screen">
+            <div className="flex justify-left">
+                {/*<h1　className="text-3xl">漢検練習帳</h1>*/}
+                {/*<img className="w-10" src={chara} alt={chara}/>*/}
+                <img className="w-40" src={logo} alt={logo}/>
+            </div>
             <main className="flex-grow">
-                <p className="flex justify-end m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
+                <p className="flex justify-end text-xl m-3">{data.quiz[currentQuiz].level === 11 ? "準1級" : "1級"}</p>
 
-                <p className="flex justify-end m-3">{currentQuiz + 1}問目 / {data.quiz.length} 問中</p>
+                <p className="flex justify-end text-xl m-3">{currentQuiz + 1}問目 / {data.quiz.length} 問中</p>
 
-                <p className="text-xl m-10 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
-                <p className="text-3xl m-10 flex justify-center">{data.quiz[currentQuiz].question}</p>
+                <p className="text-xl m-6 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
+                <p className="text-3xl m-6 flex justify-center">{data.quiz[currentQuiz].question}</p>
 
                 {data.quiz[currentQuiz].answers.map((answer) =>
                     <div className="flex justify-center" key={answer.id}>
@@ -84,7 +90,7 @@ const Quiz = (): JSX.Element => {
                                             <label className="label cursor-pointer">
                                                 <input
                                                     type="checkbox"
-                                                    className="toggle"
+                                                    className="toggle toggle-info"
                                                     defaultChecked={localStorage.hasOwnProperty(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`)}
                                                     onClick={(e) => handleToggle(e)}
                                                 />
@@ -119,10 +125,10 @@ const Quiz = (): JSX.Element => {
                                                     <h3 className="font-bold text-lg">本当に問題選択画面に戻りますか？</h3>
                                                     <div className="modal-action">
 
-                                                        <label htmlFor={`break${answer.id}`} className="btn btn-primary"
+                                                        <label htmlFor={`break${answer.id}`} className="btn btn-info"
                                                                onClick={finishQuiz}>はい</label>
                                                         <label htmlFor={`break${answer.id}`}
-                                                               className="btn btn-primary">いいえ</label>
+                                                               className="btn btn-info">いいえ</label>
                                                     </div>
                                                 </div>
                                             </div>
