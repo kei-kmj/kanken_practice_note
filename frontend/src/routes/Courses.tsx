@@ -66,7 +66,6 @@ const Courses = () => {
     return (<>
         <div className="flex flex-col min-h-screen">
             <main className="flex-grow">
-                {/*<h3>( ..)φ 漢検練習帳</h3>*/}
                 <div className="flex justify-left items-center m-2">
                     {/*<h1　className="text-3xl">漢検練習帳</h1>*/}
                     {/*<img className="w-10" src={chara} alt={chara}/>*/}

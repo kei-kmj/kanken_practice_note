@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
 import {useNavigate, useLocation} from "react-router-dom";
 import {LOCAL_STORAGE} from "./Top";
@@ -12,10 +11,6 @@ const saveJSON = (key, data) => {
 const removeJSON = (key) => {
     localStorage.removeItem(key)
 }
-const loadJSON = (key) => {
-    key && JSON.parse(localStorage.getItem(key))
-}
-
 
 const Quiz = (): JSX.Element => {
     const navigate = useNavigate()
@@ -44,7 +39,6 @@ const Quiz = (): JSX.Element => {
     }
 
     const handleToggle = (e) => {
-        console.log(e.target.checked)
         if (e.target.checked) {
             saveJSON(`${LOCAL_STORAGE.KEY}${data.quiz[currentQuiz].id}`, data.quiz[currentQuiz])
         } else {
@@ -97,7 +91,6 @@ const Quiz = (): JSX.Element => {
                                                 <span className="label-text">復習する</span>
                                             </label>
                                         </div>
-
                                     </div>
                                     {currentQuiz === data.quiz.length - 1 ?
                                         <p className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p> : null}
