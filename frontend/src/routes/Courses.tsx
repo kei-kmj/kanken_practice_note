@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { useFetchApi } from '../API'
@@ -33,7 +34,7 @@ const Courses = () => {
       alert('出題できる問題がありません')
       return
     }
-    navigate('/quiz', { state: { quiz: quiz } })
+    navigate('/quiz', { state: { quiz } })
   }
 
   const repeatQuizStart = () => {
@@ -60,7 +61,7 @@ const Courses = () => {
       alert('登録されている問題がありません')
       return
     }
-    navigate('/quiz', { state: { quiz: quiz } })
+    navigate('/quiz', { state: { quiz } })
   }
   return (<>
     <div className="flex flex-col min-h-screen">

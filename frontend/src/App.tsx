@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Qualification from './routes/Qualification'
 import Top from './routes/Top'

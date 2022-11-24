@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Footer from '../components/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo5.png'
