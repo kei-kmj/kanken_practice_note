@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import Footer from '../components/Footer'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
@@ -83,7 +84,7 @@ const Quiz = () => {
                         <input
                           type="checkbox"
                           className="toggle toggle-info"
-                          defaultChecked={localStorage.hasOwnProperty.call(`${LOCAL_STORAGE_DATA.KEY}${data.quiz[currentQuiz].id}`)}
+                          defaultChecked={!!localStorage.getItem(`${LOCAL_STORAGE_DATA.KEY}${data.quiz[currentQuiz].id}`)}
                           onClick={(e) => handleToggle(e)}
                         />
                         <span className="label-text">復習する</span>
