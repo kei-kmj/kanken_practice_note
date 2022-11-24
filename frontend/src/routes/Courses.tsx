@@ -64,7 +64,7 @@ const Courses = () => {
     navigate('/quiz', { state: { quiz } })
   }
   return (<>
-    <div className="flex flex-col min-h-screen">
+    <div>
       <main className="flex-grow">
         <div className="flex justify-left items-center m-2">
           {/* <h1 className="text-3xl">漢検練習帳</h1> */}

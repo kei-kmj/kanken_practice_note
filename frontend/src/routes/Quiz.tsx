@@ -46,7 +46,7 @@ const Quiz = () => {
   }
 
   return (<>
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen sticky top-0">
       <div className="flex justify-left">
         {/* <h1 className="text-3xl">漢検練習帳</h1> */}
         {/* <img className="w-10" src={chara} alt={chara}/> */}

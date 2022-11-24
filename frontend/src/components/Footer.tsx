@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
       <>
-        <footer className="footer absolute bottom-0 p-3 bg-accent text-base-content text-pink-100">
+        <footer className="footer margin-top-auto p-3 bg-accent text-base-content text-pink-100">
           <div>
             <p>「漢検」「漢字検定」は公益財団法人 日本漢字能力検定協会の登録商標です
               <div className="flex justify-center grid grid-flow-col gap-4 link">

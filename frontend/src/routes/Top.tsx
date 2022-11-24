@@ -17,7 +17,7 @@ const Top = () => {
   }
 
   return (<>
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen sticky top-0">
       <main className="flex-grow">
         <div className="flex justify-center items-center m-8">
           {/* <h1 className="text-3xl">漢検練習帳</h1> */}
@@ -31,6 +31,30 @@ const Top = () => {
                   onClick={start}>始める
           </button>
         </div>
+        <div className="flex justify-center">
+          <div className="card w-52 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <p>4択式で漢字学習！</p>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+
+            </div>
+          </div>
+          <div className="card w-52 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <p>点数を確認！</p>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+
+            </div>
+          </div>
+          <div className="card w-52 bg-base-100 shadow-xl">
+            <div className="card-body">
+              <p>苦手な問題を復習！</p>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+
+            </div>
+          </div>
+        </div>
+
 
         <div className="flex justify-end">
           <label htmlFor="my-modal" className="btn text-gray-400 btn-link">復習データを消す</label>
@@ -38,8 +62,8 @@ const Top = () => {
           <input type="checkbox" id="my-modal" className="modal-toggle"/>
           <div className="modal">
             <div className="modal-box">
-              <p className="font-bold text-lg">本当に復習データを消していいですか？</p>
-              <p className="font-bold text-lg">一度消すと元には戻せません</p>
+              <p className="font-bold text-lg">本当に復習データを消しますか？</p>
+              <p className="font-bold text-lg">一度消すと元に戻せません</p>
               <div className="modal-action">
 
                 <label htmlFor="my-modal" className="btn btn-info" onClick={deleteAll}>はい</label>
@@ -48,11 +72,6 @@ const Top = () => {
             </div>
           </div>
         </div>
-
-        <p className="flex justify-center">~~~~</p>
-        <p className="flex justify-center">説明画像📸</p>
-        <p className="flex justify-center">~~~~</p>
-
       </main>
 
       <Footer/></div>
