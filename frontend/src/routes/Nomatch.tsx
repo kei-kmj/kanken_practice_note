@@ -1,5 +1,5 @@
-const Nomatch = ():JSX.Element =>  {
-    return <h2>このページは存在しません</h2>;
-}
+import React from 'react'
 
-export default Nomatch;
+export const Nomatch = () => {
+  return <h2>このページは存在しません</h2>
+}
