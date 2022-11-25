@@ -7,7 +7,7 @@ const Qualification = () => {
   return (
     <>
       <div>
-        <h1 className="policy text-4xl m-4 flex justify-center">サイトポリシー</h1>
+        <h1 className="policy text-4xl m-4 flex justify-center">アプリケーションポリシー</h1>
         <div>
           <h2 className="badge badge-lg badge-info m-4 mr-0">1</h2><span className="text-2xl m-5">ご利用にあたって</span>
           <p className="ml-5">当アプリの利用条件を予告なく変更することがあります。最新の情報をご確認いただきますようお願いいたします。</p>
@@ -35,13 +35,13 @@ const Qualification = () => {
         </div>
         <div>
           <p className="ml-5">ローカルストレージとは、ウェブサイトが個のデバイス上でデータを保存、または取得できるようにする業界標準の技術です。</p>
-          <p className="ml-5">当サイトではコンテンツ出題のためのデータをローカルストレージに保存することがあります。</p>
+          <p className="ml-5">当アプリでは出題する問題を選択するためのデータをローカルストレージに保存することがあります。</p>
           <p className="ml-5">当アプリの操作で個人情報をローカルストレージに保存することは一切ありません。</p>
           <p className="ml-5">ブラウザの設定によりLocalstorageの設定を変更し、機能を無効にすることができますが、当アプリの一部の機能がご利用いただけなくなることがあります。</p>
-          <p className="ml-5">Localstorageに保存したデータはトップページで削除出来ますが、一度削除すると元には戻せません。</p>
+          <p className="ml-5">Localstorageに保存したデータはトップページから削除出来ますが、一度削除すると元に戻せません。</p>
           <div>
             <h3 className="text-xl mt-5 mb-2 ml-5">JavaScript</h3>
-            <p className="ml-5">当アプリでは、より快適にご利用いただくため、JavaScriptを使用しています。 ご使用のブラウザ設定においてJavaScriptをオン (有効)
+            <p className="ml-5">当アプリは、より快適にご利用いただくため、JavaScriptを使用しています。 ご使用のブラウザ設定においてJavaScriptをオン (有効)
               にされていない場合に、正しく表示されない又は操作ができない場合があります。</p>
           </div>
 
