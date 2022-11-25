@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 
 
-const Qualification = () => {
+const Policy = () => {
   return (
     <>
       <div>
@@ -54,4 +54,4 @@ const Qualification = () => {
 
     </>)
 }
-export default Qualification
+export default Policy
