@@ -2,9 +2,14 @@ import * as React from 'react'
 import Footer from '../components/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo5.png'
+import icon from '../../public/usa.png'
+import icon2 from '../../public/inu.png'
+import icon3 from '../../public/usaben.png'
+import icon4 from '../../public/inu.png'
+import icon5 from '../../public/inu.png'
 
 export const LOCAL_STORAGE_DATA = {
-  KEY: 'repeatItemID'
+  KEY: 'kankenApp_repeatItemID'
 }
 
 const Top = () => {
@@ -13,7 +18,11 @@ const Top = () => {
     navigate('/courses')
   }
   const deleteAll = () => {
-    localStorage.removeItem(LOCAL_STORAGE_DATA.KEY)
+    for (let key in localStorage) {
+      if (key.startsWith(LOCAL_STORAGE_DATA.KEY)) {
+        localStorage.removeItem(key)
+      }
+    }
   }
 
   return (<>
@@ -21,8 +30,9 @@ const Top = () => {
       <main className="flex-grow">
         <div className="flex justify-center items-center m-8">
           {/* <h1 className="text-3xl">漢検練習帳</h1> */}
-          {/* <img className="w-16" src={chara} alt={chara}/> */}
+           <img className="w-16" src={icon3} alt={icon}/>
           <img className="w-96" src={logo} alt={logo}/>
+          <img className="w-24" src={icon} alt={icon3}/>
         </div>
         <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
         <p className="flex justify-center">（1級は準備中です）</p>
@@ -32,21 +42,21 @@ const Top = () => {
           </button>
         </div>
         <div className="flex justify-center">
-          <div className="card w-52 bg-base-100 shadow-xl">
+          <div className="card w-52">
             <div className="card-body">
-              <p>4択式で漢字学習！</p>
+              <p>クイズで漢字学習！</p>
               <p>If a dog chews shoes whose shoes does he choose?</p>
 
             </div>
           </div>
-          <div className="card w-52 bg-base-100 shadow-xl">
+          <div className="card w-52 ml-2">
             <div className="card-body">
-              <p>点数を確認！</p>
+              <p>得点をチェック！</p>
               <p>If a dog chews shoes whose shoes does he choose?</p>
 
             </div>
           </div>
-          <div className="card w-52 bg-base-100 shadow-xl">
+          <div className="card w-52 ml-2">
             <div className="card-body">
               <p>苦手な問題を復習！</p>
               <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -57,7 +67,7 @@ const Top = () => {
 
 
         <div className="flex justify-end">
-          <label htmlFor="my-modal" className="btn text-gray-400 btn-link">復習データを消す</label>
+          <label htmlFor="my-modal" className="btn text-gray-400 btn-link m-8">復習データを消す</label>
 
           <input type="checkbox" id="my-modal" className="modal-toggle"/>
           <div className="modal">
