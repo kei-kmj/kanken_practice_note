@@ -8,7 +8,7 @@ import logo from '../../public/logo5.png'
 import { LOCAL_STORAGE_DATA } from './Top'
 
 const Courses = () => {
-  const {fetchRequest} = useFetchApi()
+  const { fetchRequest } = useFetchApi()
   const navigate = useNavigate()
   const [level, setLevel] = useState('')
   const [category, setCategory] = useState('')
@@ -21,8 +21,8 @@ const Courses = () => {
     setCategory(category)
   }
 
-  const allQuizStart = async () => {
-    const {quiz} = await fetchRequest(level, category, '10')
+  const newQuizStart = async (): Promise<void> => {
+    const { quiz } = await fetchRequest(level, category, '10')
     console.log(quiz)
 
     if (level === '') {
@@ -35,7 +35,7 @@ const Courses = () => {
       alert('出題できる問題がありません')
       return
     }
-    navigate('/quiz', {state: {quiz}})
+    navigate('/quiz', { state: { quiz } })
   }
 
   const repeatQuizStart = () => {
@@ -47,14 +47,14 @@ const Courses = () => {
       return
     }
     const quiz = []
-    for (let key in localStorage) {
+    for (const key in localStorage) {
       if (!key.startsWith(LOCAL_STORAGE_DATA.KEY)) {
         continue
-      } else if (level !== JSON.parse(localStorage.getItem(key)).level.toString()) {
+      } else if (level !== JSON.parse(localStorage.getItem(key) as string).level.toString()) {
         continue
       } else if (category === '0' ||
-        category === JSON.parse(localStorage.getItem(key)).category_id.toString()) {
-        quiz.push(JSON.parse(localStorage.getItem(key)))
+        category === JSON.parse(localStorage.getItem(key) as string).category_id.toString()) {
+        quiz.push(JSON.parse(localStorage.getItem(key) as string))
       }
     }
     console.log(quiz)
@@ -62,7 +62,7 @@ const Courses = () => {
       alert('登録されている問題がありません')
       return
     }
-    navigate('/quiz', {state: {quiz}})
+    navigate('/quiz', { state: { quiz } })
   }
   return (<>
     <div>
@@ -138,7 +138,7 @@ const Courses = () => {
             <p className="text-xl flex justify-center mt-5">新規又は復習を選んでください</p>
             <div className="flex justify-center">
               <div>
-                <button className="btn btn-wide m-2 btn-primary b" onClick={allQuizStart}>新 規
+                <button className="btn btn-wide m-2 btn-primary b" onClick={() => newQuizStart()}>新 規
                 </button>
                 <p className="flex justify-center">選んだ分野のすべての問題から出題されます</p>
               </div>

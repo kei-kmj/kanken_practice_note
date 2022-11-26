@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Qualification from './routes/Qualification'
+import Policy from './routes/Policy'
 import Top from './routes/Top'
 import Support from './routes/Support'
 import Courses from './routes/Courses'
@@ -18,7 +18,7 @@ function App () {
               <Route exact path="/" element={ <Top/> }/>
               <Route path="/vite-dev" element={ <Top/> }/>
               <Route path="/courses" element={ <Courses/> }/>
-              <Route path="/qualification" element={ <Qualification/> }/>
+              <Route path="/qualification" element={ <Policy/> }/>
               <Route path="/support" element={ <Support/> }/>
               <Route path="/quiz" element={ <Quiz/> }/>
               <Route path="/*" element={ <Nomatch/> }/>

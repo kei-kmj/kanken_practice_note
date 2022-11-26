@@ -5,15 +5,15 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
 import logo from '../../public/logo5.png'
 
-const saveJSON = (key, data) => {
+const saveJSON = (key:string, data:string):void => {
   localStorage.setItem(key, JSON.stringify(data))
 }
 
-const removeJSON = (key) => {
+const removeJSON = (key:string):void => {
   localStorage.removeItem(key)
 }
 
-const Quiz = () => {
+const Quiz = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
 

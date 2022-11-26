@@ -3,10 +3,7 @@ import Footer from '../components/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo5.png'
 import icon from '../../public/usa.png'
-import icon2 from '../../public/inu.png'
 import icon3 from '../../public/usaben.png'
-import icon4 from '../../public/inu.png'
-import icon5 from '../../public/inu.png'
 
 export const LOCAL_STORAGE_DATA = {
   KEY: 'kankenApp_repeatItemID'
@@ -18,7 +15,7 @@ const Top = () => {
     navigate('/courses')
   }
   const deleteAll = () => {
-    for (let key in localStorage) {
+    for (const key in localStorage) {
       if (key.startsWith(LOCAL_STORAGE_DATA.KEY)) {
         localStorage.removeItem(key)
       }
@@ -30,9 +27,9 @@ const Top = () => {
       <main className="flex-grow">
         <div className="flex justify-center items-center m-8">
           {/* <h1 className="text-3xl">漢検練習帳</h1> */}
-           <img className="w-16" src={icon3} alt={icon}/>
-          <img className="w-96" src={logo} alt={logo}/>
-          <img className="w-24" src={icon} alt={icon3}/>
+           <img className="w-16" src={icon3} alt={icon3} />
+          <img className="w-96" src={logo} alt={logo} />
+          <img className="w-24" src={icon} alt={icon} />
         </div>
         <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
         <p className="flex justify-center">（1級は準備中です）</p>
@@ -60,11 +57,9 @@ const Top = () => {
             <div className="card-body">
               <p>苦手な問題を復習！</p>
               <p>If a dog chews shoes whose shoes does he choose?</p>
-
             </div>
           </div>
         </div>
-
 
         <div className="flex justify-end">
           <label htmlFor="my-modal" className="btn text-gray-400 btn-link m-8">復習データを消す</label>

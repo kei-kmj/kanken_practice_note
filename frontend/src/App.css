@@ -2,17 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-.policy{
+.all {
+    color:#333333;
+}
+
+.card {
+    border: 1px dotted #95483f;
+    backdrop-filter: brightness(98%) blur(2px);
+}
+
+
+.policy {
     background-color: #3e8b94;
     height: 70px;
     text-align: center;
-    color:#eaf4fc;
+    color: #eaf4fc;
     padding: 0.2em 5em 0.8em 5em;
     border-radius: 8px;
 }
 
 .btn-primary.btn-wide {
     background-color: #dddcd6;
+    color:#333333;
     width: 380px;
     height: 70px;
     font-size: 1em; /* フォントサイズ */
@@ -41,7 +52,7 @@
     padding: 0.8em 5em 0.8em 5em; /* 塗りの余白 */
     font-size: 1em; /* フォントサイズ */
     text-align: center;
-    color: #2E2F30; /* テキストカラー */
+    color:#333333; /* テキストカラー */
     cursor: pointer; /* カーソルを指マークに */
     border-radius: 8px; /* 角の丸み */
     border: 0; /* 枠線を消す */
@@ -50,14 +61,13 @@
 }
 
 
-
 .radiobutton:checked + label {
     background-color: #9e9478;
     display: inline-block; /* テキストに応じて幅を可変させるため */
     width: 380px;
     height: 70px;
     margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
-    padding: 0.8em 5em 0.8em 5em;/* 塗りの余白 */
+    padding: 0.8em 5em 0.8em 5em; /* 塗りの余白 */
     font-size: 1em; /* フォントサイズ */
     color: #FFF; /* テキストカラー */
     cursor: pointer; /* カーソルを指マークに */
@@ -73,7 +83,7 @@
     width: 380px;
     height: 70px;
     margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
-    padding: 0.8em 5em 0.8em 5em;/* 塗りの余白 */
+    padding: 0.8em 5em 0.8em 5em; /* 塗りの余白 */
     font-size: 1em; /* フォントサイズ */
     color: #FFF; /* テキストカラー */
     cursor: pointer; /* カーソルを指マークに */
