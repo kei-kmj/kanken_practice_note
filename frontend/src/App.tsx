@@ -9,23 +9,23 @@ import { Nomatch } from './routes/Nomatch'
 import background from '../public/shippou.jpeg'
 import './App.css'
 
-function App () {
+function App() {
   return (
-      <>
-        <div className="bg-auto" style={ { backgroundImage: `url(${background}` } }>
-          <div className="">
-            <Routes>
-              <Route exact path="/" element={ <Top/> }/>
-              <Route path="/vite-dev" element={ <Top/> }/>
-              <Route path="/courses" element={ <Courses/> }/>
-              <Route path="/qualification" element={ <Policy/> }/>
-              <Route path="/support" element={ <Support/> }/>
-              <Route path="/quiz" element={ <Quiz/> }/>
-              <Route path="/*" element={ <Nomatch/> }/>
-            </Routes>
-          </div>
+    <>
+      <div className="bg-auto" style={{ backgroundImage: `url(${background}` }}>
+        <div className="">
+          <Routes>
+            <Route exact path="/" element={<Top />} />
+            <Route path="/vite-dev" element={<Top />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/qualification" element={<Policy />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/*" element={<Nomatch />} />
+          </Routes>
         </div>
-      </>
+      </div>
+    </>
   )
 }
 export default App
