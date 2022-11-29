@@ -18,11 +18,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "compilerOptions": {
+      "types": ["vitest/globals"]
+    }
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "node_modules/vitest/globals.d.ts",
+    "node_modules/vitest/globals.d.ts",
+    "node_modules/vitest/globals.d.ts",
+    "node_modules/vitest/globals.d.ts"
   ],
   "references": [
     {
