@@ -5,8 +5,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [RubyPlugin(), react()],
-  test: {
-    globals: true,
-    environment: 'happy-dom'
-  },
+  test: {},
 })

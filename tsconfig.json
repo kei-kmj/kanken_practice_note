@@ -18,10 +18,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "compilerOptions": {
-      "types": ["vitest/globals"]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
     "**/*.ts",
@@ -29,7 +26,8 @@
     "node_modules/vitest/globals.d.ts",
     "node_modules/vitest/globals.d.ts",
     "node_modules/vitest/globals.d.ts",
-    "node_modules/vitest/globals.d.ts"
+    "node_modules/vitest/globals.d.ts",
+    "node_modules/cypress/types/cypress-global-vars.d.ts"
   ],
   "references": [
     {

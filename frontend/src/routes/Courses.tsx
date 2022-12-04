@@ -5,12 +5,10 @@ import Footer from '../components/Footer'
 import { useFetchApi } from '../API'
 import '../App.css'
 import { LOCAL_STORAGE_DATA } from './Top'
-import { LevelPanel } from '../components/LevelPanel'
+import { LevelPanel } from '../components/courses/LevelPanel'
 import { Logo } from '../components/Logo'
-import { CategoryPanel } from '../components/CategoryPanel'
-import { QuizStartPanel } from '../components/QuizStartPanel'
-// import { QuizStartPanel } from '../components/QuizStartPanel'
-
+import { CategoryPanel } from '../components/courses/CategoryPanel'
+import { QuizStartPanel } from '../components/courses/QuizStartPanel'
 
 const Courses = () => {
   const {fetchRequest} = useFetchApi()
@@ -19,7 +17,7 @@ const Courses = () => {
   const [category, setCategory] = useState('')
 
   const ref = useRef<HTMLDivElement>(null!)
-  const scrollToLast = () => {
+  const scrollToStartButton = () => {
     ref.current.scrollIntoView({
       behavior: "smooth",
     });
@@ -31,9 +29,8 @@ const Courses = () => {
 
   const selectCategory = (category: string) => {
     setCategory(category)
-    scrollToLast()
+    scrollToStartButton()
   }
-
 
   const newQuizStart = async (): Promise<void> => {
     const {quiz} = await fetchRequest(level, category, '10')
@@ -66,8 +63,8 @@ const Courses = () => {
     navigate('/quiz', {state: {quiz}})
   }
   return (<>
-    <div>
-      <main className="flex flex-col min-h-screen sticky top-0">
+    <div className="flex flex-col min-h-screen">
+      <main className="flex flex-col flex-1 top-0">
         <Logo/>
         <LevelPanel
           onClick={() => selectLevel('11')}
