@@ -9,6 +9,7 @@ import { LevelPanel } from '../components/courses/LevelPanel'
 import { Logo } from '../components/Logo'
 import { CategoryPanel } from '../components/courses/CategoryPanel'
 import { QuizStartPanel } from '../components/courses/QuizStartPanel'
+import { BackToTop } from '../components/BackToTop'
 
 const Courses = () => {
   const {fetchRequest} = useFetchApi()
@@ -84,9 +85,7 @@ const Courses = () => {
           {category && <QuizStartPanel onClick={newQuizStart} onClick1={repeatQuizStart}/>}
         </div>}
         <div ref={ref}/>
-        <div className="grid grid-flow-col gap-4 link flex justify-end m-5">
-          <Link to="/">トップ画面に戻る</Link>
-        </div>
+        <BackToTop />
       </main>
       <Footer/>
     </div>

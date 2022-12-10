@@ -21,7 +21,7 @@ function App() {
             <Route path="/qualification" element={<Policy />} />
             <Route path="/support" element={<Support />} />
             <Route path="/quiz" element={<Quiz />} />
-            <Route path="/*" element={<Nomatch />} />
+            <Route path="*" element={<Nomatch />} />
           </Routes>
         </div>
       </div>
