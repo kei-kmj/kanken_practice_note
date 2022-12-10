@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 type ResponseData = {
+  length: number
   current: string
 }
 

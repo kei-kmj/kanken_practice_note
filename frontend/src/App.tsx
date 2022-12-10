@@ -15,7 +15,7 @@ function App() {
       <div className="bg-auto" style={{ backgroundImage: `url(${background}` }}>
         <div className="">
           <Routes>
-            <Route exact path="/" element={<Top />} />
+            <Route path="/" element={<Top />} />
             <Route path="/vite-dev" element={<Top />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/qualification" element={<Policy />} />

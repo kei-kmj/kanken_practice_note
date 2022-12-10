@@ -3,13 +3,23 @@ import { useState } from 'react'
 import Footer from '../components/Footer'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
-import logo from '../../public/logo5.png'
+import { Logo } from '../components/Logo'
+import { Question } from '../components/quiz/Question'
+import { Alternatives } from '../components/quiz/Alternatives'
+import { Correct } from '../components/quiz/Corrext'
+import { Incorrect } from '../components/quiz/Incorrect'
+import { Note } from '../components/quiz/Note'
+import { NextQuiz } from '../components/quiz/NextQuiz'
+import { AbortConfirm } from '../components/quiz/AbortConfirm'
+import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
+import { Score } from '../components/quiz/Score'
+import { RepeatButton } from '../components/quiz/ReapeatButton'
 
-const saveJSON = (key:string, data:string):void => {
+const saveJSON = (key: string, data: string): void => {
   localStorage.setItem(key, JSON.stringify(data))
 }
 
-const removeJSON = (key:string):void => {
+const removeJSON = (key: string): void => {
   localStorage.removeItem(key)
 }
 
@@ -48,83 +58,39 @@ const Quiz = (): JSX.Element => {
   return (<>
     <div className="flex flex-col min-h-screen sticky top-0">
       <div className="flex justify-left">
-        {/* <h1 className="text-3xl">漢検練習帳</h1> */}
-        {/* <img className="w-10" src={chara} alt={chara}/> */}
-        <img className="w-40" src={logo} alt={logo}/>
+        <Logo/>
       </div>
       <main className="flex-grow">
-        <p className="flex justify-end text-xl m-3">{data.quiz[currentQuiz].level === 11 ? '準1級' : '1級'}</p>
-
-        <p className="flex justify-end text-xl m-3">{currentQuiz + 1}問目 / {data.quiz.length} 問中</p>
-
-        <p className="text-xl m-6 flex justify-center">{data.quiz[currentQuiz].category.description}</p>
-        <p className="text-3xl m-6 flex justify-center">{data.quiz[currentQuiz].question}</p>
+        <Question data={data} currentQuiz={currentQuiz}/>
 
         {data.quiz[currentQuiz].answers.map((answer) =>
           <div className="flex justify-center" key={answer.id}>
-            <label htmlFor={answer.id}
-                   className="btn btn-wide btn-primary"
-                   onClick={() => addScore(answer)}>{answer.answer}</label>
+
+            <Alternatives answer={answer} onClick={() => addScore(answer)}/>
 
             <input type="checkbox" id={answer.id} className="modal-toggle"/>
             <div className="modal">
               <div className="modal-box">
                 <div>
                   <div className="flex justify-center">
-                    {answer.correctness.toString() === 'true'
-                      ? <p className="text-3xl text-blue-600 flex justify-center m-5 ">正解！</p>
-                      : <p className="text-3xl text-red-600 flex justify-center m-5 ">不正解</p>}
+                    {answer.correctness.toString() === 'true' ? <Correct/> : <Incorrect/>}
                   </div>
                   <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
-                  <p className="text-xl flex justify-center m-5">{data.quiz[currentQuiz].note}</p>
-                  <div className="flex m-3 justify-end">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          className="toggle toggle-info"
-                          defaultChecked={!!localStorage.getItem(`${LOCAL_STORAGE_DATA.KEY}${data.quiz[currentQuiz].id}`)}
-                          onClick={(e) => handleToggle(e)}
-                        />
-                        <span className="label-text">復習する</span>
-                      </label>
-                    </div>
-                  </div>
-                  {currentQuiz === data.quiz.length - 1
-                    ? <p className="text-3xl flex justify-center m-5">得点：{score} / {data.quiz.length} 点</p>
-                    : null}
-                  {currentQuiz < data.quiz.length - 1
-                    ? <div className="flex justify-center"><label
-                      htmlFor={answer.id}
-                      className="btn btn-wide btn-primary text-2xl"
-                      onClick={() => {
-                        setCurrentQuiz(currentQuiz + 1)
-                      }}>次の問題</label></div>
-                    : <div className="flex justify-center"><label
-                      htmlFor={`quit${answer.id}`}
-                      className="btn btn-wide btn-primary text-2xl"
-                      onClick={finishQuiz}
-                    >問題選択画面に戻る</label></div>}
-                  {currentQuiz < data.quiz.length - 1
-                    ? <div className="flex justify-end">
-                      <label htmlFor={`break${answer.id}`}
-                             className="btn text-gray-400 btn-link">問題選択画面に戻る</label>
+                  <Note data={data} currentQuiz={currentQuiz}/>
 
-                      <input type="checkbox" id={`break${answer.id}`} className="modal-toggle"/>
-                      <div className="modal">
-                        <div className="modal-box">
-                          <h3 className="font-bold text-lg">本当に問題選択画面に戻りますか？</h3>
-                          <div className="modal-action">
+                  <RepeatButton data={data} currentQuiz={currentQuiz} onClick={(e) => handleToggle(e)}/>
 
-                            <label htmlFor={`break${answer.id}`} className="btn btn-info"
-                                   onClick={finishQuiz}>はい</label>
-                            <label htmlFor={`break${answer.id}`}
-                                   className="btn btn-info">いいえ</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  {currentQuiz === data.quiz.length - 1 ? <Score score={score} data={data}/> : null}
+
+                  {currentQuiz < data.quiz.length - 1
+                    ? <NextQuiz answer={answer} onClick={() => {
+                      setCurrentQuiz(currentQuiz + 1)
+                    }}/>
+                    : <EndOfQuiz answer={answer} onClick={finishQuiz}/>}
+
+                  {currentQuiz < data.quiz.length - 1
+                    ? <AbortConfirm answer={answer} onClick={finishQuiz}/>
                     : null}
                 </div>
               </div>

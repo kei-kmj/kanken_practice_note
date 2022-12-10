@@ -45,7 +45,7 @@ module KankenPracticeNote
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins "http://localhost:3036"
+        origins "http://localhost:3030"
         resource "*",
                  headers: :any,
                  methods: [:get, :post, :options, :head]
