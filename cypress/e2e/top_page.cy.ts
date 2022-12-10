@@ -20,5 +20,11 @@ describe('ルーティング', () => {
     cy.get('h1').should('contain', 'Google Form')
     cy.contains('トップ画面に戻る').click()
   })
+
+  it('ページが無い時は404が表示される', () => {
+    cy.visit('/vite-dev/aa')
+    cy.get('h2').should('contain', '404')
+    cy.contains('トップ画面に戻る').click()
+  })
 })
 export {}
