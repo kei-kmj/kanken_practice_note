@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
 import { Logo } from '../components/Logo'
+import frame from '../../public/frame2.png'
 import { Question } from '../components/quiz/Question'
 import { Alternatives } from '../components/quiz/Alternatives'
 import { Correct } from '../components/quiz/Corrext'
@@ -14,6 +15,8 @@ import { AbortConfirm } from '../components/quiz/AbortConfirm'
 import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
 import { Score } from '../components/quiz/Score'
 import { RepeatButton } from '../components/quiz/ReapeatButton'
+import '../App.css'
+import logo from '../../public/logo5.png'
 
 const saveJSON = (key: string, data: string): void => {
   localStorage.setItem(key, JSON.stringify(data))
@@ -56,15 +59,14 @@ const Quiz = (): JSX.Element => {
   }
 
   return (<>
-    <div className="flex flex-col min-h-screen sticky top-0">
+    <div className="flex flex-col min-h-screen top-0">
       <div className="flex justify-left">
         <Logo/>
       </div>
       <main className="flex-grow">
-        <Question data={data} currentQuiz={currentQuiz}/>
-
+            <Question data={data} currentQuiz={currentQuiz}/>
         {data.quiz[currentQuiz].answers.map((answer) =>
-          <div className="flex justify-center" key={answer.id}>
+          <div className="flex justify-center mt-3" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
 

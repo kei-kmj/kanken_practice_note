@@ -1,0 +1,40 @@
+
+.card.quiz {
+    width: 32rem;
+    background-color: white;
+}
+.card-body.quiz{
+    width: 32rem;
+}
+
+.level {
+    color: #FFF;
+    font-size: 1.3em;
+    background-color: #9e9478;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border-radius: 30px;
+}
+
+.btn.answer {
+    background-color: #dddcd6;
+    color: #333333;
+    width: 32rem;
+    height: 90px;
+    font-size: 1.5em; /* フォントサイズ */
+    text-align: center;
+    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
+    padding: 0.8em 1em 0.8em 1em;
+}
+
+.btn.answer:hover {
+    background-color: #9e9478;
+    color: #FFF;
+    font-size: 1.5em; /* フォントサイズ */
+    text-align: center;
+    vertical-align: middle;
+    width: 32rem;
+    height: 90px;
+    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
+    padding: 0.8em 1em 0.8em 1em;
+}
+

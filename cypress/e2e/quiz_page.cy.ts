@@ -18,7 +18,7 @@ describe('quizページ', () => {
   })
 
   it('選択肢が4つ表示される', () => {
-    cy.get('.btn.btn-wide.btn-primary').should('have.length',8)
+    cy.get('.btn.btn-wide.btn-primary').should('have.length', 8)
   })
 
   it('1問目と表示される', () => {
@@ -58,6 +58,4 @@ describe('quizページ', () => {
     cy.contains('得点').should('exist')
     cy.contains('問題選択画面に戻る').should('exist')
   })
-
-
 })
