@@ -30,11 +30,11 @@ const Quiz = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const data = location.state as { quiz }
+  const data = location.state as { quiz: string | any[] }
   const [currentQuiz, setCurrentQuiz] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
 
-  const correctAnswer = data.quiz[currentQuiz].answers.filter(answer => {
+  const correctAnswer = data.quiz[currentQuiz].answers.filter((answer: { correctness: boolean }) => {
     if (answer.correctness) {
       return answer
     } else return null
@@ -44,13 +44,13 @@ const Quiz = (): JSX.Element => {
     navigate('/courses')
   }
 
-  const addScore = (answer) => {
-    if (answer.correctness === true) {
+  const addScore = (answer: { correctness: boolean }) => {
+    if (answer.correctness) {
       setScore(score + 1)
     }
   }
 
-  const handleToggle = (e) => {
+  const handleToggle = (e: { target: { checked: boolean } }) => {
     if (e.target.checked) {
       saveJSON(`${LOCAL_STORAGE_DATA.KEY}${data.quiz[currentQuiz].id}`, data.quiz[currentQuiz])
     } else {
@@ -65,7 +65,7 @@ const Quiz = (): JSX.Element => {
       </div>
       <main className="flex-grow">
             <Question data={data} currentQuiz={currentQuiz}/>
-        {data.quiz[currentQuiz].answers.map((answer) =>
+        {data.quiz[currentQuiz].answers.map((answer: { id?: string; correctness: boolean; answer?: string | undefined }) =>
           <div className="flex justify-center mt-3" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
