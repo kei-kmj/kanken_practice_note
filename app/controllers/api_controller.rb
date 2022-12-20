@@ -12,9 +12,9 @@ class ApiController < ApplicationController
     level = params[:level]
 
     limit =
-      if params[:category].empty? && params[:limit].empty?
+      if params[:category].blank? && params[:limit].blank?
         Question.where(level:level).length
-      elsif params[:limit].empty?
+      elsif params[:limit].blank?
         Question.where(level:level, category:category).length
       else
         params[:limit]

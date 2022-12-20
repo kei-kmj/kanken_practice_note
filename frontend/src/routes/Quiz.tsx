@@ -30,7 +30,7 @@ const Quiz = (): JSX.Element => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const data = location.state as { quiz: string | any[] }
+  const data = location.state as { quiz }
   const [currentQuiz, setCurrentQuiz] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
 

@@ -1,0 +1,4 @@
+dbs:
+  - path: ./db/development.sqlite3
+    replicas:
+      - url: gcs://kankendb
