@@ -1,0 +1,4 @@
+.card {
+    border: 1px dotted #95483f;
+    backdrop-filter: brightness(98%) blur(2px);
+}

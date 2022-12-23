@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { Footer } from '../components/shared/Footer'
+import './policy.css'
 
 export const Policy:React.FC = () => {
   return (

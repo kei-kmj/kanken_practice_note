@@ -3,6 +3,7 @@ import { Footer } from '../components/shared/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo.png'
 import icon3 from '../../public/usaben.png'
+import './top.css'
 
 export const LOCAL_STORAGE_DATA = {
   KEY: 'kankenApp_repeatItemID'
