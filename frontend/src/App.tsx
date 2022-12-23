@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Top />} />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/qualification" element={<Policy />} />
+            <Route path="/policy" element={<Policy />} />
             <Route path="/support" element={<Support />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="*" element={<Nomatch />} />

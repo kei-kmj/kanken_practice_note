@@ -10,7 +10,7 @@ const Footer = () => {
           <p>「漢検」「漢字検定」は公益財団法人 日本漢字能力検定協会の登録商標です</p>
         </div>
         <div className="flex justify-center mt-1 grid grid-flow-col gap-4">
-          <Link to="/qualification"><span className="link">アプリケーションポリシー</span></Link>
+          <Link to="/policy"><span className="link">アプリケーションポリシー</span></Link>
           <Link to="/support"><span className="link">お問い合わせ</span></Link>
           <span className="text-xl"><a target="_blank" href="https://twitter.com/home"><FaTwitter/></a></span>
           <span className="text-xl"><a target="_blank" href="https://www.youtube.com/"><FaYoutube/></a></span>
