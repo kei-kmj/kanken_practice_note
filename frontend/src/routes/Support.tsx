@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/shared/Footer'
+import { Footer } from '../components/shared/Footer'
 
-const Support = () => {
+export const Support = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen">
@@ -20,4 +20,3 @@ const Support = () => {
     </>
   )
 }
-export default Support

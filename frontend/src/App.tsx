@@ -1,15 +1,15 @@
 import * as React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Policy from './routes/Policy'
-import Top from './routes/Top'
-import Support from './routes/Support'
-import Courses from './routes/Courses'
-import Quiz from './routes/Quiz'
+import { Route, Routes } from 'react-router-dom'
+import { Policy } from './routes/Policy'
+import { Top } from './routes/Top'
+import { Support } from './routes/Support'
+import { Courses } from './routes/Courses'
+import { Quiz } from './routes/Quiz'
 import { Nomatch } from './routes/Nomatch'
 import background from '../public/shippou.jpeg'
 import './App.css'
 
-function App() {
+export const App:React.FC = () => {
   return (
     <>
       <div className="bg-auto" style={{ backgroundImage: `url(${background}` }}>
@@ -27,4 +27,4 @@ function App() {
     </>
   )
 }
-export default App
+

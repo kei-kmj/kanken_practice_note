@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import Footer from '../components/shared/Footer'
+import { useNavigate } from 'react-router-dom'
+import { Footer } from '../components/shared/Footer'
 import { useFetchApi } from '../hooks/useFetchAPI'
 import '../App.css'
 import { LOCAL_STORAGE_DATA } from './Top'
@@ -11,7 +11,7 @@ import { CategoryPanel } from '../components/courses/CategoryPanel'
 import { QuizStartPanel } from '../components/courses/QuizStartPanel'
 import { BackToTop } from '../components/shared/BackToTop'
 
-const Courses = () => {
+export const Courses:React.FC = () => {
   const {fetchRequest} = useFetchApi()
   const navigate = useNavigate()
   const [level, setLevel] = useState('')
@@ -91,4 +91,3 @@ const Courses = () => {
     </div>
   </>)
 }
-export default Courses

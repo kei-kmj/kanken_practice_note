@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/shared/Footer'
+import { Footer } from '../components/shared/Footer'
 
-const Policy = () => {
+export const Policy:React.FC = () => {
   return (
     <>
       <div>
@@ -50,7 +50,5 @@ const Policy = () => {
         </div>
       </div>
       <Footer/>
-
     </>)
 }
-export default Policy

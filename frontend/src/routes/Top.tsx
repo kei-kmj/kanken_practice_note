@@ -1,15 +1,14 @@
 import * as React from 'react'
-import Footer from '../components/shared/Footer'
+import { Footer } from '../components/shared/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo.png'
-import icon from '../../public/usa.png'
 import icon3 from '../../public/usaben.png'
 
 export const LOCAL_STORAGE_DATA = {
   KEY: 'kankenApp_repeatItemID'
 }
 
-const Top = () => {
+export const Top:React.FC = () => {
   const navigate = useNavigate()
   const start = () => {
     navigate('/courses')
@@ -76,8 +75,6 @@ const Top = () => {
           </div>
         </div>
       </main>
-
       <Footer/></div>
   </>)
 }
-export default Top

@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react'
-import Footer from '../components/shared/Footer'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Footer } from '../components/shared/Footer'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
 import { Logo } from '../components/shared/Logo'
-import frame from '../../public/frame2.png'
 import { Question } from '../components/quiz/Question'
 import { Alternatives } from '../components/quiz/Alternatives'
 import { Correct } from '../components/quiz/Corrext'
@@ -16,7 +15,6 @@ import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
 import { Score } from '../components/quiz/Score'
 import { RepeatButton } from '../components/quiz/ReapeatButton'
 import '../App.css'
-import logo from '../../public/logo.png'
 
 const saveJSON = (key: string, data: string): void => {
   localStorage.setItem(key, JSON.stringify(data))
@@ -26,7 +24,7 @@ const removeJSON = (key: string): void => {
   localStorage.removeItem(key)
 }
 
-const Quiz = (): JSX.Element => {
+export const Quiz:React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -103,4 +101,3 @@ const Quiz = (): JSX.Element => {
     </div>
   </>)
 }
-export default Quiz

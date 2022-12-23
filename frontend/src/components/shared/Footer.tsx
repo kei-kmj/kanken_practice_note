@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { FaGithub, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
 
-const Footer = () => {
+export const Footer:React.FC = () => {
   return (
     <>
       <footer className="margin-top-auto p-3 bg-accent text-base-content text-pink-100">
@@ -24,4 +24,3 @@ const Footer = () => {
     </>
 )
 }
-export default Footer
