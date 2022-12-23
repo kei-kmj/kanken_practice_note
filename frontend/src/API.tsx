@@ -2,7 +2,7 @@ import axios from 'axios'
 
 type ResponseData = {
   length: number
-  current: string
+  content: string
 }
 
 export const useFetchApi = () => {

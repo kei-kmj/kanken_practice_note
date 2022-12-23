@@ -16,7 +16,7 @@ import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
 import { Score } from '../components/quiz/Score'
 import { RepeatButton } from '../components/quiz/ReapeatButton'
 import '../App.css'
-import logo from '../../public/logo5.png'
+import logo from '../../public/logo.png'
 
 const saveJSON = (key: string, data: string): void => {
   localStorage.setItem(key, JSON.stringify(data))
