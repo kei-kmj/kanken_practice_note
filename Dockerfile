@@ -21,7 +21,6 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 
 COPY package*.json ./
-RUN npm install
 
 copy . /app
 

@@ -1,0 +1,21 @@
+# .env
+.env
+.env_example
+
+# git
+.git
+.gitignore
+.idea
+
+# Docker
+Dockerfile
+.dockerignore
+
+# DB dumps
+dump.json
+latest.dump
+
+# docs
+*.md
+
+.ruby-version
