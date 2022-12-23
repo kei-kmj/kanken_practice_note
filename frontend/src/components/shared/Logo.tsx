@@ -1,4 +1,4 @@
-import logo from '../../public/logo.png'
+import logo from '../../../public/logo.png'
 import * as React from 'react'
 
 export function Logo () {

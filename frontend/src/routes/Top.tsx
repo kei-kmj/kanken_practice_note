@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Footer from '../components/Footer'
+import Footer from '../components/shared/Footer'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo.png'
 import icon from '../../public/usa.png'

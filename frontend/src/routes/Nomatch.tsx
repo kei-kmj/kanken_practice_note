@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { BackToTop } from '../components/BackToTop'
+import { BackToTop } from '../components/shared/BackToTop'
 
 export const Nomatch = () => {
   return (<div className="flex flex-col min-h-screen"><h2>404</h2>

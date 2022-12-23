@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Footer from '../components/Footer'
+import Footer from '../components/shared/Footer'
 import { useFetchApi } from '../hooks/useFetchAPI'
 import '../App.css'
 import { LOCAL_STORAGE_DATA } from './Top'
 import { LevelPanel } from '../components/courses/LevelPanel'
-import { Logo } from '../components/Logo'
+import { Logo } from '../components/shared/Logo'
 import { CategoryPanel } from '../components/courses/CategoryPanel'
 import { QuizStartPanel } from '../components/courses/QuizStartPanel'
-import { BackToTop } from '../components/BackToTop'
+import { BackToTop } from '../components/shared/BackToTop'
 
 const Courses = () => {
   const {fetchRequest} = useFetchApi()
