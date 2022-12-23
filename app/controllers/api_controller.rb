@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# comment
 class ApiController < ApplicationController
   def index
     category =
