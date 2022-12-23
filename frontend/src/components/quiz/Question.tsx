@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export const Question = (props: { currentQuiz: number, data: { quiz: string | any[] } }) => {
-  return <>
+  return (<>
     <div className="card quiz mx-auto items-center image-full mt-24">
       <div className="indicator">
         <div className="indicator-item indicator-top">
@@ -18,5 +18,5 @@ export const Question = (props: { currentQuiz: number, data: { quiz: string | an
         </div>
       </div>
     </div>
-  </>
+  </>)
 }
