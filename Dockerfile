@@ -21,8 +21,9 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 
 COPY package*.json ./
+RUN npm install
 
-copy . /app
+copy . /app/
 
 # Copy Litestream configuration file & startup script.
 COPY ./litestream.yml /etc/litestream.yml
