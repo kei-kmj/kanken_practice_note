@@ -1,7 +1,7 @@
 FROM ruby:3.1.1
 
 # Cloud Run default port 8080
-EXPOSE 8080
+EXPOSE 3000
 
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
 
@@ -21,18 +21,17 @@ COPY . /app
 #COPY Gemfile /app/Gemfile
 #COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
-
+#
 #COPY package*.json ./
-RUN npm install
-
-
+#RUN npm install
 
 # Copy Litestream configuration file & startup script.
 #COPY ./litestream.yml /etc/litestream.yml
 COPY entrypoint.sh /app/entrypoint.sh
 
 RUN chmod +x /app/entrypoint.sh
-CMD ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
+#CMD ["rails", "server", "-b", "0.0.0.0"]
 
 
 

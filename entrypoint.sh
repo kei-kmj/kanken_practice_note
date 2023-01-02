@@ -18,7 +18,14 @@ set -e
 #  mv /app/db/development.sqlite3.bk /app/db/development.sqlite3
 #fi
 
-rails db:migrate
+#rails db:migrate
 
 # Run litestream with your app as the subprocess.
-rails server -p 8080 -b 0.0.0.0
+#rails server -p 3000 -b 0.0.0.0
+#sqlite3 development.sqlite3
+
+rm -f /app/tmp/pids/server.pid
+#bin/vite build --clear --mode=development
+#npm run build
+exec "$@"
+# bin/vite build --clear --mode=development
