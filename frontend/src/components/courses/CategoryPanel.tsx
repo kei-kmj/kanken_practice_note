@@ -8,7 +8,7 @@ type Props = {
   onClickDictation: () => void,
   onClickDictationIdiom: () => void,
   onClickMeaningIdiom: () => void,
-  onClickSynonymAntonym: () => void,
+  onClickAntonymSynonym: () => void,
   onClickProverb: () => void
 }
 
@@ -19,7 +19,7 @@ export const CategoryPanel: FC<Props> = ({
                                            onClickDictation,
                                            onClickDictationIdiom,
                                            onClickMeaningIdiom,
-                                           onClickSynonymAntonym,
+                                           onClickAntonymSynonym,
                                            onClickProverb
                                          }) => {
   return <div>
@@ -51,7 +51,7 @@ export const CategoryPanel: FC<Props> = ({
     </div>
     <div className="flex justify-center">
       <input id="category7" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickSynonymAntonym}/>
+             onClick={onClickAntonymSynonym}/>
       <label htmlFor="category7">対義語・類義</label>
 
       <input id="category8" className="radiobutton" name="category" hidden type="radio"

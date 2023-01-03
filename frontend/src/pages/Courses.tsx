@@ -10,22 +10,19 @@ import { Logo } from '../components/shared/Logo'
 import { CategoryPanel } from '../components/courses/CategoryPanel'
 import { QuizStartPanel } from '../components/courses/QuizStartPanel'
 import { BackToTop } from '../components/shared/BackToTop'
+import { CATEGORY, LEVEL } from '../constants'
 
 export const Courses:React.FC = () => {
   const {fetchRequest} = useFetchApi()
   const navigate = useNavigate()
-  const [level, setLevel] = useState('')
-  const [category, setCategory] = useState('')
+  const [level, setLevel] = useState<string>('')
+  const [category, setCategory] = useState<string>('')
 
   const ref = useRef<HTMLDivElement>(null!)
   const scrollToStartButton = () => {
     ref.current.scrollIntoView({
       behavior: "smooth",
     });
-  }
-
-  const selectLevel = (level: string) => {
-    setLevel(level)
   }
 
   const selectCategory = (category: string) => {
@@ -68,19 +65,19 @@ export const Courses:React.FC = () => {
       <main className="flex flex-col flex-1 top-0">
         <Logo/>
         <LevelPanel
-          onClickSemiFirst={() => selectLevel('11')}
-          onClickFirst={() => selectLevel('1')}/>
+          onClickSemiFirst={() => setLevel(LEVEL.SEMI_FIRST)}
+          onClickFirst={() => setLevel(LEVEL.FIRST)}/>
         {level &&
         <div>
           <CategoryPanel
-            onClickAll={() => selectCategory('0')}
-            onClickReading={() => selectCategory('1')}
-            onClickExtraReading={() => selectCategory('2')}
-            onClickDictation={() => selectCategory('3')}
-            onClickDictationIdiom={() => selectCategory('4')}
-            onClickMeaningIdiom={() => selectCategory('5')}
-            onClickSynonymAntonym={() => selectCategory('6')}
-            onClickProverb={() => selectCategory('7')}/>
+            onClickAll={() => selectCategory(CATEGORY.ALL)}
+            onClickReading={() => selectCategory(CATEGORY.READING)}
+            onClickExtraReading={() => selectCategory(CATEGORY.EXTRA_READING)}
+            onClickDictation={() => selectCategory(CATEGORY.DICTATION)}
+            onClickDictationIdiom={() => selectCategory(CATEGORY.DICTATION_IDIOM)}
+            onClickMeaningIdiom={() => selectCategory(CATEGORY.MEANING_IDIOM)}
+            onClickAntonymSynonym={() => selectCategory(CATEGORY.ANTONYM_SYNONYM)}
+            onClickProverb={() => selectCategory(CATEGORY.PROVERB)}/>
 
           {category && <QuizStartPanel onClick={newQuizStart} onClick1={repeatQuizStart}/>}
         </div>}
