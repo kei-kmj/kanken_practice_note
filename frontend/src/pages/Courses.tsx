@@ -68,19 +68,19 @@ export const Courses:React.FC = () => {
       <main className="flex flex-col flex-1 top-0">
         <Logo/>
         <LevelPanel
-          onClick={() => selectLevel('11')}
-          onClick1={() => selectLevel('1')}/>
+          onClickSemiFirst={() => selectLevel('11')}
+          onClickFirst={() => selectLevel('1')}/>
         {level &&
         <div>
           <CategoryPanel
-            onClick={() => selectCategory('0')}
-            onClick1={() => selectCategory('1')}
-            onClick2={() => selectCategory('2')}
-            onClick3={() => selectCategory('3')}
-            onClick4={() => selectCategory('4')}
-            onClick5={() => selectCategory('5')}
-            onClick6={() => selectCategory('6')}
-            onClick7={() => selectCategory('7')}/>
+            onClickAll={() => selectCategory('0')}
+            onClickReading={() => selectCategory('1')}
+            onClickExtraReading={() => selectCategory('2')}
+            onClickDictation={() => selectCategory('3')}
+            onClickDictationIdiom={() => selectCategory('4')}
+            onClickMeaningIdiom={() => selectCategory('5')}
+            onClickSynonymAntonym={() => selectCategory('6')}
+            onClickProverb={() => selectCategory('7')}/>
 
           {category && <QuizStartPanel onClick={newQuizStart} onClick1={repeatQuizStart}/>}
         </div>}
