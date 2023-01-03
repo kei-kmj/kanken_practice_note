@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_DATA } from '../../routes/Top'
+import { LOCAL_STORAGE_DATA } from '../../pages/Top'
 import * as React from 'react'
 
 export const RepeatButton = (props: { data: { quiz: string | any[] }, currentQuiz: number, onClick: (e: any) => void }) => {

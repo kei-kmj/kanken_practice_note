@@ -13,7 +13,7 @@ export const Support = () => {
           </iframe>
         </div>
         <div className="flex justify-end m-8 link">
-          <Link to="/vite-dev">トップ画面に戻る</Link>
+          <Link to="/">トップ画面に戻る</Link>
         </div>
         <Footer/>
       </div>
