@@ -13,7 +13,7 @@ import { BackToTop } from '../components/shared/BackToTop'
 import { CATEGORY, LEVEL } from '../constants'
 
 export const Courses:React.FC = () => {
-  const {fetchRequest} = useFetchApi()
+  const { fetchRequest } = useFetchApi()
   const navigate = useNavigate()
   const [level, setLevel] = useState<string>('')
   const [category, setCategory] = useState<string>('')
@@ -30,7 +30,7 @@ export const Courses:React.FC = () => {
     scrollToStartButton()
   }
 
-  const newQuizStart = async (): Promise<void> => {
+  const startQuiz = async (): Promise<void> => {
     const {quiz} = await fetchRequest(level, category, '10')
     console.log(quiz)
 
@@ -41,14 +41,14 @@ export const Courses:React.FC = () => {
     navigate('/quiz', {state: {quiz}})
   }
 
-  const repeatQuizStart = () => {
+  const repeatQuiz = () => {
     const quiz = []
     for (const key in localStorage) {
       if (!key.startsWith(LOCAL_STORAGE_DATA.KEY)) {
         continue
       } else if (level !== JSON.parse(localStorage.getItem(key) as string).level.toString()) {
         continue
-      } else if (category === '0' ||
+      } else if (category === CATEGORY.ALL ||
         category === JSON.parse(localStorage.getItem(key) as string).category_id.toString()) {
         quiz.push(JSON.parse(localStorage.getItem(key) as string))
       }
@@ -79,7 +79,7 @@ export const Courses:React.FC = () => {
             onClickAntonymSynonym={() => selectCategory(CATEGORY.ANTONYM_SYNONYM)}
             onClickProverb={() => selectCategory(CATEGORY.PROVERB)}/>
 
-          {category && <QuizStartPanel onClick={newQuizStart} onClick1={repeatQuizStart}/>}
+          {category && <QuizStartPanel onClick={startQuiz} onClick1={repeatQuiz}/>}
         </div>}
         <div ref={ref}/>
         <BackToTop />
