@@ -11,7 +11,8 @@ export const LOCAL_STORAGE_DATA = {
 
 export const Top:React.FC = () => {
   const navigate = useNavigate()
-  const start = () => {
+
+  const handleStart = () => {
     navigate('/courses')
   }
   const deleteAll = () => {
@@ -33,7 +34,7 @@ export const Top:React.FC = () => {
         <p className="flex justify-center">（1級は準備中です）</p>
         <div className="flex justify-center m-8">
           <button className="btn btn-wide btn-primary  text-2xl m-10"
-                  onClick={start}>始める
+                  onClick={handleStart}>始める
           </button>
         </div>
         <div className="flex justify-center">
