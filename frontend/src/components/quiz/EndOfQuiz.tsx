@@ -1,11 +1,17 @@
 import * as React from 'react'
+import { FC } from 'react'
 
-export const EndOfQuiz = (props: { answer: { id?: string; answer?: string; correctness: boolean }, onClick: () => void }) => {
+type Props = {
+  answer: { id: string }
+  onClick: () => void
+}
+
+export const EndOfQuiz: FC<Props> = ({answer: {id}, onClick}) => {
   return (<>
     <div className="flex justify-center"><label
-      htmlFor={`quit${props.answer.id}`}
+      htmlFor={`quit${id}`}
       className="btn btn-wide btn-primary text-2xl"
-      onClick={props.onClick}
+      onClick={onClick}
     >問題選択画面に戻る</label></div>
   </>)
 }
