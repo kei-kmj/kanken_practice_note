@@ -1,27 +1,24 @@
 # frozen_string_literal: true
 
 class ApiController < ApplicationController
+  ALL_CATEGORIES = "0"
+  FIRST_CATEGORIES = "1"
+  LAST_CATEGORIES = "7"
+
   def index
     category =
-      if params[:category] === "0"
-        [1..7]
+      if params[:category] === ALL_CATEGORIES
+        [FIRST_CATEGORIES..LAST_CATEGORIES]
       else
         params[:category]
       end
+
     level = params[:level]
+    limit = params[:limit]
 
-    limit =
-      if params[:category].blank? && params[:limit].blank?
-        Question.where(level:level).length
-      elsif params[:limit].blank?
-        Question.where(level:level, category:category).length
-      else
-        params[:limit]
-      end
+    quiz_intermediate = Question.where(level: level).order('RANDOM()').limit(limit)
+    quiz_completed = quiz_intermediate.where(category: category) if category.presence
 
-    quiz = Question.where(level:level).order('RANDOM()').limit(limit)
-    quiz = quiz.where(category:category) if category.presence
-
-    render json: quiz.to_json(include: %i[category answers])
+    render json: quiz_completed.to_json(include: %i[category answers])
   end
 end
