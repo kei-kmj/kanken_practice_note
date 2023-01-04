@@ -1,5 +1,5 @@
-class ContentsController < ApplicationController
-  def index
+# frozen_string_literal: true
 
-  end
+class ContentsController < ApplicationController
+  def index; end
 end
