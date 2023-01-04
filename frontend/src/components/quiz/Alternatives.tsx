@@ -1,8 +1,14 @@
 import * as React from 'react'
 import './Question.css'
+import { FC } from 'react'
 
-export const Alternatives = (props: { answer: { id?: string; answer?: string; correctness: boolean }, onClick: () => void }) => {
-  return <label htmlFor={props.answer.id}
+type Props = {
+  answer: { id: string; answer: string }
+  onClick: () => void
+}
+
+export const Alternatives: FC<Props> = ({answer: {id, answer}, onClick}) => {
+  return <label htmlFor={id}
                 className="btn answer btn-wide btn-primary"
-                onClick={props.onClick}>{props.answer.answer}</label>
+                onClick={onClick}>{answer}</label>
 }
