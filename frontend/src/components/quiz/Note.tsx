@@ -1,6 +1,12 @@
 import * as React from 'react'
+import { FC } from 'react'
 
-export const Note = (props: { data: { quiz: { note: string }[] }, currentQuiz: number }) => {
+type Props = {
+  data: { quiz: { note: string } }
+  currentQuiz: number
+}
+
+export const Note: FC<Props> = ({data, currentQuiz}) => {
   return <p
-    className="text-2xl flex justify-center ">{props.data.quiz[props.currentQuiz].note ? `💡 ${props.data.quiz[props.currentQuiz].note}` : null}</p>
+    className="text-2xl flex justify-center ">{data.quiz[currentQuiz].note ? `💡 ${data.quiz[currentQuiz].note}` : null}</p>
 }
