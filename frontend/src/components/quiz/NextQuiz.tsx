@@ -1,10 +1,17 @@
 import * as React from 'react'
+import { FC } from 'react'
 
-export const NextQuiz = (props: { answer: { id?: string; answer?: string; correctness: boolean }, onClick: () => void }) => {
+type Props = {
+  answer: { id: string }
+  onClick: () => void
+}
+
+export const NextQuiz: FC<Props> = ({answer: {id}, onClick}) => {
   return (<>
     <div className="flex justify-center"><label
-      htmlFor={props.answer.id}
+      htmlFor={id}
       className="btn btn-wide btn-primary text-2xl"
-      onClick={props.onClick}>次の問題</label></div>
+      onClick={onClick}>次の問題</label>
+    </div>
   </>)
 }
