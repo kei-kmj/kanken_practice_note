@@ -1,5 +1,11 @@
 import * as React from 'react'
+import { FC } from 'react'
 
-export const Score = (props: { score: number, data: { quiz: string | any[] } }) => {
-  return <p className="text-3xl flex justify-center m-5">得点：{props.score} / {props.data.quiz.length} 点</p>
+type Props = {
+  score: number
+  data: { quiz: string | string[] }
+}
+
+export const Score:FC<Props> = ({ score , data: { quiz } }) => {
+  return <p className="text-3xl flex justify-center m-5">得点：{score} / {quiz.length} 点</p>
 }
