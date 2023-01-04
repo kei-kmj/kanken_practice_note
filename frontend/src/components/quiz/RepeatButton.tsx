@@ -1,7 +1,14 @@
 import { LOCAL_STORAGE_DATA } from '../../pages/Top'
 import * as React from 'react'
+import { FC } from 'react'
 
-export const RepeatButton = (props: { data: { quiz: string | any[] }, currentQuiz: number, onClick: (e: any) => void }) => {
+type Props = {
+  data: { quiz: string | string[] }
+  currentQuiz: number
+  onClick: (e) => void
+}
+
+export const RepeatButton:FC<Props> = ({ data: { quiz }, currentQuiz, onClick }) => {
   return (<>
     <div className="flex m-3 justify-end">
       <div className="form-control">
@@ -9,8 +16,8 @@ export const RepeatButton = (props: { data: { quiz: string | any[] }, currentQui
           <input
             type="checkbox"
             className="toggle toggle-info"
-            defaultChecked={!!localStorage.getItem(`${LOCAL_STORAGE_DATA.KEY}${props.data.quiz[props.currentQuiz].id}`)}
-            onClick={props.onClick}
+            defaultChecked={!!localStorage.getItem(`${LOCAL_STORAGE_DATA.KEY}${quiz[currentQuiz].id}`)}
+            onClick={onClick}
           />
           <span className="label-text">復習する</span>
         </label>
