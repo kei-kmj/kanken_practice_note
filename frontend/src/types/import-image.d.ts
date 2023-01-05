@@ -1,3 +1,12 @@
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.png'
+declare module '*.jpg' {
+  const image: string;
+  export default image;
+}
+declare module '*.jpeg'{
+  const image: string;
+  export default image;
+}
+declare module '*.png'{
+  const image: string;
+  export default image;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FC } from 'react'
+import { HiddenButtonRadio } from '../shared/HiddenButtonRadio'
 
 type Props = {
   onClickAll: () => void,
@@ -25,38 +26,20 @@ export const CategoryPanel: FC<Props> = ({
   return <div>
     <p className="text-xl flex justify-center mt-2">分野を選んでください</p>
     <div className="flex justify-center m-0">
-      <input id="category1" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickAll}/>
-      <label htmlFor="category1">全分野</label>
-      <input id="category3" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickReading}/>
-      <label htmlFor="category3">読 み</label>
+      <HiddenButtonRadio id="category1" onClick={onClickAll} labelId="category1" labelName="全分野"/>
+      <HiddenButtonRadio id="category3" onClick={onClickReading} labelId="category3" labelName="読 み"/>
     </div>
     <div className="flex justify-center">
-      <input id="category4" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickExtraReading}/>
-      <label htmlFor="category4">表外の読み</label>
-      <input id="category2" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickDictation}/>
-      <label htmlFor="category2">書 き</label>
+      <HiddenButtonRadio id="category4" onClick={onClickExtraReading} labelId="category4" labelName="表外の読み"/>
+      <HiddenButtonRadio id="category2" onClick={onClickDictation} labelId="category2" labelName="書 き"/>
     </div>
     <div className="flex justify-center">
-      <input id="category5" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickDictationIdiom}/>
-      <label htmlFor="category5">四字熟語（書き）</label>
-
-      <input id="category6" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickMeaningIdiom}/>
-      <label htmlFor="category6">四字熟語（意味）</label>
+      <HiddenButtonRadio id="category5" onClick={onClickDictationIdiom} labelId="category5" labelName="四字熟語（書き）"/>
+      <HiddenButtonRadio id="category6" onClick={onClickMeaningIdiom} labelId="category6" labelName="四字熟語（意味）"/>
     </div>
     <div className="flex justify-center">
-      <input id="category7" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickAntonymSynonym}/>
-      <label htmlFor="category7">対義語・類義</label>
-
-      <input id="category8" className="radiobutton" name="category" hidden type="radio"
-             onClick={onClickProverb}/>
-      <label htmlFor="category8">故事成語・諺</label>
+      <HiddenButtonRadio id="category7" onClick={onClickAntonymSynonym} labelId="category7" labelName="対義語・類義"/>
+      <HiddenButtonRadio id="category8" onClick={onClickProverb} labelId="category8" labelName="故事成語・諺"/>
     </div>
   </div>
 }

@@ -79,7 +79,7 @@ export const Courses:React.FC = () => {
             onClickAntonymSynonym={() => selectCategory(CATEGORY.ANTONYM_SYNONYM)}
             onClickProverb={() => selectCategory(CATEGORY.PROVERB)}/>
 
-          {category && <QuizStartPanel onClick={startQuiz} onClick1={repeatQuiz}/>}
+          {category && <QuizStartPanel onClickStart={startQuiz} onClickRepeat={repeatQuiz}/>}
         </div>}
         <div ref={ref}/>
         <BackToTop />

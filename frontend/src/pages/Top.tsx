@@ -27,7 +27,7 @@ export const Top:React.FC = () => {
     <div className="flex flex-col min-h-screen sticky top-0">
       <main className="flex-grow">
         <div className="flex justify-center items-center m-20">
-           <img className="w-16" src={icon} alt={icon} />
+           <img className="w-20" src={icon} alt={icon} />
           <img className="w-96" src={logo} alt={logo} />
         </div>
         <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>

@@ -4,7 +4,6 @@ import { Footer } from '../components/shared/Footer'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA } from './Top'
 import { Logo } from '../components/shared/Logo'
-import frame from '../../public/frame2.png'
 import { Question } from '../components/quiz/Question'
 import { Alternatives } from '../components/quiz/Alternatives'
 import { Note } from '../components/quiz/Note'
@@ -12,7 +11,7 @@ import { NextQuiz } from '../components/quiz/NextQuiz'
 import { AbortConfirm } from '../components/quiz/AbortConfirm'
 import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
 import { Score } from '../components/quiz/Score'
-import { RepeatButton } from '../components/quiz/ReapeatButton'
+import { RepeatButton } from '../components/quiz/RepeatButton'
 import { DisplayCorrect } from '../components/quiz/DisplayCorrect'
 import { DisplayIncorrect } from '../components/quiz/DisplayIncorrect'
 
@@ -24,7 +23,7 @@ const removeJSON = (key: string): void => {
   localStorage.removeItem(key)
 }
 
-export const Quiz = (): JSX.Element => {
+export const Quiz:React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -63,7 +62,7 @@ export const Quiz = (): JSX.Element => {
       </div>
       <main className="flex-grow">
         <Question data={data} currentQuiz={currentQuiz}/>
-        {data.quiz[currentQuiz].answers.map((answer: { id?: string; correctness: boolean; answer?: string | undefined }) =>
+        {data.quiz[currentQuiz].answers.map((answer: { id: string; correctness: boolean; answer: string | undefined }) =>
           <div className="flex justify-center mt-3" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
