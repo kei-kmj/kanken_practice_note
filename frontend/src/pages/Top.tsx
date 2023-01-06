@@ -1,13 +1,11 @@
 import * as React from 'react'
 import { Footer } from '../components/shared/Footer'
+import { deleteAll } from '../hooks/useLocalStrage'
+import { ConfirmationModal} from '../components/shared/ConfirmationModal'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../public/logo.png'
 import icon from '../../public/icon.png'
 import './top.css'
-
-export const LOCAL_STORAGE_DATA = {
-  KEY: 'kankenApp_repeatItemID'
-}
 
 export const Top:React.FC = () => {
   const navigate = useNavigate()
@@ -15,20 +13,13 @@ export const Top:React.FC = () => {
   const handleStart = () => {
     navigate('/courses')
   }
-  const deleteAll = () => {
-    for (const key in localStorage) {
-      if (key.startsWith(LOCAL_STORAGE_DATA.KEY)) {
-        localStorage.removeItem(key)
-      }
-    }
-  }
 
   return (<>
     <div className="flex flex-col min-h-screen sticky top-0">
       <main className="flex-grow">
         <div className="flex justify-center items-center m-20">
-           <img className="w-20" src={icon} alt={icon} />
-          <img className="w-96" src={logo} alt={logo} />
+          <img className="w-20" src={icon} alt={icon}/>
+          <img className="w-96" src={logo} alt={logo}/>
         </div>
         <h3 className="text-xl flex justify-center m-10">漢字検定1級・準1級範囲の漢字を 4択クイズで学習するアプリです</h3>
         <p className="flex justify-center">（1級は準備中です）</p>
@@ -63,18 +54,7 @@ export const Top:React.FC = () => {
         <div className="flex justify-end">
           <label htmlFor="my-modal" className="btn text-gray-400 btn-link m-8">復習データを消す</label>
 
-          <input type="checkbox" id="my-modal" className="modal-toggle"/>
-          <div className="modal">
-            <div className="modal-box">
-              <p className="font-bold text-lg">本当に復習データを消しますか？</p>
-              <p className="font-bold text-lg">一度消すと元に戻せません</p>
-              <div className="modal-action">
-
-                <label htmlFor="my-modal" className="btn btn-info" onClick={deleteAll}>はい</label>
-                <label htmlFor="my-modal" className="btn btn-info">いいえ</label>
-              </div>
-            </div>
-          </div>
+          <ConfirmationModal id="my-modal" confirmation="本当に復習データを消しますか？" unrecoverable="一度消すと元に戻せません" onClick={deleteAll} />
         </div>
       </main>
       <Footer/></div>
