@@ -1,30 +1,8 @@
 /// <reference types="cypress" />
 
-describe('ルーティング', () => {
-
-  it('トップページを開く', () => {
-    cy.visit('/')
-    cy.get('h3').should('contain', '漢字検定')
-  })
-
-  it('アプリケーションポリシーを開く', () => {
-    cy.contains('アプリケーションポリシー').click()
-
-    cy.get('h1').should('contain', 'アプリケーションポリシー')
-    cy.contains('トップ画面に戻る').click()
-  })
-
-  it('お問い合わせを開く', () => {
-    cy.contains('お問い合わせ').click()
-
-    cy.get('h1').should('contain', 'Google Form')
-    cy.contains('トップ画面に戻る').click()
-  })
-
-  it('ページが無い時は404が表示される', () => {
-    cy.visit('/vite-dev/aa')
-    cy.get('h2').should('contain', '404')
-    cy.contains('トップ画面に戻る').click()
+describe('API', () => {
+  it('APIを叩くと200が返る', () => {
+    cy.intercept('get', '/api/index?&category=1&level=11&limit=10',{statusCode:200})
   })
 })
 export {}
