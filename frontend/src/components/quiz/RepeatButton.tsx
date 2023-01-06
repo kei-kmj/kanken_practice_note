@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_DATA } from '../../pages/Top'
+import { LOCAL_STORAGE_DATA } from '../../hooks/useLocalStrage'
 import * as React from 'react'
 import { FC } from 'react'
 

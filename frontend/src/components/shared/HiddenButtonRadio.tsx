@@ -9,11 +9,11 @@ type Props = {
   labelName: string
 }
 
-export const HiddenButtonRadio: FC<Props> = ({id, disabled = false, onClick, labelId, labelName}) => {
+export const HiddenButtonRadio: FC<Props> = ({id, disabled = false, onClick, labelName}) => {
   return <>
     <input id={id} className="radiobutton" disabled={disabled} name="level" hidden type="radio"
            onClick={onClick}
     />
-    <label htmlFor={labelId}>{labelName}</label>
+    <label htmlFor={id}>{labelName}</label>
   </>
 }
