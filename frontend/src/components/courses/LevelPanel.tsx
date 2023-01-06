@@ -8,12 +8,12 @@ type Props = {
 }
 
 export const LevelPanel: FC<Props> = ({onClickSemiFirst, onClickFirst}) => {
-  return <div>
+  return (<>
     <p className="text-xl flex justify-center mt-1">級を選んでください</p>
     <div className="flex justify-center m-0">
-      <HiddenButtonRadio id="radio1" onClick={onClickSemiFirst} labelId="radio1" labelName="準1級"/>
-      <HiddenButtonRadio id="radio2" onClick={onClickFirst} disabled={true} labelId="radio2" labelName="1 級"/>
+      <HiddenButtonRadio id="radio1" onClick={onClickSemiFirst} labelName="準1級"/>
+      <HiddenButtonRadio id="radio2" onClick={onClickFirst} disabled={true} labelName="1 級"/>
 
     </div>
-  </div>
+  </>)
 }
