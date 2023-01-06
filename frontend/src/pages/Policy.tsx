@@ -9,18 +9,18 @@ export const Policy:React.FC = () => {
       <div>
         <h1 className="policy text-4xl m-4 flex justify-center">アプリケーションポリシー</h1>
         <div>
-          <h2 className="badge badge-lg badge-info m-4 mr-0">1</h2><span className="text-2xl m-5">ご利用にあたって</span>
+          <h2 className="badge badge-lg badge-warning m-4 mr-0">1</h2><span className="text-2xl m-5">ご利用にあたって</span>
           <p className="ml-5">当アプリの利用条件を予告なく変更することがあります。最新の情報をご確認いただきますようお願いいたします。</p>
         </div>
         <div>
-          <h2 className="badge badge-lg badge-info m-4 mt-10 mr-0">2</h2><span
+          <h2 className="badge badge-lg badge-warning m-4 mt-10 mr-0">2</h2><span
           className="text-2xl m-5">掲載情報について</span>
           <p className="ml-5">コンテンツ作成においては、細心の注意を払っておりますが、内容の正確性を保証するものではありません。</p>
           <p className="ml-5">正解とした選択肢以外にも別解がある場合があります。</p>
           <p className="ml-5">予告なしにコンテンツを変更、削除すること並びにアプリ自体の運営を中止することがあります。</p></div>
 
         <div>
-          <h2 className="badge badge-lg badge-info m-4 mt-10 mr-0">3</h2><span
+          <h2 className="badge badge-lg badge-warning m-4 mt-10 mr-0">3</h2><span
           className="text-2xl m-5">免責事項について</span>
           <p className="ml-5">漢字検定の合格を保証するものではありません。</p>
           <p className="ml-5">当アプリの利用はご利用者様の責任において行われるものとします。</p>
@@ -28,7 +28,7 @@ export const Policy:React.FC = () => {
         </div>
 
         <div>
-          <h2 className="badge badge-lg badge-info m-4 mt-10 mr-0">4</h2><span
+          <h2 className="badge badge-lg badge-warning m-4 mt-10 mr-0">4</h2><span
           className="text-2xl m-5">使用技術について</span>
 
           <h3 className="text-xl mb-2 ml-5">ローカルストレージ</h3>

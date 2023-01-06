@@ -18,7 +18,7 @@ module.exports = {
                     "base-100": "#f3f3f3",
                     "info": "#3e8b94",
                     "success": "#788036",
-                    "warning": "#943e8b",
+                    "warning": "#cc7000",
                     "error": "#de352c",
                 },
                 mytheme2: {

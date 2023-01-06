@@ -1,0 +1,49 @@
+.radiobutton + label {
+    background-color: #dddcd6;
+    display: inline-block; /* テキストに応じて幅を可変させるため */
+    width: 400px;
+    height: 90px;
+    margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
+    padding: 0.8em 1em 0.8em 1em; /* 塗りの余白 */
+    font-size: 1.5em; /* フォントサイズ */
+    text-align: center;
+    vertical-align: middle;
+    color: #333333; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
+}
+
+.radiobutton:checked + label {
+    background-color: #9e9478;
+    width: 400px;
+    height: 90px;
+    margin: 0.2em 1em 1em 1em;
+    padding: 0.8em 1em 0.8em 1em; /* 塗りの余白 */
+    font-size: 1.5em; /* フォントサイズ */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
+}
+
+.radiobutton:active + label {
+    background-color: #9e9478;
+    display: inline-block; /* テキストに応じて幅を可変させるため */
+    width: 400px;
+    height: 90px;
+    margin: 0.2em 1em 1em 1em; /* 前後の隙間 */
+    padding: 0.8em 1em 0.8em 1em; /* 塗りの余白 */
+    vertical-align: center;
+    font-size: 1.5em; /* フォントサイズ */
+    color: #FFF; /* テキストカラー */
+    cursor: pointer; /* カーソルを指マークに */
+    border-radius: 8px; /* 角の丸み */
+    border: 0; /* 枠線を消す */
+    transition: 0.3s; /* ホバーの変化を滑らかに */
+    font-weight: bold;
+}

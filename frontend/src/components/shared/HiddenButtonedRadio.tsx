@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import * as React from 'react'
+import './HiddenButtonedRadio.css'
 
 type Props = {
   onClickSemiFirst: () => void
@@ -9,7 +10,7 @@ type Props = {
   labelName: string
 }
 
-export const HiddenButtonRadio: FC<Props> = ({id, disabled = false, onClick, labelName}) => {
+export const HiddenButtonedRadio: FC<Props> = ({id, disabled = false, onClick, labelName}) => {
   return <>
     <input id={id} className="radiobutton" disabled={disabled} name="level" hidden type="radio"
            onClick={onClick}
