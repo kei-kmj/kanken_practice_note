@@ -26,20 +26,20 @@ export const CategoryPanel: FC<Props> = ({
   return (<>
     <p className="text-xl flex justify-center mt-2">分野を選んでください</p>
     <div className="flex justify-center m-0">
-      <HiddenButtonedRadio id="category1" onClick={onClickAll} labelName="全分野"/>
-      <HiddenButtonedRadio id="category3" onClick={onClickReading} labelName="読 み"/>
+      <HiddenButtonedRadio id="category1" onClick={onClickAll} name="category" labelName="全分野"/>
+      <HiddenButtonedRadio id="category3" onClick={onClickReading} name="category" labelName="読 み"/>
     </div>
     <div className="flex justify-center">
-      <HiddenButtonedRadio id="category4" onClick={onClickExtraReading} labelName="表外の読み"/>
-      <HiddenButtonedRadio id="category2" onClick={onClickDictation} labelName="書 き"/>
+      <HiddenButtonedRadio id="category4" onClick={onClickExtraReading} name="category" labelName="表外の読み"/>
+      <HiddenButtonedRadio id="category2" onClick={onClickDictation} name="category" labelName="書 き"/>
     </div>
     <div className="flex justify-center">
-      <HiddenButtonedRadio id="category5" onClick={onClickDictationIdiom} labelName="四字熟語（書き）"/>
-      <HiddenButtonedRadio id="category6" onClick={onClickMeaningIdiom} labelName="四字熟語（意味）"/>
+      <HiddenButtonedRadio id="category5" onClick={onClickDictationIdiom} name="category" labelName="四字熟語（書き）"/>
+      <HiddenButtonedRadio id="category6" onClick={onClickMeaningIdiom} name="category" labelName="四字熟語（意味）"/>
     </div>
     <div className="flex justify-center">
-      <HiddenButtonedRadio id="category7" onClick={onClickAntonymSynonym} labelName="対義語・類義"/>
-      <HiddenButtonedRadio id="category8" onClick={onClickProverb} labelName="故事成語・諺"/>
+      <HiddenButtonedRadio id="category7" onClick={onClickAntonymSynonym} name="category" labelName="対義語・類義"/>
+      <HiddenButtonedRadio id="category8" onClick={onClickProverb} name="category" labelName="故事成語・諺"/>
     </div>
   </>)
 }

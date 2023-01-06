@@ -7,14 +7,17 @@ type Props = {
   onClickFirst: () => void
   id: string
   disabled: boolean
+  name:string
   labelName: string
 }
 
-export const HiddenButtonedRadio: FC<Props> = ({id, disabled = false, onClick, labelName}) => {
+export const HiddenButtonedRadio: FC<Props> = ({id, disabled = false, name, onClick, labelName}) => {
   return <>
-    <input id={id} className="radiobutton" disabled={disabled} name="level" hidden type="radio"
+    <input id={id} className="radiobutton" disabled={disabled} name={name} hidden type="radio"
            onClick={onClick}
     />
-    <label htmlFor={id}>{labelName}</label>
+    <label htmlFor={id}><span className="dummy-radio"
+    ><span className="dummy-radio-check"/></span
+    > {labelName}</label>
   </>
 }
