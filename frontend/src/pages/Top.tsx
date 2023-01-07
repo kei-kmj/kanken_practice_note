@@ -10,7 +10,7 @@ import icon from '../../public/charactor/icon.png'
 import questioningGuide from '../../public/guidance/questioningGuide.png'
 import choiceGuide from '../../public/guidance/choiceGuide.png'
 import repeatGuide from '../../public/guidance/repeatGuide.png'
-import './top.css'
+import './Top.css'
 
 
 export const Top: React.FC = () => {
