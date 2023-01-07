@@ -11,7 +11,8 @@ export const LevelPanel: FC<Props> = ({onClickSemiFirst, onClickFirst}) => {
   return (<>
     <p className="text-xl flex justify-center mt-1">級を選んでください</p>
     <div className="flex justify-center m-0">
-      <HiddenButtonedRadio id="radio1" onClick={onClickSemiFirst} name="level" labelName="準1級"/>
+      <HiddenButtonedRadio id="radio1" onClick={onClickSemiFirst} name="level" labelName="準1級"/></div>
+    <div className="flex justify-center m-0">
       <HiddenButtonedRadio id="radio2" onClick={onClickFirst}  disabled={true} name="level" labelName="1 級"/>
 
     </div>

@@ -6,27 +6,33 @@
     color: #333333;
 }
 
+@media screen and (min-width: 768px) {
+    .br-sp {
+        display: none;
+    }
+}
+
 .btn-primary.btn-wide {
     background-color: #dddcd6;
     color: #333333;
-    width: 400px;
-    height: 90px;
-    font-size: 1.5em; /* フォントサイズ */
+    width: 300px;
+    height: 60px;
+    font-size: 1.2em; /* フォントサイズ */
     text-align: center;
-    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
-    padding: 0.8em 1em 0.8em 1em;
+    margin: 0.2em 0.2em 0.2em 0.2em;
+    padding: 0.4em 0.2em 0.8em 0.2em;
 }
 
 .btn-primary.btn-wide:hover {
     background-color: #9e9478;
     color: #FFF;
-    font-size: 1.5em; /* フォントサイズ */
+    font-size: 1.2em; /* フォントサイズ */
     text-align: center;
     vertical-align: middle;
-    width: 400px;
-    height: 90px;
-    margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
-    padding: 0.8em 1em 0.8em 1em;
+    width: 300px;
+    height: 60px;
+    margin: 0.2em 0.2em 0.2em 0.2em;
+    padding: 0.4em 0.2em 0.8em 0.2em;
 }
 
 

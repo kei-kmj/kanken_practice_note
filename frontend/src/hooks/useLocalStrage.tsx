@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 export const LOCAL_STORAGE_DATA = {
   KEY: 'kankenApp_repeatItemID'
 }

@@ -10,23 +10,22 @@ export const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="margin-top-auto p-3 bg-accent text-base-content text-pink-100">
-        <div className="flex justify-center">
-          <p>「漢検」「漢字検定」は公益財団法人 日本漢字能力検定協会の登録商標です</p>
-        </div>
+      <footer className="margin-top-auto p-3 bg-accent text-sm text-pink-100">
+          <p className="flex justify-center text-xs">「漢検」「漢字検定」は</p><p className="br-sp flex justify-center text-xs"> 公益財団法人 日本漢字能力検定協会の登録商標です</p>
         <div className="flex justify-center mt-1 grid grid-flow-col gap-4">
           <Link to="/policy"><span className="link">アプリケーションポリシー</span></Link>
           <Link to="/support"><span className="link">お問い合わせ</span></Link>
           <span className="text-xl"><a target="_blank" rel="noopener noreferrer"
-                                       href="https://twitter.com/home"><FaTwitter/></a></span>
-          <p className="flex justify-center mt-1 text-xs">©kei-kmj {getYear()}</p>
-          <p className="flex justify-center mt-1 text-xs"><a target="_blank" rel="noopener noreferrer"
-                                                             href="https://github.com/kei-kmj/kanken_practice_note"><FaGithub/></a>
+                                       href="https://twitter.com/home"><FaTwitter/></a></span></div>
+        <div className="flex justify-center">
+          <p className="flex justify-center m-1 text-xs">©kei-kmj {getYear()} </p>
+          <p className="flex justify-center m-1 text-xs"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://github.com/kei-kmj/kanken_practice_note"><FaGithub/></a>
           </p>
-          <p className="flex justify-center mt-1 text-xs"><a target="_blank" rel="noopener noreferrer"
-                                                             href="https://twitter.com/kei16180339"><FaTwitter/></a></p>
+          <p className="flex justify-center m-1 text-xs"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://twitter.com/kei16180339"><FaTwitter/></a></p>
         </div>
       </footer>
     </>
-  )
+)
 }

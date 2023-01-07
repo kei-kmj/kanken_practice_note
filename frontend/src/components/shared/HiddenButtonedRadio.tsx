@@ -8,6 +8,7 @@ type Props = {
   id: string
   disabled: boolean
   name:string
+  onClick: () => void
   labelName: string
 }
 

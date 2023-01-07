@@ -14,6 +14,7 @@ import { Score } from '../components/quiz/Score'
 import { RepeatButton } from '../components/quiz/RepeatButton'
 import { DisplayCorrect } from '../components/quiz/DisplayCorrect'
 import { DisplayIncorrect } from '../components/quiz/DisplayIncorrect'
+import './Quiz.css'
 
 export const Quiz:React.FC = () => {
   const navigate = useNavigate()
@@ -48,25 +49,25 @@ export const Quiz:React.FC = () => {
   }
 
   return (<>
-    <div className="flex flex-col min-h-screen top-0">
+    <div className="flex flex-col min-h-screen">
       <div className="flex justify-left">
         <Logo/>
       </div>
       <main className="flex-grow">
         <Question data={data} currentQuiz={currentQuiz}/>
         {data.quiz[currentQuiz].answers.map((answer: { id: string; correctness: boolean; answer: string | undefined }) =>
-          <div className="flex justify-center mt-3" key={answer.id}>
+          <div className="flex justify-center" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
 
             <input type="checkbox" id={answer.id} className="modal-toggle"/>
             <div className="modal">
-              <div className="modal-box">
+              <div className="modal-box ">
                 <div>
                   <div className="flex justify-center">
                     {answer.correctness.toString() === 'true' ? <DisplayCorrect /> : <DisplayIncorrect />}
                   </div>
-                  <p className="text-3xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
+                  <p className="text-2xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 
                   <Note data={data} currentQuiz={currentQuiz}/>
 

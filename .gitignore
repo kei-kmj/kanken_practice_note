@@ -55,3 +55,6 @@ node_modules
 /test-results/
 /playwright-report/
 /playwright/.cache/
+/cypress/component/
+/cypress/downloads/
+/db/production.sqlite3

@@ -22,7 +22,7 @@ export const App:React.FC = () => {
             <Route path="/support" element={<Support />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/loading" element={<Loading />} />
-            <Route path="*" element={<Nomatch />} />
+            <Route path="/*" element={<Nomatch />} />
           </Routes>
         </div>
       </div>
