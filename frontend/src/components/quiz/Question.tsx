@@ -1,5 +1,5 @@
 import * as React from 'react'
-import question from '../../../public/charactor/questioningFace.png'
+import question from '../../../public/charactor/questioning.png'
 import { LEVEL } from '../../constants'
 import { FC } from 'react'
 
