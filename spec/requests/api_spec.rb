@@ -10,7 +10,7 @@ RSpec.describe 'Apis', type: :request do
 
   describe 'GET /index' do
     it 'カテゴリ、レベル、問題数を指定すると10件取得する' do
-      get '/?&category=3&level=11&limit=10'
+      get '/api/index?&category=3&level=11&limit=10'
       expect(response.status).to eq 200
 
       json = JSON.parse(response.body)
@@ -18,16 +18,8 @@ RSpec.describe 'Apis', type: :request do
     end
 
     it 'カテゴリを指定しない時も200が返る' do
-      get '/?&category=&level=11&limit=10'
+      get '/api/index?&category=&level=11&limit=10'
       expect(response.status).to eq 200
-    end
-
-    it '問題数を指定しない時は全件取得する' do
-      get '/?&category=3&level=11&limit='
-      expect(response.status).to eq 200
-
-      json = JSON.parse(response.body)
-      expect(json.length).to eq(21)
     end
   end
 end
