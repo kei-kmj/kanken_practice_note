@@ -1,0 +1,27 @@
+name: Cypress
+
+on: deployment_status
+
+jobs:
+  cypress:
+    if: |
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Preview'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/npm
+          key: ${{ runner.os }}-ynpm-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          restore-keys: ${{ runner.os }}-npm-
+      - name: Install dependencies
+        run: npm install --frozen-lockfile --prefer-offline
+      - name: Run cypress
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          config: baseUrl=${{ github.event.deployment_status.target_url }}
