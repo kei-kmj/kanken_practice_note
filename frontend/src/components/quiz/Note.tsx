@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { FC } from 'react'
+import { QuestionType } from '../../namespace'
 
 type Props = {
-  data: { quiz: { note: string } }
+  data: { quiz: QuestionType }
   currentQuiz: number
 }
 

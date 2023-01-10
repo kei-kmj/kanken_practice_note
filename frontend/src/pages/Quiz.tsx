@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { Footer } from '../components/shared/Footer'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { LOCAL_STORAGE_DATA,saveJSON,removeJSON } from '../hooks/useLocalStrage'
+import { LOCAL_STORAGE_DATA, saveJSON, removeJSON } from '../hooks/useLocalStrage'
 import { Logo } from '../components/shared/Logo'
 import { Question } from '../components/quiz/Question'
 import { Alternatives } from '../components/quiz/Alternatives'
@@ -14,13 +14,15 @@ import { Score } from '../components/quiz/Score'
 import { RepeatButton } from '../components/quiz/RepeatButton'
 import { DisplayCorrect } from '../components/quiz/DisplayCorrect'
 import { DisplayIncorrect } from '../components/quiz/DisplayIncorrect'
+import { QuestionType } from '../namespace'
 import './Quiz.css'
 
-export const Quiz:React.FC = () => {
+
+export const Quiz:FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const data = location.state as { quiz }
+  const data = location.state as { quiz:QuestionType }
   const [currentQuiz, setCurrentQuiz] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
 
@@ -55,7 +57,7 @@ export const Quiz:React.FC = () => {
       </div>
       <main className="flex-grow">
         <Question data={data} currentQuiz={currentQuiz}/>
-        {data.quiz[currentQuiz].answers.map((answer: { id: string; correctness: boolean; answer: string | undefined }) =>
+        {data.quiz[currentQuiz].answers.map((answer: { id: string; correctness: boolean; answer: string }) =>
           <div className="flex justify-center" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
@@ -65,7 +67,7 @@ export const Quiz:React.FC = () => {
               <div className="modal-box ">
                 <div>
                   <div className="flex justify-center">
-                    {answer.correctness.toString() === 'true' ? <DisplayCorrect /> : <DisplayIncorrect />}
+                    {answer.correctness.toString() === 'true' ? <DisplayCorrect/> : <DisplayIncorrect/>}
                   </div>
                   <p className="text-2xl flex justify-center m-5 ">答え：{correctAnswer[0].answer}</p>
 

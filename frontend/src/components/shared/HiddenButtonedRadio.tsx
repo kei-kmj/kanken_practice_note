@@ -3,8 +3,6 @@ import * as React from 'react'
 import './HiddenButtonedRadio.css'
 
 type Props = {
-  onClickSemiFirst: () => void
-  onClickFirst: () => void
   id: string
   disabled: boolean
   name:string

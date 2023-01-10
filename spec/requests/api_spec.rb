@@ -17,8 +17,8 @@ RSpec.describe 'Apis', type: :request do
       expect(json.length).to eq(10)
     end
 
-    it 'カテゴリを指定しない時も200が返る' do
-      get '/api/index?&category=&level=11&limit=10'
+    it 'カテゴリパラメーターが0の時も200が返る' do
+      get '/api/index?&category=0&level=11&limit=10'
       expect(response.status).to eq 200
     end
   end

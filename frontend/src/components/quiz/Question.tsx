@@ -2,10 +2,11 @@ import * as React from 'react'
 import question from '../../../public/charactor/questioning.png'
 import { LEVEL } from '../../constants'
 import { FC } from 'react'
+import { QuestionType } from '../../namespace'
 
 type Props = {
   currentQuiz: number
-  data: { quiz: string | string[] }
+  data: { quiz: QuestionType }
 }
 
 export const Question:FC<Props> = ({ currentQuiz, data: { quiz } }) => {
