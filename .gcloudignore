@@ -1,0 +1,32 @@
+# ignore all
+*
+
+# directories
+!app
+!bin
+!config
+!db
+!frontend
+!lib
+!node_modules
+!public
+!storage
+!vendor
+
+# files
+!Dockerfile
+!entrypoint.sh
+!Gemfile
+!Gemfile.lock
+!package.json
+!package-lock.json
+!config.ru
+!identifier.sqlite
+!litestream.yml
+!postcss.config.cjs
+!Procfile.dev
+!Rakefile
+!tailwind.config.cjs
+!tsconfig.json
+!tsconfig.node.json
+!vite.config.ts

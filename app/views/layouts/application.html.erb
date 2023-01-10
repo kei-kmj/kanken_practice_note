@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>KankenPracticeNote</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en" data-theme="mytheme">
+<head>
+  <title>漢検練習帳</title>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <!-- faviconの設定 -->
+  <%= favicon_link_tag('favicon.ico') %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Twitterカードの設定 -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@kei16180339"/>
+  <meta name="twitter:title" content="漢検練習帳"/>
+  <meta name="twitter:description" content="クイズで漢検準1伋/1級の学習をしよう！"/>
+  <meta name="twitter:image" content="https://kanken-practice-b5ve7zdnrq-an.a.run.app//app/assets/images/twittercard.png"/>
+
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= vite_client_tag %>
+  <%= vite_react_refresh_tag %>
+  <%= vite_javascript_tag 'main.tsx' %>
+
+</head>
+
+<body>
+<%= yield %>
+</body>
 </html>
