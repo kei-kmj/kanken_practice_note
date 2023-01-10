@@ -1,16 +1,8 @@
-name: Rspec
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+name: Test
+on: [ push ]
 jobs:
-  test:
-
+  rspec:
     runs-on: ubuntu-20.04
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
