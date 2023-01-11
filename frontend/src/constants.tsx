@@ -13,7 +13,3 @@ export const CATEGORY = {
   ANTONYM_SYNONYM:'6',
   PROVERB:'7',
 }
-
-export const QUIZ = {
-  AMOUNT:'20'
-}

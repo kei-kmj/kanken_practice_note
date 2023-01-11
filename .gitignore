@@ -58,3 +58,4 @@ node_modules
 /cypress.od/component/
 /cypress.od/downloads/
 /db/production.sqlite3
+/cypress.od/

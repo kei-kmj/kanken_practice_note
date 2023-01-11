@@ -1,24 +1,24 @@
 import * as React from 'react'
-import { FC, useState } from 'react'
-import { Footer } from '../components/shared/Footer'
+import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { LOCAL_STORAGE_DATA, saveJSON, removeJSON } from '../hooks/useLocalStrage'
+import { Header } from '../components/shared/Header'
 import { Logo } from '../components/shared/Logo'
 import { Question } from '../components/quiz/Question'
 import { Alternatives } from '../components/quiz/Alternatives'
+import { DisplayCorrect } from '../components/quiz/DisplayCorrect'
+import { DisplayIncorrect } from '../components/quiz/DisplayIncorrect'
 import { Note } from '../components/quiz/Note'
+import { RepeatButton } from '../components/quiz/RepeatButton'
 import { NextQuiz } from '../components/quiz/NextQuiz'
 import { AbortConfirm } from '../components/quiz/AbortConfirm'
 import { EndOfQuiz } from '../components/quiz/EndOfQuiz'
 import { Score } from '../components/quiz/Score'
-import { RepeatButton } from '../components/quiz/RepeatButton'
-import { DisplayCorrect } from '../components/quiz/DisplayCorrect'
-import { DisplayIncorrect } from '../components/quiz/DisplayIncorrect'
-import { QuestionType } from '../namespace'
+import { Footer } from '../components/shared/Footer'
+import { QuestionType } from '../types/quizTypes'
 import './Quiz.css'
 
-
-export const Quiz:FC = () => {
+export const Quiz:React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -51,6 +51,7 @@ export const Quiz:FC = () => {
   }
 
   return (<>
+    <Header pageTitle="問題です！" description="問題を出題します"/>
     <div className="flex flex-col min-h-screen">
       <div className="flex justify-left">
         <Logo/>

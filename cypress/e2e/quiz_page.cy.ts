@@ -22,7 +22,7 @@ describe('quizページ', () => {
   })
 
   it('選択肢が4つ表示される', () => {
-    cy.get('.btn.btn-wide.btn-primary').should('have.length', 8)
+    cy.get('.btn.answer.btn-wide').should('have.length', 4)
   })
 
   it('1問目と表示される', () => {
@@ -30,7 +30,7 @@ describe('quizページ', () => {
   })
 
   it('途中で止めようとすると確認画面が表示される', () => {
-    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.get('.btn.answer.btn-wide').first().click()
     cy.contains('問題選択画面に戻る').click()
     cy.contains('戻りますか？')
     cy.contains('いいえ').click()

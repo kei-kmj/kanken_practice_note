@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    max-width: 1000px;
+}
+
 .all {
     color: #333333;
 }

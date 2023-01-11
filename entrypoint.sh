@@ -17,17 +17,7 @@ else
   echo "---- Failed to restore from Cloud Storage ----"
   mv /app/db/development.sqlite3.bk /app/db/development.sqlite3
 fi
-#rails db:migrate
-
-# Run litestream with your app as the subprocess.
-#rails server -p 3000 -b 0.0.0.0
-#sqlite3 development.sqlite3
 
 rm -f /app/tmp/pids/server.pid
-#bin/vite build --clear --mode=development
-#echo "fogefogefoge"
-#ls -l /app/db/
-#echo "pppppppppp"
-#cat /app/db/development.sqlite3
-#echo "qqqqqqqqqq"
+
 exec litestream replicate -exec "rails server -p 8080 -b 0.0.0.0"

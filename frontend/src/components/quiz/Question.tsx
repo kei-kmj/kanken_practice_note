@@ -1,8 +1,8 @@
 import * as React from 'react'
+import { FC } from 'react'
+import { QuestionType } from '../../types/quizTypes'
 import question from '../../../public/charactor/questioning.png'
 import { LEVEL } from '../../constants'
-import { FC } from 'react'
-import { QuestionType } from '../../namespace'
 
 type Props = {
   currentQuiz: number

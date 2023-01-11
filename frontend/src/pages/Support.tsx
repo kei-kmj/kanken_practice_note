@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/shared/Header'
 import { Footer } from '../components/shared/Footer'
 
-export const Support = () => {
+export const Support:React.FC = () => {
   return (
     <>
+      <Header pageTitle="お問い合わせ" description="「お問い合わせ」ページです。"/>
       <div className="flex flex-col min-h-screen">
         <div className="flex justify-center flex-1 top-0 m-10">
           <iframe

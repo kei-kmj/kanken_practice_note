@@ -1,12 +1,12 @@
 import { LOCAL_STORAGE_DATA } from '../../hooks/useLocalStrage'
 import * as React from 'react'
 import { FC } from 'react'
-import { QuestionType } from '../../namespace'
+import { QuestionType } from '../../types/quizTypes'
 
 type Props = {
   data: { quiz: QuestionType }
   currentQuiz: number
-  onClick: (e:any) => void
+  onClick: (e: { target: { checked: boolean } }) => void
 }
 
 export const RepeatButton:FC<Props> = ({ data: { quiz }, currentQuiz, onClick }) => {

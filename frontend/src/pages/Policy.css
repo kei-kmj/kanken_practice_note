@@ -1,4 +1,9 @@
-.policy {
+
+
+.policy{
+    width: 96%;
+}
+.policyTitle {
     background-color: #cc7000;
     height: 70px;
     text-align: center;

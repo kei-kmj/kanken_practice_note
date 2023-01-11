@@ -9,10 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint --ext .jsx,.js,.tsx,.ts frontend/src/",
     "format": "prettier --write \"frontend/src/*.+(js|json|yml|ts|tsx)\"",
-    "cy:open": "cypress.od open",
-    "start": "bundle exec rails server -p 3000",
-    "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:run"
+    "cy:open": "cypress.od open"
   },
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
@@ -23,6 +20,7 @@
     "node-stdlib-browser": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.3"
   },
@@ -32,6 +30,7 @@
     "@types/axios": "^0.14.0",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { FC } from 'react'
-import { QuestionType } from '../../namespace'
+import { QuestionType } from '../../types/quizTypes'
 
 type Props = {
   data: { quiz: QuestionType }

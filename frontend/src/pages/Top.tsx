@@ -1,10 +1,11 @@
 import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { StartButton } from '../components/topPage/StartButton'
-import { Footer } from '../components/shared/Footer'
 import { deleteAll } from '../hooks/useLocalStrage'
 import { Guidance } from '../components/topPage/Guidance'
+import { Footer } from '../components/shared/Footer'
 import { ConfirmationModal } from '../components/shared/ConfirmationModal'
-import { useNavigate } from 'react-router-dom'
+import { Header } from '../components/shared/Header'
 import logo from '../../public/logo.png'
 import icon from '../../public/charactor/icon.png'
 import questioningGuide from '../../public/guidance/questioningGuide.png'
@@ -21,6 +22,7 @@ export const Top: React.FC = () => {
   }
 
   return (<>
+    <Header pageTitle="漢検練習帳" title="クイズで漢検学習！" description="漢字検定1級・準1級範囲の漢字を4択クイズで学習するアプリで"/>
     <div className="flex flex-col min-h-screen sticky top-0">
       <main className="flex-grow">
         <div className="flex justify-center items-center m-8">
@@ -32,13 +34,13 @@ export const Top: React.FC = () => {
         <p className="flex justify-center mt-5">（1級は準備中です）</p>
         <StartButton onClick={handleStart}/>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <Guidance guidance="級と分野を選んで" src={choiceGuide}/>
         </div>
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center mt-8">
           <Guidance guidance="クイズで学習！" src={questioningGuide}/>
         </div>
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center mt-8">
           <Guidance guidance="チェックした問題を何度も復習" src={repeatGuide}/>
         </div>
 

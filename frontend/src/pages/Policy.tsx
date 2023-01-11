@@ -1,13 +1,16 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/shared/Header'
 import { Footer } from '../components/shared/Footer'
 import './Policy.css'
 
-export const Policy:React.FC = () => {
+export const Policy: React.FC = () => {
   return (
     <>
+      <Header pageTitle="アプリケーションポリシー" description="「アプリケーションポリシー」を案内します"/>
       <div>
-        <h1 className="policy text-2xl mb-5">アプリケーションポリシー</h1>
+        <h1 className="policyTitle text-2xl mb-5">アプリケーションポリシー</h1>
+        <div className="policy">
         <div>
           <h2 className="badge badge-lg badge-warning m-4 mr-0">1</h2><span className="text-2xl m-5">ご利用にあたって</span>
           <p className="ml-5">当アプリの利用条件を予告なく変更することがあります。最新の情報をご確認いただきますようお願いいたします。</p>
@@ -49,7 +52,7 @@ export const Policy:React.FC = () => {
         <div className=" text-l grid grid-flow-col gap-4 link m-5 flex justify-end">
           <Link to="/">トップ画面に戻る</Link>
         </div>
-      </div>
+        </div></div>
       <Footer/>
     </>)
 }

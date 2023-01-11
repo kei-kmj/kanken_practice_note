@@ -1,14 +1,15 @@
 import * as React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Policy } from './pages/Policy'
 import { Top } from './pages/Top'
-import { Support } from './pages/Support'
 import { Courses } from './pages/Courses'
 import { Quiz } from './pages/Quiz'
+import { Policy } from './pages/Policy'
+import { Support } from './pages/Support'
+import { Loading } from './pages/Loading'
 import { Nomatch } from './pages/Nomatch'
 import background from '../public/shippou.jpeg'
 import './App.css'
-import { Loading } from './pages/Loading'
+
 
 export const App:React.FC = () => {
   return (

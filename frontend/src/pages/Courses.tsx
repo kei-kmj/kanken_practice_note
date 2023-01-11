@@ -1,16 +1,17 @@
 import * as React from 'react'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Footer } from '../components/shared/Footer'
 import { useFetchApi } from '../hooks/useFetchAPI'
-import '../App.css'
-import { LOCAL_STORAGE_DATA } from '../hooks/useLocalStrage'
-import { LevelPanel } from '../components/courses/LevelPanel'
+import { Header} from '../components/shared/Header'
 import { Logo } from '../components/shared/Logo'
+import { LevelPanel } from '../components/courses/LevelPanel'
 import { CategoryPanel } from '../components/courses/CategoryPanel'
 import { QuizStartPanel } from '../components/courses/QuizStartPanel'
 import { BackToTop } from '../components/shared/BackToTop'
+import { Footer } from '../components/shared/Footer'
+import { LOCAL_STORAGE_DATA } from '../hooks/useLocalStrage'
 import { CATEGORY, LEVEL } from '../constants'
+import '../App.css'
 
 export const Courses:React.FC = () => {
   const { fetchRequest } = useFetchApi()
@@ -61,6 +62,7 @@ export const Courses:React.FC = () => {
     navigate('/quiz', {state: {quiz}})
   }
   return (<>
+    <Header pageTitle="コース選択" description="問題の級と分野を選択します"/>
     <div className="flex flex-col min-h-screen">
       <main className="flex flex-col flex-1 top-0">
         <Logo/>
@@ -82,7 +84,7 @@ export const Courses:React.FC = () => {
           {category && <QuizStartPanel onClickStart={startQuiz} onClickRepeat={repeatQuiz}/>}
         </div>}
         <div ref={ref}/>
-        <BackToTop />
+        <BackToTop/>
       </main>
       <Footer/>
     </div>
