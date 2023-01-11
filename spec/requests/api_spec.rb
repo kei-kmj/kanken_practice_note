@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Apis', type: :request do
+RSpec.describe 'APIs', type: :request do
   before(:each) do
     FactoryBot.create_list(:question, 10)
     FactoryBot.create_list(:question, 20, category_id: 3)
