@@ -20,10 +20,6 @@
 # 環境構築
 1. リポジトリのクローン   
 `$ git clone https://github.com/kei-kmj/kanken_practice_note.git`
-2. 依存パッケージインストール   
-`$ bundle install`   
-`$ npm install`   
-3. 開発サーバー起動   
-`$ rails server`   
-`$ npm run dev`   
-
+2. 依存パッケージインストール・開発サーバ起動   
+`$ bin/setup`  
+`別タブで$ npm run dev`
