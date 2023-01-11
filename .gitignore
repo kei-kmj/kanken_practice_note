@@ -60,3 +60,4 @@ node_modules
 /db/production.sqlite3
 /cypress.od/
 /frontend/src/test/
+/questiondata2.csv
