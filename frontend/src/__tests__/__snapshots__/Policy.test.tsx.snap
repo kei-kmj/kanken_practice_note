@@ -1,0 +1,151 @@
+// Vitest Snapshot v1
+
+exports[`Simple working test > should render correctly 1`] = `
+<div>
+  <h1
+    class="policyTitle text-2xl mb-5"
+  >
+    アプリケーションポリシー
+  </h1>
+  <div
+    class="policy"
+  >
+    <div>
+      <h2
+        class="badge badge-lg badge-warning m-4 mr-0"
+      >
+        1
+      </h2>
+      <span
+        class="text-2xl m-5"
+      >
+        ご利用にあたって
+      </span>
+      <p
+        class="ml-5"
+      >
+        当アプリの利用条件を予告なく変更することがあります。最新の情報をご確認いただきますようお願いいたします。
+      </p>
+    </div>
+    <div>
+      <h2
+        class="badge badge-lg badge-warning m-4 mt-10 mr-0"
+      >
+        2
+      </h2>
+      <span
+        class="text-2xl m-5"
+      >
+        掲載情報について
+      </span>
+      <p
+        class="ml-5"
+      >
+        コンテンツ作成においては、細心の注意を払っておりますが、内容の正確性を保証するものではありません。
+      </p>
+      <p
+        class="ml-5"
+      >
+        正解とした選択肢以外にも別解がある場合があります。
+      </p>
+      <p
+        class="ml-5"
+      >
+        予告なしにコンテンツを変更、削除すること並びにアプリ自体の運営を中止することがあります。
+      </p>
+    </div>
+    <div>
+      <h2
+        class="badge badge-lg badge-warning m-4 mt-10 mr-0"
+      >
+        3
+      </h2>
+      <span
+        class="text-2xl m-5"
+      >
+        免責事項について
+      </span>
+      <p
+        class="ml-5"
+      >
+        漢字検定の合格を保証するものではありません。
+      </p>
+      <p
+        class="ml-5"
+      >
+        当アプリの利用はご利用者様の責任において行われるものとします。
+      </p>
+      <p
+        class="ml-5"
+      >
+        当アプリ利用中に発生した損失・損害に対し、いかなる責任も負いません。
+      </p>
+    </div>
+    <div>
+      <h2
+        class="badge badge-lg badge-warning m-4 mt-10 mr-0"
+      >
+        4
+      </h2>
+      <span
+        class="text-2xl m-5"
+      >
+        使用技術について
+      </span>
+      <h3
+        class="text-xl mb-2 ml-5"
+      >
+        ローカルストレージ
+      </h3>
+    </div>
+    <div>
+      <p
+        class="ml-5"
+      >
+        ローカルストレージとは、ウェブサイトが個のデバイス上でデータを保存、または取得できるようにする業界標準の技術です。
+      </p>
+      <p
+        class="ml-5"
+      >
+        当アプリでは出題する問題を選択するためのデータをローカルストレージに保存することがあります。
+      </p>
+      <p
+        class="ml-5"
+      >
+        当アプリの操作で個人情報をローカルストレージに保存することは一切ありません。
+      </p>
+      <p
+        class="ml-5"
+      >
+        ブラウザの設定によりローカルストレージの設定を変更し、機能を無効にすることができますが、当アプリの一部の機能がご利用いただけなくなることがあります。
+      </p>
+      <p
+        class="ml-5"
+      >
+        ローカルストレージに保存したデータはトップページから削除出来ますが、一度削除すると元に戻せません。
+      </p>
+      <div>
+        <h3
+          class="text-xl mt-5 mb-2 ml-5"
+        >
+          JavaScript
+        </h3>
+        <p
+          class="ml-5"
+        >
+          当アプリは、より快適にご利用いただくため、JavaScriptを使用しています。 ご使用のブラウザ設定においてJavaScriptをオン (有効) にされていない場合に、正しく表示されない又は操作ができない場合があります。
+        </p>
+      </div>
+    </div>
+    <div
+      class=" text-l grid grid-flow-col gap-4 link m-5 flex justify-end"
+    >
+      <a
+        href="/"
+      >
+        トップ画面に戻る
+      </a>
+    </div>
+  </div>
+</div>
+`;
