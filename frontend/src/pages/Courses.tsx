@@ -33,7 +33,7 @@ export const Courses:React.FC = () => {
 
   const startQuiz = async (): Promise<void> => {
     const {quiz} = await fetchRequest(level, category, '10')
-    console.log(quiz)
+    // console.log(quiz)
 
     if (quiz.length === 0) {
       alert('出題できる問題がありません')
