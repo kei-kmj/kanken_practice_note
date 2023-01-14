@@ -1,10 +1,9 @@
 import { describe, test } from 'vitest'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react'
-import { Courses } from '../pages/Courses'
-import userEvent from '@testing-library/user-event'
+import { Courses } from '../../pages/Courses'
 
-describe('Coursesページレンダリング', () => {
+describe('', () => {
   test('スナップショット一致', () => {
     const {container} = render(<Router><Courses/></Router>)
     expect(container.firstChild).toMatchSnapshot()

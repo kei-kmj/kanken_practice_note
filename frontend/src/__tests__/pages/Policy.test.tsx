@@ -1,18 +1,17 @@
 import { describe, test } from 'vitest'
-import { Policy } from '../pages/Policy'
+import { Policy } from '../../pages/Policy'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react'
 
-describe('Simple working test', () => {
-  test('should render correctly', () => {
+describe('スナップショット', () => {
+  test('スナップショットが同一', () => {
     const {container} = render(<Router><Policy /></Router>)
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('すべての要素が正常にレンダリングされていること', () => {
+  test('すべての要素が正常にレンダリングされている', () => {
     render(<Router><Policy /></Router>)
     expect(screen.getAllByRole("heading")).toBeTruthy()
-    // expect(screen.getAllByRole("img")).toBeTruthy()
     expect(screen.getAllByRole("generic")).toBeTruthy()
     expect(screen.getAllByRole("link")).toBeTruthy()
 

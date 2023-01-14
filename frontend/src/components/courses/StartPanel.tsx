@@ -6,7 +6,7 @@ type Props = {
   onClickRepeat: () => void
 }
 
-export const QuizStartPanel: FC<Props> = ({onClickStart, onClickRepeat}) => {
+export const StartPanel: FC<Props> = ({onClickStart, onClickRepeat}) => {
   return (<>
     <div>
       <p className="text-xl flex justify-center mt-5">新規または復習を選んでください</p>

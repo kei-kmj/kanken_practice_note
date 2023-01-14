@@ -3,12 +3,21 @@ import userEvent from "@testing-library/user-event";
 import { AbortConfirm } from '../../components/quiz/AbortConfirm'
 import { vi } from 'vitest'
 
-describe("問題選択画面に戻るボタン",() => {
-  test('クリックでonClickが実行される', async () => {
-    const onClickMock = vi.fn()
+describe("中断ボタン", () => {
+  const onClickMock = vi.fn()
+  test('「はい」でonClickが実行される', async () => {
 
-    render(<AbortConfirm answer={{id: "1"}} onClick={onClickMock}　/>)
+    render(<AbortConfirm answer={{id: "1"}} onClick={onClickMock}/>)
     await userEvent.click(screen.getByText("はい"))
+
+    expect(onClickMock).toHaveBeenCalledTimes(1)
+
+  })
+
+  test('「いいえ」でonClickが実行される', async () => {
+
+    render(<AbortConfirm answer={{id: "1"}} onClick={onClickMock}/>)
+    await userEvent.click(screen.getByText("いいえ"))
 
     expect(onClickMock).toHaveBeenCalledTimes(1)
 

@@ -1,5 +1,5 @@
 import { describe, test } from 'vitest'
-import { Top } from '../pages/Top'
+import { Top } from '../../pages/Top'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react'
 
@@ -15,6 +15,8 @@ describe('レンダリング', () => {
     expect(screen.getAllByRole("img")).toBeTruthy()
     expect(screen.getAllByRole("generic")).toBeTruthy()
     expect(screen.getByText("漢字検定1級・準1級範囲の漢字を")).toBeInTheDocument()
+    expect(screen.getByText("4択クイズで学習するアプリです")).toBeInTheDocument()
+
     expect(screen.getByText("復習データを消す")).toBeInTheDocument()
     expect(screen.getAllByRole("button")).toBeTruthy()
 

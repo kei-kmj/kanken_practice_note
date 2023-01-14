@@ -13,7 +13,6 @@ import choiceGuide from '../../public/guidance/choiceGuide.png'
 import repeatGuide from '../../public/guidance/repeatGuide.png'
 import './Top.css'
 
-
 export const Top: React.FC = () => {
   const navigate = useNavigate()
 
@@ -22,7 +21,7 @@ export const Top: React.FC = () => {
   }
 
   return (<>
-    <Header pageTitle="漢検練習帳" title="クイズで漢検学習！" description="漢字検定1級・準1級範囲の漢字を4択クイズで学習するアプリで"/>
+    <Header pageTitle="漢検練習帳" title="クイズで漢検学習！" description="漢字検定1級・準1級範囲の漢字を4択クイズで学習するアプリです"/>
     <div className="flex flex-col min-h-screen sticky top-0">
       <main className="flex-grow">
         <div className="flex justify-center items-center m-8">
@@ -56,3 +55,5 @@ export const Top: React.FC = () => {
     </div>
   </>)
 }
+
+

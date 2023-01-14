@@ -6,7 +6,7 @@ import { Header} from '../components/shared/Header'
 import { Logo } from '../components/shared/Logo'
 import { LevelPanel } from '../components/courses/LevelPanel'
 import { CategoryPanel } from '../components/courses/CategoryPanel'
-import { QuizStartPanel } from '../components/courses/QuizStartPanel'
+import { StartPanel } from '../components/courses/StartPanel'
 import { BackToTop } from '../components/shared/BackToTop'
 import { Footer } from '../components/shared/Footer'
 import { LOCAL_STORAGE_DATA } from '../hooks/useLocalStrage'
@@ -33,7 +33,7 @@ export const Courses:React.FC = () => {
 
   const startQuiz = async (): Promise<void> => {
     const {quiz} = await fetchRequest(level, category, '10')
-    // console.log(quiz)
+    console.log(quiz)
 
     if (quiz.length === 0) {
       alert('出題できる問題がありません')
@@ -81,7 +81,7 @@ export const Courses:React.FC = () => {
             onClickAntonymSynonym={() => selectCategory(CATEGORY.ANTONYM_SYNONYM)}
             onClickProverb={() => selectCategory(CATEGORY.PROVERB)}/>
 
-          {category && <QuizStartPanel onClickStart={startQuiz} onClickRepeat={repeatQuiz}/>}
+          {category && <StartPanel onClickStart={startQuiz} onClickRepeat={repeatQuiz}/>}
         </div>}
         <div ref={ref}/>
         <BackToTop/>

@@ -44,7 +44,7 @@ export const CategoryPanel: FC<Props> = ({
       <HiddenButtonedRadio id="category6" onClick={onClickMeaningIdiom} name="category" labelName="四字熟語（意味）" disabled={false}/>
     </div>
     <div className="flex justify-center">
-      <HiddenButtonedRadio id="category7" onClick={onClickAntonymSynonym} name="category" labelName="対義語・類義" disabled={false}/></div>
+      <HiddenButtonedRadio id="category7" onClick={onClickAntonymSynonym} name="category" labelName="対義語・類義語" disabled={false}/></div>
     <div className="flex justify-center">
       <HiddenButtonedRadio id="category8" onClick={onClickProverb} name="category" labelName="故事成語・諺" disabled={false}/>
     </div>

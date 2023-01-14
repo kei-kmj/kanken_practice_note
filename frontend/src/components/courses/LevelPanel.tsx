@@ -18,3 +18,4 @@ export const LevelPanel: FC<Props> = ({onClickSemiFirst, onClickFirst}) => {
     </div>
   </>)
 }
+

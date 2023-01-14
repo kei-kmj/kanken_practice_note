@@ -5,18 +5,17 @@ import './HiddenButtonedRadio.css'
 type Props = {
   id: string
   disabled: boolean
-  name:string
+  name: string
   onClick: () => void
   labelName: string
 }
 
 export const HiddenButtonedRadio: FC<Props> = ({id, disabled = false, name, onClick, labelName}) => {
   return <>
-    <input id={id} className="radiobutton" disabled={disabled} name={name} hidden type="radio"
+    <input id={id} className="radiobutton" role="radio" disabled={disabled} name={name} hidden type="radio"
            onClick={onClick}
     />
     <label htmlFor={id}><span className="dummy-radio"
-    ><span className="dummy-radio-check"/></span
-    > {labelName}</label>
+    ><span className="dummy-radio-check"/></span> {labelName}</label>
   </>
 }

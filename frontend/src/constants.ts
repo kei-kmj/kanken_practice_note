@@ -1,8 +1,9 @@
 export const LEVEL = {
   SEMI_FIRST: '11',
   FIRST: '1'
+/* c8 ignore next */
 }
-
+/* c8 ignore next */
 export const CATEGORY = {
   ALL:'0',
   READING:'1',

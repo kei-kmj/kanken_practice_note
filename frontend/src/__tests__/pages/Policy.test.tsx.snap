@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`Simple working test > should render correctly 1`] = `
+exports[`スナップショット > スナップショットが同一 1`] = `
 <div>
   <h1
     class="policyTitle text-2xl mb-5"

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-type ResponseData = {
+export type ResponseData = {
   length: number
   content: string
 }

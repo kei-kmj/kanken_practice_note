@@ -1,15 +1,15 @@
 import { describe, test } from 'vitest'
-import { Support } from '../pages/Support'
+import { Support } from '../../pages/Support'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react'
 
-describe('Simple working test', () => {
-  test('should render correctly', () => {
+describe('レンダリング', () => {
+  test('スナップショットが同一', () => {
     const {container} = render(<Router><Support /></Router>)
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  test('すべての要素が正常にレンダリングされていること', () => {
+  test('すべての要素が正常にレンダリングされている', () => {
     render(<Router><Support /></Router>)
     // expect(screen.getAllByRole("heading")).toBeTruthy()
     expect(screen.getAllByRole("generic")).toBeTruthy()
