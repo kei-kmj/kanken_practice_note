@@ -33,9 +33,18 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails log:clear tmp:clear'
-  system! 'mkdir app/assets/stylesheets'
-  system! 'mkdir app/javascript'
-  system! 'mkdir vendor/javascript'
+
+  unless File.exist?("app/assets/stylesheets")
+    system! 'mkdir app/assets/stylesheets'
+  end
+
+  unless File.exist?("app/javascript")
+    system! 'mkdir app/javascript'
+  end
+
+  unless File.exist?("vendor/javascript")
+    system! 'mkdir vendor/javascript'
+  end
   system! 'bin/rails server'
 
 end
