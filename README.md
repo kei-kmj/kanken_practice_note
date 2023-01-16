@@ -24,4 +24,4 @@
 `$ git clone https://github.com/kei-kmj/kanken_practice_note.git`
 2. 依存パッケージインストール・開発サーバ起動   
 `$ bin/setup`  
-別タブで$ npm run dev`
+別タブで`$ npm run dev`
