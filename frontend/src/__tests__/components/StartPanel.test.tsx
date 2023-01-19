@@ -11,7 +11,7 @@ describe("クイズ開始ボタン", () => {
 
     expect(screen.getByText("新規または復習を選んでください"))
 
-    await userEvent.click(screen.getByText("新 規"))
+    await userEvent.click(screen.getByText("新規"))
     expect(onClickMock).toHaveBeenCalledTimes(1)
       })
 
@@ -20,7 +20,7 @@ describe("クイズ開始ボタン", () => {
 
     render(<StartPanel  onClickStart={onClickMock} onClickRepeat={onClickMock} />)
 
-    await userEvent.click(screen.getByText("復 習"))
+    await userEvent.click(screen.getByText("復習"))
     expect(onClickMock).toHaveBeenCalledTimes(1)
   })
 })

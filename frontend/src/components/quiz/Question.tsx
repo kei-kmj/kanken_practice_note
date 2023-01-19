@@ -3,29 +3,26 @@ import { FC } from 'react'
 import { QuestionType } from '../../types/quizTypes'
 import question from '../../../public/charactor/questioning.png'
 import { LEVEL } from '../../constants'
+import './Question.css'
 
 type Props = {
   currentQuiz: number
   data: { quiz: QuestionType }
 }
 
-export const Question:FC<Props> = ({ currentQuiz, data: { quiz } }) => {
+export const Question: FC<Props> = ({currentQuiz, data: {quiz}}) => {
   return (<>
-    <div className="card quiz mx-auto items-center image-full">
-      <div className="indicator">
-        <div className="indicator-item indicator-top">
-          <p className="level text-xs mr-8">{quiz[currentQuiz].level.toString() === LEVEL.SEMI_FIRST ? '準1級' : '1級'}</p>
-        </div>
-        <div className="indicator-item indicator-middle indicator-start">
-          <img className="w-24 ml-4" src={question} alt={question} />
-        </div>
-
+    <div className="card quiz mx-auto items-center">
+      <div className="card-body quiz">
+        <p
+          className="level text-accent text-xs">{quiz[currentQuiz].level.toString() === LEVEL.SEMI_FIRST ? '準1級' : '1級'}</p>
+        <img className="question w-10" src={question} alt="question" />
         <div className="card-body quiz">
 
-          <p className="flex justify-end mb-2">{currentQuiz + 1}問目 / {quiz.length} 問中</p>
+          <p className="flex justify-end mt-3">{currentQuiz + 1}問目 / {quiz.length} 問中</p>
 
-          <p className="text-l m-1 flex justify-center">{quiz[currentQuiz].category.description}</p>
-          <p className="text-xl mt-1 flex justify-center">{quiz[currentQuiz].question}</p>
+          <p className="text-l flex justify-center">{quiz[currentQuiz].category.description}</p>
+          <p className="text-xl flex justify-center">{quiz[currentQuiz].question}</p>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import { Footer } from '../components/shared/Footer'
 import { LOCAL_STORAGE_DATA } from '../hooks/useLocalStrage'
 import { CATEGORY, LEVEL } from '../constants'
 import '../App.css'
+import './Courses.css'
 
 export const Courses:React.FC = () => {
   const { fetchRequest } = useFetchApi()
@@ -62,10 +63,12 @@ export const Courses:React.FC = () => {
     navigate('/quiz', {state: {quiz}})
   }
   return (<>
-    <Header pageTitle="コース選択" description="問題の級と分野を選択します"/>
+    <Header pageTitle="コース選択" description="問題の級と分野を選択します" title="漢検練習帳"/>
     <div className="flex flex-col min-h-screen">
       <main className="flex flex-col flex-1 top-0">
         <Logo/>
+        <h1 className="coursesTitle text-2xl flex justify-center bg-white">コース選択</h1>
+
         <LevelPanel
           onClickSemiFirst={() => setLevel(LEVEL.SEMI_FIRST)}
           onClickFirst={() => setLevel(LEVEL.FIRST)}/>

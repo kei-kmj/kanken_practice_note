@@ -20,7 +20,7 @@ export const RepeatButton:FC<Props> = ({ data: { quiz }, currentQuiz, onClick })
             defaultChecked={!!localStorage.getItem(`${LOCAL_STORAGE_DATA.KEY}${quiz[currentQuiz].id}`)}
             onClick={onClick}
           />
-          <span className="label-text">復習する</span>
+          <span className="label-text text-base ml-1">復習する</span>
         </label>
       </div>
     </div>

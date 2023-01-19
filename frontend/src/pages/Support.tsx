@@ -6,7 +6,7 @@ import { Footer } from '../components/shared/Footer'
 export const Support:React.FC = () => {
   return (
     <>
-      <Header pageTitle="お問い合わせ" description="「お問い合わせ」ページです。"/>
+      <Header pageTitle="お問い合わせ" description="「お問い合わせ」ページです。" title="漢検練習帳" />
       <div className="flex flex-col min-h-screen">
         <div className="flex justify-center flex-1 top-0 m-10">
           <iframe

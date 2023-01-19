@@ -8,9 +8,9 @@ type Props = {
 
 export const EndOfQuiz: FC<Props> = ({answer: {id}, onClick}) => {
   return (<>
-    <div className="flex justify-center"><label
+    <div className="flex justify-center mt-3"><label
       htmlFor={`quit${id}`}
-      className="btn btn-wide btn-primary text-2xl"
+      className="btn btn-wide btn-primary text-base"
       onClick={onClick}
     >問題選択画面に戻る</label></div>
   </>)

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FC } from 'react'
 import { QuestionType } from '../../types/quizTypes'
+import './Score.css'
 
 type Props = {
   score: number
@@ -8,5 +9,12 @@ type Props = {
 }
 
 export const Score: FC<Props> = ({score, data: {quiz}}) => {
-  return <p className="text-3xl flex justify-center m-5">得点：{score} / {quiz.length} 点</p>
+  return (<>
+    <div className="hitokoto">
+      <span className="hitokoto-circle1">得</span><span className="hitokoto-circle2">点</span>
+      <p className="text-3xl flex justify-center m-5">{score} / {quiz.length} 点</p>
+    </div>
+
+
+  </>)
 }

@@ -25,7 +25,7 @@ export const CategoryPanel: FC<Props> = ({
                                            onClickProverb
                                          }) => {
   return (<>
-    <p className="text-xl flex justify-center mt-2">分野を選んでください</p>
+    <p className="text-xl flex justify-center mt-8">分野を選んでください</p>
     <div className="flex justify-center m-0">
       <HiddenButtonedRadio id="category1" onClick={onClickAll} name="category" labelName="全分野" disabled={false}/>
     </div>

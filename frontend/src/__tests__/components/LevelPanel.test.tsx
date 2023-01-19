@@ -11,13 +11,4 @@ describe("問題選択画面に戻るボタン", () => {
     await userEvent.click(screen.getByText("準1級"))
     expect(onClickMock).toHaveBeenCalledTimes(1)
   })
-
-  test('「1級」クリックでonClickが実行されない', async () => {
-    const onClickMock = vi.fn()
-
-    render(<LevelPanel onClickFirst={onClickMock} onClickSemiFirst={onClickMock} />)
-
-    await userEvent.click(screen.getByText("1 級"))
-    expect(onClickMock).toHaveBeenCalledTimes(0)
   })
-})

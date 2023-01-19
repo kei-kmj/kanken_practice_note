@@ -1,0 +1,46 @@
+.hitokoto{
+    background: white;
+    margin: 0 auto;
+    padding: 18px;
+    border:solid #de7c76;
+    border-radius: 10px;
+    width: 280px;
+}
+
+.hitokoto-circle1{
+    font-size: 24px;
+    line-height: 1.5;
+    position: absolute;
+    margin-top: -45px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#de7c76;
+    opacity: 90%;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+}
+
+
+
+.hitokoto-circle2{
+    position: absolute;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-top: -45px;
+    margin-left: 32px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#de7c76;
+    opacity: 90%;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+}
+
+.hitokoto p{
+    margin: 0;
+    padding: 0;
+}

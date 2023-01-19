@@ -23,6 +23,7 @@ export const Quiz:React.FC = () => {
   const location = useLocation()
 
   const data = location.state as { quiz:QuestionType }
+  // console.log(data)
   const [currentQuiz, setCurrentQuiz] = useState<number>(0)
   const [score, setScore] = useState<number>(0)
 
@@ -51,7 +52,7 @@ export const Quiz:React.FC = () => {
   }
 
   return (<>
-    <Header pageTitle="問題です！" description="問題を出題します"/>
+    <Header pageTitle="問題です！" description="問題を出題します" title="漢検練習帳"/>
     <div className="flex flex-col min-h-screen">
       <div className="flex justify-left">
         <Logo/>
@@ -59,13 +60,13 @@ export const Quiz:React.FC = () => {
       <main className="flex-grow">
         <Question data={data} currentQuiz={currentQuiz}/>
         {data.quiz[currentQuiz].answers.map((answer: { id: string; correctness: boolean; answer: string }) =>
-          <div className="flex justify-center" key={answer.id}>
+          <div className="flex justify-center mt-2" key={answer.id}>
 
             <Alternatives answer={answer} onClick={() => addScore(answer)}/>
 
             <input type="checkbox" id={answer.id} className="modal-toggle"/>
             <div className="modal">
-              <div className="modal-box ">
+              <div className="modal-box bg-white">
                 <div>
                   <div className="flex justify-center">
                     {answer.correctness.toString() === 'true' ? <DisplayCorrect/> : <DisplayIncorrect/>}

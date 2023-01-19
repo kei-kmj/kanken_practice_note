@@ -34,19 +34,19 @@ export const Top: React.FC = () => {
         <StartButton onClick={handleStart}/>
 
         <div className="flex justify-center ">
-          <Guidance guidance="級と分野を選んで" src={choiceGuide}/>
+          <Guidance guidanceAbove="級と分野を選んで" guidanceBelow="" src={choiceGuide} />
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidance="クイズで学習！" src={questioningGuide}/>
+          <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide} />
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidance="チェックした問題を何度も復習" src={repeatGuide}/>
+          <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide}/>
         </div>
 
         <StartButton onClick={handleStart}/>
 
         <div className="flex justify-end">
-          <label htmlFor="my-modal" className="btn text-gray-400 btn-link m-8">復習データを消す</label>
+          <label htmlFor="my-modal" className="btn text-gray-400 text-base btn-link m-8">復習データを消す</label>
           <ConfirmationModal id="my-modal" confirmation="本当に復習データを消しますか？" unrecoverable="一度消すと元に戻せません"
                              onClick={deleteAll}/>
         </div>

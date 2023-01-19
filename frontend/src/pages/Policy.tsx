@@ -7,7 +7,7 @@ import './Policy.css'
 export const Policy: React.FC = () => {
   return (
     <>
-      <Header pageTitle="アプリケーションポリシー" description="「アプリケーションポリシー」を案内します"/>
+      <Header pageTitle="アプリケーションポリシー" description="「アプリケーションポリシー」を案内します" title="漢検練習帳"/>
       <div>
         <h1 className="policyTitle text-2xl mb-5">アプリケーションポリシー</h1>
         <div className="policy">

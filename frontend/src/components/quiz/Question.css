@@ -1,10 +1,14 @@
 
 .card.quiz {
-    width: 330px;
+    width: 100%;
     background-color: white;
+    border-radius: 0;
+    border-left: 1px dotted white;
+    border-right: 1px dotted white;
 }
 .card-body.quiz{
-    width: 320px;
+    width: 95%;
+    margin-left: 1rem;
 }
 
 .level {
@@ -13,12 +17,21 @@
     background-color: #9e9478;
     padding: 0.3em 0.5em 0.3em 0.5em;
     border-radius: 30px;
+    position: absolute;
+    right: 0.3rem;
+    top: -1rem;
+}
+
+.question {
+    position: absolute;
+    left: -0.1rem;
+    bottom: 0;
 }
 
 .btn.answer {
     background-color: #dddcd6;
     color: #333333;
-    width: 330px;
+    width: 88%;
     height: 70px;
     font-size: 1.3em; /* フォントサイズ */
     text-align: center;
@@ -33,7 +46,7 @@
     font-size: 1.3em; /* フォントサイズ */
     text-align: center;
     vertical-align: middle;
-    width: 330px;
+    width: 88%;
     height: 70px;
     margin: 0.2em 1em 0.2em 1em; /* 前後の隙間 */
     padding: 0.8em 1em 0.8em 1em;
