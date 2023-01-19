@@ -64,6 +64,7 @@
     "vite": "^3.2.2",
     "vite-plugin-node-stdlib-browser": "^0.1.1",
     "vite-plugin-ruby": "^3.1.2",
-    "vitest": "^0.25.3"
+    "vitest": "^0.25.3",
+    "vitest-fetch-mock": "^0.2.1"
   }
 }

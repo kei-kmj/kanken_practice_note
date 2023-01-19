@@ -19,3 +19,5 @@ latest.dump
 *.md
 
 .ruby-version
+
+frontend/src/__tests__
