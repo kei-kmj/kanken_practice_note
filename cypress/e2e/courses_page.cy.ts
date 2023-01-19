@@ -20,11 +20,11 @@ describe('coursesページ', () => {
 
   })
   it('分野選択後に新規/復習ボタンが出る', () => {
-    cy.contains('新 規').should('exist')
+    cy.contains('新規').should('exist')
   })
 
   it('復習データが無い時', () => {
-    cy.contains('復 習').click()
+    cy.contains('復習').click()
 
   })
 })

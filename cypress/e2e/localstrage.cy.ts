@@ -11,7 +11,7 @@ describe('localstrage', () => {
     cy.contains('準1級').click()
 
     cy.contains('全分野').click()
-    cy.get('.btn').contains('復 習').click()
+    cy.get('.btn').contains('復習').click()
 
     cy.on('window:alert', (t) => {
       expect(t).to.contains('登録されている問題がありません')
@@ -22,7 +22,7 @@ describe('localstrage', () => {
     cy.contains('始める').click()
     cy.contains('準1級').click()
     cy.contains('全分野').click()
-    cy.get('.btn').contains('新 規').click()
+    cy.get('.btn').contains('新規').click()
 
     cy.get('.btn.answer.btn-wide').first().click()
     cy.contains('復習する').click()
@@ -32,7 +32,7 @@ describe('localstrage', () => {
 
     cy.contains('準1級').click()
     cy.contains('全分野').click()
-    cy.get('.btn').contains('復 習').click()
+    cy.get('.btn').contains('復習').click()
 
     cy.contains('1問目 / 1 問中').should('exist')
   })
@@ -41,7 +41,7 @@ describe('localstrage', () => {
     cy.contains('始める').click()
     cy.contains('準1級').click()
     cy.contains('全分野').click()
-    cy.get('.btn').contains('新 規').click()
+    cy.get('.btn').contains('新規').click()
 
     cy.get('.btn.answer.btn-wide').first().click()
     cy.contains('復習する').click()
@@ -51,7 +51,7 @@ describe('localstrage', () => {
 
     cy.contains('準1級').click()
     cy.contains('全分野').click()
-    cy.get('.btn').contains('復 習').click()
+    cy.get('.btn').contains('復習').click()
 
     cy.contains('1問目 / 1 問中').should('exist')
     cy.get('.btn.answer.btn-wide').first().click()
@@ -60,7 +60,7 @@ describe('localstrage', () => {
 
     cy.contains('準1級').click()
     cy.contains('全分野').click()
-    cy.get('.btn').contains('復 習').click()
+    cy.get('.btn').contains('復習').click()
 
     cy.on('window:alert', (t) => {
       expect(t).to.contains('登録されている問題がありません')
