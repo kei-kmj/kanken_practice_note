@@ -17,25 +17,4 @@ export default defineConfig({
     resolveSnapshotPath: (testPath, snapExtension) => testPath + snapExtension,
     css: true,
   },
-  // optimizeDeps: {
-  //   esbuildOptions: {
-  //     // Node.js global to browser globalThis
-  //     define: {
-  //       global: 'globalThis'
-  //     },
-  //     // Enable esbuild polyfill plugins
-  //     plugins: [
-  //       NodeGlobalsPolyfillPlugin({
-  //         process: true,
-  //         buffer: true
-  //       }),
-  //       NodeModulesPolyfillPlugin()
-  //     ]
-  //   }
-  // },
-  // build: {
-  //   rollupOptions: {
-  //     plugins: [rollupNodePolyFill()]
-  //   }
-  // }
 })
