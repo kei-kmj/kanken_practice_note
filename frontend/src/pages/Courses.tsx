@@ -55,7 +55,6 @@ export const Courses:React.FC = () => {
         quiz.push(JSON.parse(localStorage.getItem(key) as string))
       }
     }
-    console.log(quiz)
     if (quiz.length === 0) {
       alert('登録されている問題がありません')
       return

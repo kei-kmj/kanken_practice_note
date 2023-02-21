@@ -26,11 +26,10 @@ html {
     width: 100%;
     height: 6px;
     content: '';
-    border-radius: 3px;
-    background-image: -webkit-gradient(linear, right top, left top, from(#97483f), to(#de7c76));
-    background-image: -webkit-linear-gradient(right, #97483f 50%, #de7c76 100%);
-    background-image: linear-gradient(to left, #97483f 50%, #de7c76 100%);
-}
+    /*border-radius: 3px;*/
+    border-bottom: 8px dotted #bbbbbb;
+    /*background-color: #bbbbbb;*/
+   }
 
 line:before {
     top: 0;
