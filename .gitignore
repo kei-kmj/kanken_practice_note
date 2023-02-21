@@ -61,3 +61,5 @@ node_modules
 /cypress.od/
 /frontend/src/test/
 /questiondata2.csv
+/openquestion.csv
+/answerdatadev.csv

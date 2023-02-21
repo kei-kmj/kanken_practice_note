@@ -14,7 +14,7 @@ export const StartPanel: FC<Props> = ({onClickStart, onClickRepeat}) => {
       <div className="flex justify-center">
         <div>
           <p className="flex justify-center text-s mt-3">選んだ分野のすべての問題から出題</p>
-          <button className="btn btn-wide btn-primary b" onClick={onClickStart}>新規
+          <button className="btn btn-wide btn-primary" onClick={onClickStart}>新規<MdNavigateNext className="ml-3"/>
           </button>
 
         </div>
@@ -22,7 +22,8 @@ export const StartPanel: FC<Props> = ({onClickStart, onClickRepeat}) => {
       <div className="flex justify-center">
         <div>
           <p className="flex justify-center text-s mt-3">「復習する」にチェックした問題から出題</p>
-          <button className="btn btn-wide btn-primary b" onClick={onClickRepeat}>復習<MdNavigateNext/></button>
+          <button className="btn btn-wide btn-primary b" onClick={onClickRepeat}>復習<MdNavigateNext className="ml-3"/>
+          </button>
         </div>
       </div>
     </div>
