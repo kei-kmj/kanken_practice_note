@@ -52,10 +52,10 @@ export const Quiz:React.FC = () => {
   }
 
   return (<>
-    <Header pageTitle="問題です！" description="問題を出題します" title="漢検練習帳"/>
+    <Header pageTitle="問題です" description="問題を出題します" title="漢検練習帳"/>
     <div className="flex flex-col min-h-screen">
       <div className="flex justify-left">
-        <Logo/>
+        <Logo />
       </div>
       <main className="flex-grow">
         <Question data={data} currentQuiz={currentQuiz}/>

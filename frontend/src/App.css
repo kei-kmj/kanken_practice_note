@@ -4,7 +4,7 @@
 
 html {
     max-width: 480px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .all {
@@ -15,10 +15,10 @@ html {
     padding: 10px
 }
 
-.line{
+.line {
     position: relative;
     padding: 1rem .5rem;
-    }
+}
 
 .line:before {
     position: absolute;
@@ -26,10 +26,8 @@ html {
     width: 100%;
     height: 6px;
     content: '';
-    /*border-radius: 3px;*/
     border-bottom: 8px dotted #bbbbbb;
-    /*background-color: #bbbbbb;*/
-   }
+}
 
 line:before {
     top: 0;
@@ -45,7 +43,7 @@ line:before {
     background-color: #dddcd6;
     color: #333333;
     width: 300px;
-    height: 60px;
+    height: 70px;
     font-size: 1.2em; /* フォントサイズ */
     text-align: center;
     margin: 0.2em 0.2em 0.2em 0.2em;
@@ -60,9 +58,7 @@ line:before {
     text-align: center;
     vertical-align: middle;
     width: 300px;
-    height: 60px;
+    height: 70px;
     margin: 0.2em 0.2em 0.2em 0.2em;
-
 }
-
 
