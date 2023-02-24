@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'APIs', type: :request do
+RSpec.describe 'Quizzes', type: :request do
   before(:each) do
     FactoryBot.create_list(:question, 10)
     FactoryBot.create_list(:question, 20, category_id: 3)
@@ -10,7 +10,7 @@ RSpec.describe 'APIs', type: :request do
 
   describe 'GET /index' do
     it 'カテゴリ、レベル、問題数を指定すると10件取得する' do
-      get '/api/index?&category=3&level=11&limit=10'
+      get '/quizzes?&category=3&level=11&limit=10'
       expect(response.status).to eq 200
 
       json = JSON.parse(response.body)
@@ -18,7 +18,7 @@ RSpec.describe 'APIs', type: :request do
     end
 
     it 'カテゴリパラメーターが0の時も200が返る' do
-      get '/api/index?&category=0&level=11&limit=10'
+      get '/quizzes?&category=0&level=11&limit=10'
       expect(response.status).to eq 200
     end
   end

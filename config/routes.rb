@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'contents#index'
-  get 'api/index'
+  resources 'quizzes'
 
   get '*all', to: 'contents#index'
 end

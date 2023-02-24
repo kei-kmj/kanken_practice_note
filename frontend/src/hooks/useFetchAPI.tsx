@@ -16,7 +16,7 @@ export const useFetchApi = () => {
   ) => {
     navigate('/loading')
     const response = await axios.get<ResponseData>(
-      `/api/index?&category=${category}&level=${level}&limit=${limit}`
+      `/quizzes?&category=${category}&level=${level}&limit=${limit}`
     )
     return { quiz: response.data, error: null, loading: false }
   }

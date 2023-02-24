@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class APIController < ApplicationController
+class QuizzesController < ApplicationController
   ALL_CATEGORIES = "0"
   FIRST_CATEGORIES = "1"
   LAST_CATEGORIES = "7"
