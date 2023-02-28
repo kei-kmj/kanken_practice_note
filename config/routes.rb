@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'contents#index'
-  resources 'quizzes'
+  resources 'quizzes', only: 'index'
 
   get '*all', to: 'contents#index'
 end
