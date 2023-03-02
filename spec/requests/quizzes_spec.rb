@@ -13,7 +13,7 @@ RSpec.describe 'Quizzes', type: :request do
       get '/quizzes?&category=3&level=11&limit=10'
       expect(response.status).to eq 200
 
-      json = JSON.parse(response.body)
+      json = response.parsed_body
       expect(json.length).to eq(10)
     end
 
