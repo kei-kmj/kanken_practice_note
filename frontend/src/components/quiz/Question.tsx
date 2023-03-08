@@ -21,8 +21,8 @@ export const Question: FC<Props> = ({currentQuiz, data: {quiz}}) => {
 
           <p className="flex justify-end mt-3">{currentQuiz + 1}問目 / {quiz.length} 問中</p>
 
-          <p className="text-lg mt-2 flex justify-center">{quiz[currentQuiz].category.description}</p>
-          <p className="text-xl mt-3 flex justify-center">{quiz[currentQuiz].question}</p>
+          <p className="text-lg mt-2 ml-3 flex justify-center">{quiz[currentQuiz].category.description}</p>
+          <p className="text-xl flex justify-center">{quiz[currentQuiz].question}</p>
         </div>
       </div>
     </div>
