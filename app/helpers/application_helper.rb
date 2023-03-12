@@ -23,7 +23,7 @@ module ApplicationHelper
       local: 'ja-JP',
     },
       twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       site: '@kei16180339',
       image: image_url('img.png'),
     }
