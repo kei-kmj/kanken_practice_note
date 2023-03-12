@@ -111,6 +111,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    meta-tags (2.18.0)
+      actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
@@ -254,6 +256,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   jbuilder
+  meta-tags
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="mytheme">
-<head prefix=og:http://ogp.me/ns#>
+<head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DF57Z4F4VZ"></script>
   <script>
@@ -10,26 +10,9 @@
 
     gtag('config', 'G-DF57Z4F4VZ');
   </script>
-  <title>漢検練習帳 | クイズで漢検！</title>
 
   <!-- faviconの設定 -->
   <%= favicon_link_tag('favicon.ico') %>
-
-  <!-- OGPの設定 -->
-  <meta property="og:url" content=https://kanken-practice-b5ve7zdnrq-an.a.run.app/  />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="漢検練習帳 | クイズで漢検学習" />
-  <meta property="og:description" content="漢検1級/準1級の範囲の漢字をクイズ形式で学習できます" />
-  <meta property="og:site_name" content="漢検練習帳" />
-  <meta property="og:image" content=https://kanken-practice-b5ve7zdnrq-an.a.run.app/app/assets/images/twittercard.png />
-
-  <!-- Twitterカードの設定 -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@kei16180339"/>
-  <meta name="twitter:title" content="漢検練習帳"/>
-  <meta name="twitter:description" content="クイズで漢検準1伋/1級の学習をしよう！"/>
-  <meta name="twitter:image" content="https://kanken-practice-b5ve7zdnrq-an.a.run.app/app/assets/images/twittercard.png"/>
-
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
@@ -38,6 +21,7 @@
   <%= vite_client_tag %>
   <%= vite_react_refresh_tag %>
   <%= vite_javascript_tag 'main.tsx' %>
+  <%= display_meta_tags(default_meta_tags) %>
 
 </head>
 

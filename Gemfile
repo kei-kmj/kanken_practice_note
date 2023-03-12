@@ -28,6 +28,8 @@ gem 'bootsnap', require: false
 
 gem 'vite_rails'
 
+gem 'meta-tags'
+
 # Permit cors
 gem 'rack-cors'
 
