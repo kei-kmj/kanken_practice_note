@@ -1,0 +1,13 @@
+
+
+.policy{
+    width: 96%;
+}
+.policyTitle {
+    background-color: #cc7000;
+    height: 70px;
+    text-align: center;
+    color: #eaf4fc;
+    padding: 0.5em 0.3em 0.8em 0.5em;
+    border-radius: 8px;
+}
