@@ -11,6 +11,7 @@ AllCops:
   Exclude:
     - "Gemfile"
     - "bin/**/*"
+    - "app/helpers/*"
     - "db/**/*"
     - "log/**/*"
     - "tmp/**/*"
