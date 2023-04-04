@@ -47,6 +47,12 @@ export const Policy: React.FC = () => {
             <p className="ml-5">当アプリは、より快適にご利用いただくため、JavaScriptを使用しています。 ご使用のブラウザ設定においてJavaScriptをオン (有効)
               にされていない場合に、正しく表示されない又は操作ができない場合があります。</p>
           </div>
+          <div>
+            <h3 className="text-xl mt-5 mb-2 ml-5">Google Analytics</h3>
+            <p className="ml-5">当アプリでは、アプリ改善や新しいコンテンツの開発などに役立てるために、Google Analyticsを使用してアクセス解析を行っています。</p><p className="ml-5">Google Analyticsは、ユーザーがアプリを利用した際の情報（閲覧したページ、利用したブラウザ・OSなど）を匿名で収集し管理するサービスで、<a className="link link-info" href="https://policies.google.com/privacy?hl=ja">Google社のプライバシーポリシー</a>に基づいて運用されています。</p>
+            <p className="ml-5">なお、Cookieを無効にすることで、収集される情報を制限することができます。
+            </p>
+          </div>
 
         </div>
         <div className=" text-l grid grid-flow-col gap-4 link m-5 flex justify-end">
