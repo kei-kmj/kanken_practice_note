@@ -10,8 +10,8 @@ module ApplicationHelper
       canonical: request.original_url,
       separator: '|',
     icon: [
-      { href: image_url('img.png') },
-      { href: image_url('img.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+      { href: image_url('favicon.ico') },
+      # { href: image_url('img.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
     ],
       og: {
       site_name: :site,
