@@ -16,9 +16,8 @@ class QuizzesController < ApplicationController
     level = params[:level]
     limit = params[:limit]
 
-    quiz_intermediate = Question.where(level:).order('RANDOM()').limit(limit)
-    quiz_completed = quiz_intermediate.where(category:) if category.presence
+    quiz = Question.where(category:).where(level:).order('RANDOM()').limit(limit)
 
-    render json: quiz_completed.to_json(include: %i[category answers])
+    render json: quiz.to_json(include: %i[category answers])
   end
 end

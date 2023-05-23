@@ -9,17 +9,23 @@ RSpec.describe 'Quizzes', type: :request do
   end
 
   describe 'GET /index' do
-    it 'カテゴリ、レベル、問題数を指定すると10件取得する' do
-      get '/quizzes?&category=3&level=11&limit=10'
+    context 'カテゴリ、レベル、問題数をパラメーターで受け取ったとき' do
+      it 'クイズを10件取得する' do
+        get '/quizzes?&category=3&level=11&limit=10'
+        expect(response.status).to eq 200
+
+        json = response.parsed_body
+        expect(json.length).to eq(10)
+      end
+    end
+
+    context 'カテゴリパラメーターが0のとき'
+    it 'クイズを10件取得する' do
+      get '/quizzes?&category=0&level=11&limit=10'
       expect(response.status).to eq 200
 
       json = response.parsed_body
       expect(json.length).to eq(10)
-    end
-
-    it 'カテゴリパラメーターが0の時も200が返る' do
-      get '/quizzes?&category=0&level=11&limit=10'
-      expect(response.status).to eq 200
     end
   end
 end
