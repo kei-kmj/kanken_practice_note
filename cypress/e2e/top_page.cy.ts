@@ -8,6 +8,7 @@ describe('ルーティング', () => {
   })
 
   it('アプリケーションポリシーを開く', () => {
+    cy.visit('/')
     cy.contains('アプリケーションポリシー').click()
 
     cy.get('h1').should('contain', 'アプリケーションポリシー')
@@ -15,6 +16,7 @@ describe('ルーティング', () => {
   })
 
   it('お問い合わせを開く', () => {
+    cy.visit('/')
     cy.contains('お問い合わせ').click()
 
     cy.get('iframe').should('exist')
