@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('quizページ', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('/')
     cy.contains('始める').click()
     cy.contains('準1級').click()
@@ -40,10 +40,14 @@ describe('quizページ', () => {
   it('次の問題が表示される', () => {
     cy.get('.btn.btn-wide.btn-primary').first().click()
     cy.contains('次の問題').click()
-    cy.contains('3問目').should('exist')
+    cy.contains('2問目').should('exist')
   })
 
   it('10回目までは得点が表示されない', () => {
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
     cy.get('.btn.btn-wide.btn-primary').first().click()
     cy.contains('次の問題').click()
     cy.get('.btn.btn-wide.btn-primary').first().click()
@@ -62,6 +66,24 @@ describe('quizページ', () => {
   })
 
   it('最後に得点が表示される', () => {
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
+    cy.get('.btn.btn-wide.btn-primary').first().click()
+    cy.contains('次の問題').click()
     cy.get('.btn.btn-wide.btn-primary').first().click()
     cy.contains('点').should('exist')
     cy.contains('問題選択画面に戻る').click()
