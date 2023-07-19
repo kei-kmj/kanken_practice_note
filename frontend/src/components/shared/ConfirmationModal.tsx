@@ -12,7 +12,7 @@ export const ConfirmationModal:FC<Props> = ({ id,onClick, confirmation,unrecover
   return <>
     <input type="checkbox" id={id} className="modal-toggle"/>
     <div className="modal">
-      <div className="modal-box w-60">
+      <div className="modal-box w-80">
         <p className="font-bold text-lg">{confirmation}</p>
         <p className="font-bold text-lg">{unrecoverable}</p>
         <div className="modal-action">

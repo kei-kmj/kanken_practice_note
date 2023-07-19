@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { StartButton } from '../components/topPage/StartButton'
-import { deleteAll } from '../hooks/useLocalStrage'
+import { useDeleteAll } from '../hooks/useLocalStrage'
 import { Guidance } from '../components/topPage/Guidance'
 import { Footer } from '../components/shared/Footer'
 import { ConfirmationModal } from '../components/shared/ConfirmationModal'
@@ -12,12 +12,25 @@ import questioningGuide from '../../public/guidance/questioningGuide.png'
 import choiceGuide from '../../public/guidance/choiceGuide.png'
 import repeatGuide from '../../public/guidance/repeatGuide.png'
 import './Top.css'
+import { useEffect } from 'react'
 
 export const Top: React.FC = () => {
   const navigate = useNavigate()
+  const {deleteAll, isDeleteAll} = useDeleteAll()
+  // const [isNotificationOpen, setNotificationOpen] = React.useState<boolean>(false)
 
   const handleStart = () => {
     navigate('/courses')
+  }
+
+  useEffect(() => {
+    if (isDeleteAll) {
+      window.my_modal_1.showModal()
+    }
+  }, [isDeleteAll])
+
+  const handleCloseNotification = () => {
+    setNotificationOpen(false)
   }
 
   return (<>
@@ -34,10 +47,10 @@ export const Top: React.FC = () => {
         <StartButton onClick={handleStart}/>
 
         <div className="flex justify-center ">
-          <Guidance guidanceAbove="級と分野を選んで" guidanceBelow="" src={choiceGuide} />
+          <Guidance guidanceAbove="級と分野を選んで" guidanceBelow="" src={choiceGuide}/>
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide} />
+          <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide}/>
         </div>
         <div className="flex justify-center mt-8">
           <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide}/>
@@ -50,6 +63,16 @@ export const Top: React.FC = () => {
           <ConfirmationModal id="my-modal" confirmation="本当に復習データを消しますか？" unrecoverable="一度消すと元に戻せません"
                              onClick={deleteAll}/>
         </div>
+        {isDeleteAll && (<div>
+          <dialog id="my_modal_1" className="modal">
+            <form method="dialog" className="modal-box w-60">
+              <p className="font-bold text-lg">復習データを削除しました</p>
+              <div className="modal-action">
+                <button className="btn btn-success">閉じる</button>
+              </div>
+            </form>
+          </dialog>
+        </div>)}
       </main>
       <Footer/>
     </div>
