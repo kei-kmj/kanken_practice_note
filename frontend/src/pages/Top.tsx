@@ -5,6 +5,7 @@ import { useDeleteAll } from '../hooks/useLocalStrage'
 import { Guidance } from '../components/topPage/Guidance'
 import { Footer } from '../components/shared/Footer'
 import { ConfirmationModal } from '../components/shared/ConfirmationModal'
+import { NotificationModal } from '../components/shared/NotificationModal'
 import { Header } from '../components/shared/Header'
 import logo from '../../public/logo.png'
 import icon from '../../public/charactor/icon.png'
@@ -25,13 +26,9 @@ export const Top: React.FC = () => {
 
   useEffect(() => {
     if (isDeleteAll) {
-      window.my_modal_1.showModal()
+      window.notification.showModal()
     }
   }, [isDeleteAll])
-
-  const handleCloseNotification = () => {
-    setNotificationOpen(false)
-  }
 
   return (<>
     <Header pageTitle="漢検練習帳" title="クイズで漢検学習！" description="漢字検定1級・準1級範囲の漢字を4択クイズで学習するアプリです"/>
@@ -47,13 +44,13 @@ export const Top: React.FC = () => {
         <StartButton onClick={handleStart}/>
 
         <div className="flex justify-center ">
-          <Guidance guidanceAbove="級と分野を選んで" guidanceBelow="" src={choiceGuide}/>
+          <Guidance guidanceAbove="級と分野を選んで" guidanceBelow="" src={choiceGuide} />
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide}/>
+          <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide} />
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide}/>
+          <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide} />
         </div>
 
         <StartButton onClick={handleStart}/>
@@ -63,16 +60,7 @@ export const Top: React.FC = () => {
           <ConfirmationModal id="my-modal" confirmation="本当に復習データを消しますか？" unrecoverable="一度消すと元に戻せません"
                              onClick={deleteAll}/>
         </div>
-        {isDeleteAll && (<div>
-          <dialog id="my_modal_1" className="modal">
-            <form method="dialog" className="modal-box w-60">
-              <p className="font-bold text-lg">復習データを削除しました</p>
-              <div className="modal-action">
-                <button className="btn btn-success">閉じる</button>
-              </div>
-            </form>
-          </dialog>
-        </div>)}
+        {isDeleteAll && <NotificationModal notice="復習データを削除しました"/>}
       </main>
       <Footer/>
     </div>
