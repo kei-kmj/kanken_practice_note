@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { StartButton } from '../components/topPage/StartButton'
-import { deleteAll } from '../hooks/useLocalStrage'
+import { useDeleteAll } from '../hooks/useLocalStrage'
 import { Guidance } from '../components/topPage/Guidance'
 import { Footer } from '../components/shared/Footer'
 import { ConfirmationModal } from '../components/shared/ConfirmationModal'
+import { NotificationModal } from '../components/shared/NotificationModal'
 import { Header } from '../components/shared/Header'
 import logo from '../../public/logo.png'
 import icon from '../../public/charactor/icon.png'
@@ -12,13 +13,22 @@ import questioningGuide from '../../public/guidance/questioningGuide.png'
 import choiceGuide from '../../public/guidance/choiceGuide.png'
 import repeatGuide from '../../public/guidance/repeatGuide.png'
 import './Top.css'
+import { useEffect } from 'react'
 
 export const Top: React.FC = () => {
   const navigate = useNavigate()
+  const {deleteAll, isDeleteAll} = useDeleteAll()
+  // const [isNotificationOpen, setNotificationOpen] = React.useState<boolean>(false)
 
   const handleStart = () => {
     navigate('/courses')
   }
+
+  useEffect(() => {
+    if (isDeleteAll) {
+      window.notification.showModal()
+    }
+  }, [isDeleteAll])
 
   return (<>
     <Header pageTitle="漢検練習帳" title="クイズで漢検学習！" description="漢字検定1級・準1級範囲の漢字を4択クイズで学習するアプリです"/>
@@ -40,7 +50,7 @@ export const Top: React.FC = () => {
           <Guidance guidanceAbove="クイズで学習！" guidanceBelow="" src={questioningGuide} />
         </div>
         <div className="flex justify-center mt-8">
-          <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide}/>
+          <Guidance guidanceAbove="チェックした問題を" guidanceBelow="何度も復習" src={repeatGuide} />
         </div>
 
         <StartButton onClick={handleStart}/>
@@ -50,6 +60,7 @@ export const Top: React.FC = () => {
           <ConfirmationModal id="my-modal" confirmation="本当に復習データを消しますか？" unrecoverable="一度消すと元に戻せません"
                              onClick={deleteAll}/>
         </div>
+        {isDeleteAll && <NotificationModal notice="復習データを削除しました"/>}
       </main>
       <Footer/>
     </div>
