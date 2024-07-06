@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   root 'contents#index'
   get '*', to: 'contents#index', constraints: lambda { |req|
-    ['/', '/courses', '/policy','/support','/quiz','/loading'].include?(req.path)
+    ['/', '/courses', '/policy', '/support', '/quiz', '/loading'].include?(req.path)
   }
 
   # 404ページ。これはroutes.rbの最後に追加
