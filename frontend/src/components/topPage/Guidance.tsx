@@ -8,7 +8,7 @@ type Props = {
   src: string
 }
 
-export const Guidance: FC<Props> = ({guidanceAbove,guidanceBelow, src}) => {
+const Guidance: FC<Props> = ({guidanceAbove,guidanceBelow, src}) => {
   return (<>
     <div className="flex flex-col">
       <div className="chat chat-start">
@@ -21,3 +21,4 @@ export const Guidance: FC<Props> = ({guidanceAbove,guidanceBelow, src}) => {
     </div>
   </>)
 }
+export default Guidance
