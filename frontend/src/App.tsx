@@ -9,8 +9,7 @@ import { Loading } from './pages/Loading'
 import background from '../public/shippou.jpeg'
 import './App.css'
 
-
-export const App:React.FC = () => {
+export const App: React.FC = () => {
   return (
     <>
       <div className="bg-auto" style={{ backgroundImage: `url(${background}` }}>
@@ -28,4 +27,3 @@ export const App:React.FC = () => {
     </>
   )
 }
-

@@ -4,12 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import { App } from './App'
 import 'vite/modulepreload-polyfill'
 
-
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-
-      <App/>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 )
