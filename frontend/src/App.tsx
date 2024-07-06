@@ -6,7 +6,6 @@ import { Quiz } from './pages/Quiz'
 import { Policy } from './pages/Policy'
 import { Support } from './pages/Support'
 import { Loading } from './pages/Loading'
-import { Nomatch } from './pages/Nomatch'
 import background from '../public/shippou.jpeg'
 import './App.css'
 
@@ -23,7 +22,6 @@ export const App:React.FC = () => {
             <Route path="/support" element={<Support />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/loading" element={<Loading />} />
-            {/*<Route path="/*" element={<Nomatch />} />*/}
           </Routes>
         </div>
       </div>
